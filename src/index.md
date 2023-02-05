@@ -1,6 +1,18 @@
 ---
-title: Hello World
+title: Chris Stone
 layout: "base.njk"
 ---
 
-Hello all!
+Chris Stone is a full-stack software engineer with experience making web, cloud, desktop, and mobile applications. He
+seeks technical challenges and is always eager to learn more and continue growing.
+
+He also has experience in team leadership and public speaking. He is interested in the power of software to have a
+positive effect on the lives of others, and he is passionate about making sure that craft of making software is
+inclusive and welcoming to people of all backgrounds.
+
+When he is not writing code, he may be working on his skills in the kitchen cooking vegan food, spending some quality
+time with his wife and two cats, or playing PlayStation 5 or Nintendo Switch. He might also be heading out for a
+long-distance run. He has run several marathon and half marathon races but is mostly running 5K and 10K races lately. He
+has run the AJC Peachtree Road Race in Atlanta every year since 2014.
+
+Chris Stone. Mob programming. Test-driven development.

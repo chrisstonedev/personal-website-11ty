@@ -1,3 +1,38 @@
 body {
+    background: #ddf;
+    color: #003;
     font-family: sans-serif;
+    margin: 0;
+}
+
+header {
+    background: #cce;
+    padding: 1em;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+
+nav > ul {
+    display: flex;
+    gap: 16px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+main {
+    padding: 1em;
+}
+
+a, a:visited {
+    color: #00f;
+}
+
+a:active {
+    color: #55f;
+}
+
+h1 {
+    margin-block-start: 0;
 }
