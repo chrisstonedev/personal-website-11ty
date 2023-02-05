@@ -2,4 +2,4 @@
 title: 2022 in Review
 ---
 
-First post content
+This is where my blog article will go.

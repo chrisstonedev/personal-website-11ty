@@ -16,12 +16,16 @@
             <li><a href="/">Chris Stone</a></li>
             <li><a href="/blog">Blog</a></li>
             <li><a href="/speaking">Speaking</a></li>
+            <li><a href="/development">Development</a></li>
+            <li><a href="/contact">Contact</a></li>
         </ul>
     </nav>
 </header>
 <main>
     <h1>{{ title }}</h1>
-    {{ content | safe }}
+    {% block main %}
+        {{ content | safe }}
+    {% endblock %}
 </main>
 </body>
 </html>
