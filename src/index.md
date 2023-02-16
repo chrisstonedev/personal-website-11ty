@@ -3,8 +3,8 @@ title: Chris Stone
 layout: "base.njk"
 ---
 
-Chris Stone is a full-stack software engineer with experience making web, cloud, desktop, and mobile applications. He
-seeks technical challenges and is always eager to learn more and continue growing.
+Chris Stone is a software developer with full-stack experience and an interest in accessibility and design. He seeks
+technical challenges and is always eager to learn more and continue growing.
 
 He also has experience in team leadership and public speaking. He is interested in the power of software to have a
 positive effect on the lives of others, and he is passionate about making sure that craft of making software is
