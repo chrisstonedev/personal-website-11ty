@@ -1,5 +1,6 @@
 ---
 title: Why Code Alone When You Could Be Remote Mob Programming?
+date: 2023-04-05
 ---
 
 Remote mob programming is a practice in which a software development team, comprised of people from across the country
@@ -10,3 +11,5 @@ remote mob programming and how it has helped remove knowledge silos and asynchro
 providing a connected experience within and across modern remote teams. I will share my stories and cautionary advice
 from introducing remote mob programming practices on various teams. If you have ever been curious how remote mob
 programming can become a viable way of working, this is the talk for you!
+
+This talk has been submitted at multiple events but has yet to be accepted.

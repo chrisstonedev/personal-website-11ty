@@ -3,16 +3,21 @@ title: Chris Stone
 layout: "base.njk"
 ---
 
-Chris Stone is a software developer with full-stack experience and an interest in accessibility and design. He seeks
-technical challenges and is always eager to learn more and continue growing.
+Hello!
 
-He also has experience in team leadership and public speaking. He is interested in the power of software to have a
-positive effect on the lives of others, and he is passionate about making sure that craft of making software is
-inclusive and welcoming to people of all backgrounds.
+My name is Chris Stone.
 
-When he is not writing code, he may be working on his skills in the kitchen cooking vegan food, spending some quality
-time with his wife and two cats, or playing PlayStation 5 or Nintendo Switch. He might also be heading out for a
-long-distance run. He has run several marathon and half marathon races but is mostly running 5K and 10K races lately. He
-has run the AJC Peachtree Road Race in Atlanta every year since 2014.
+I am a software developer with full-stack experience and an interest in accessibility and design. I am a proponent of
+mob programming and working collaboratively. I look for the simplest possible solution to problems because I view code
+as a means to a value feature, and the best answer is the most readable and the most maintainable. I use test-driven
+development where possible to keep the code-writing process consistent.
 
-Chris Stone. Mob programming. Test-driven development.
+I am also a public speaker and I have given talks at several technical events. Putting a talk together helps give me
+confidence that I understand a subject well enough to be able to teach concepts to others, and I enjoy the challenge of
+trying to formulate a session that is as orderly and engaging as the kind that I would enjoy viewing myself if I were in
+the audience. Sharing things I have learned is also a way that I can give back and help pay forward all the lessons I
+learned to get where I am.
+
+Outside of software, my hobbies include playing video games (especially role-playing games with good stories), reading
+tarot cards, cooking and eating vegan food, running for exercise, and trying to find time to read more books. I live in
+Atlanta with my wife and two cats.

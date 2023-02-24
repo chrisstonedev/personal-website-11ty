@@ -13,6 +13,16 @@ header {
     z-index: 1;
 }
 
+footer {
+    background: #cce;
+    padding: 1em;
+    z-index: 1;
+}
+
+footer p {
+    margin: 0;
+}
+
 nav > ul {
     display: flex;
     gap: 16px;
@@ -35,4 +45,8 @@ a:active {
 
 h1 {
     margin-block-start: 0;
+}
+
+#nav-link-home {
+    font-weight: 700;
 }

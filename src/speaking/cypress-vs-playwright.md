@@ -1,5 +1,6 @@
 ---
 title: "Cypress Vs. Playwright: The Great Test Framework Debate"
+date: 2022-10-19
 ---
 
 Cypress and Playwright are two excellent popular modern frameworks for testing web applications. They are open source,
@@ -11,3 +12,6 @@ offered in the very latest version of each testing library and share a fair comp
 to set up new projects and run actual tests. And even though both have their advantages, I will share which one was a
 better fit for our team when we tried both hands-on, and we will poll to see which testing tool is able to win more
 hearts and minds.
+
+This talk has been submitted at multiple events and has been accepted once but, due to logistical challenges, it has not
+yet been presented.
