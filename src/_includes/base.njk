@@ -22,14 +22,16 @@
     </nav>
 </header>
 <main>
-    <h1>{{ title }}</h1>
-    {% block main %}
-        {{ content | safe }}
-    {% endblock %}
+    <article>
+        <h1>{{ title }}</h1>
+        {% block main %}
+            {{ content | safe }}
+        {% endblock %}
+    </article>
+    <footer>
+        <p>2023 Chris Stone. Views expressed on this website are my own and are not necessarily shared by any other
+            entity.</p>
+    </footer>
 </main>
-<footer>
-    <p>2023 Chris Stone. Views expressed on this website are my own and are not necessarily shared by any other
-        entity.</p>
-</footer>
 </body>
 </html>

@@ -1,22 +1,28 @@
 body {
     background: #ddf;
     color: #003;
+    display: flex;
+    flex-direction: column;
     font-family: sans-serif;
+    height: 100%;
     margin: 0;
+    position: fixed;
 }
 
 header {
     background: #cce;
     padding: 1em;
-    position: sticky;
     top: 0;
-    z-index: 1;
+}
+
+main {
+    flex-grow: 1;
+    overflow-y: auto;
 }
 
 footer {
     background: #cce;
     padding: 1em;
-    z-index: 1;
 }
 
 footer p {
@@ -25,13 +31,21 @@ footer p {
 
 nav > ul {
     display: flex;
-    gap: 16px;
+    flex-wrap: wrap;
+    column-gap: 16px;
     list-style: none;
     margin: 0;
     padding: 0;
+    row-gap: 8px;
 }
 
 main {
+    display: flex;
+    flex-direction: column;
+}
+
+article {
+    flex-grow: 1;
     padding: 1em;
 }
 
