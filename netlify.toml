@@ -1,6 +1,6 @@
 [build]
-publish = "public"
+  publish = "public"
 
 [[redirects]]
-from = "*"
-to = "/"
+  from = "*"
+  to = "/"
