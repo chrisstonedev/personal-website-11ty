@@ -1,6 +1,6 @@
 ---
 title: Chris Stone
-layout: "base.njk"
+layout: "home.njk"
 ---
 
 Hello!

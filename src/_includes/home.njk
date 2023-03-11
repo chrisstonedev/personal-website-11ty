@@ -1,0 +1,9 @@
+{% extends "base.njk" %}
+
+{% block main %}
+    {{ content | safe }}
+    {%- for post in collections.revisions -%}
+        <h2><a href="{{ post.url }}">{{ post.data.title }}</a></h2>
+        {{ post.data.content | mostRecentRevisions | safe }}
+    {%- endfor -%}
+{% endblock %}
