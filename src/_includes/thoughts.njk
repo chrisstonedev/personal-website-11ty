@@ -10,7 +10,7 @@
 		{%- for post in collections.thoughts | sort(false, false, "data.title") -%}
 			<tr>
 				<td><a href="{{ post.url }}">{{ post.data.title }}</a></td>
-				<td>{{ post.data.date }}</td>
+				<td>{{ post.data.date | htmlDate | safe }}</td>
 			</tr>
 		{%- endfor -%}
 	</table>
