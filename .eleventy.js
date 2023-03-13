@@ -19,19 +19,6 @@ module.exports = function (eleventyConfig) {
 	const md = markdownIt({html: true, linkify: true})
 		.use(require('markdown-it-footnote'))
 		.use(require('markdown-it-attrs'))
-		.use(function (md) {
-			/** @param {{raw:string,text:string,url:string}} match */
-			let normalizeLinks = match => {
-				const parts = match.raw.slice(2, -2).split('|');
-				parts[0] = parts[0].replace(/.(md|markdown)\s?$/i, '');
-				match.text = (parts[1] || parts[0]).trim();
-				match.url = `/thoughts/${parts[0].trim()}/`;
-			};
-			md.linkify.add('[[', {
-				validate: /^\s?([^\[\]|\n\r]+)(\|[^\[\]|\n\r]+)?\s?]]/,
-				normalize: normalizeLinks,
-			});
-		})
 		.use(require('markdown-it-external-links'), {externalClassName: 'external-link',});
 	eleventyConfig.addFilter('renderMarkdownLinks', string => {
 		return md.render(string);

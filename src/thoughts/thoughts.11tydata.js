@@ -1,24 +1,14 @@
-const wikiLinkRegExp = /\[\[\s?([^\[\]|\n\r]+)(\|[^\[\]|\n\r]+)?\s?]]/g
-
-function caselessCompare(a, b) {
-	return a.normalize().toLowerCase() === b.normalize().toLowerCase();
-}
-
-/** @type {import('@11ty/eleventy').Eleventy} */
 module.exports = {
 	layout: 'thought.njk',
 	tags: 'thoughts',
 	eleventyComputed: {
 		backlinks: (data) => {
-			const thoughts = data.collections.thoughts;
-			const currentFileSlug = data.page.filePathStem.replace('/thoughts/', '');
 			const backlinks = [];
-			for (const thought of thoughts) {
+			for (const thought of data.collections.all) {
 				const thoughtContent = thought.template.frontMatter.content;
-				const outboundLinks = (thoughtContent.match(wikiLinkRegExp) || []).map(link =>
-					link.slice(2, -2).split('|')[0].replace(/.(md|markdown)\s?$/i, '').trim()
-				);
-				if (!outboundLinks.some(link => caselessCompare(link, currentFileSlug))) {
+				const outboundLinks = (thoughtContent.match(/\[[^\[\]|\n\r]+]\([^\[\]|\n\r]+\)/g) || [])
+					.map(link => link.slice(1, -1).split('](')[1]);
+				if (!outboundLinks.some(link => link.localeCompare(data.page.filePathStem, undefined, {sensitivity: 'accent'}) === 0)) {
 					continue;
 				}
 				const indexWhereFirstParagraphEnds = thoughtContent.indexOf('\n\n');
