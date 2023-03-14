@@ -8,7 +8,7 @@ Hello!
 My name is Chris Stone.
 
 I am a software developer with full-stack experience and an interest in accessibility and design. I am a proponent of
-mob programming and working collaboratively. I look for the simplest possible solution to problems because I view code
+[mob programming](/thoughts/mob-programming) and working collaboratively. I look for the simplest possible solution to problems because I view code
 as a means to a value feature, and the best answer is the most readable and the most maintainable. I use test-driven
 development where possible to keep the code-writing process consistent.
 

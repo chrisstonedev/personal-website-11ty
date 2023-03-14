@@ -4,7 +4,7 @@ module.exports = {
 	eleventyComputed: {
 		backlinks: (data) => {
 			const backlinks = [];
-			for (const thought of data.collections.all) {
+			for (const thought of data.collections.thoughts.concat(data.collections.speaking)) {
 				const thoughtContent = thought.template.frontMatter.content;
 				const outboundLinks = (thoughtContent.match(/\[[^\[\]|\n\r]+]\([^\[\]|\n\r]+\)/g) || [])
 					.map(link => link.slice(1, -1).split('](')[1]);
