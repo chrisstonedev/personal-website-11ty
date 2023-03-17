@@ -3,24 +3,9 @@ title: Mob Programming
 date: 2023-03-13
 ---
 
-**Mob programming** is a style of programming in which a small team of software developers all work on one problem
-together with one person at the keyboard at a time. This can help prevent knowledge silos and increase knowledge sharing
-throughout the team that is working within a given context.
-
-It fosters a collaborative style of working in which everyone brings their strengths to the table. Ideally, instead of
-seeing certain people as senior or as junior to one another, and instead of thinking about a dynamic through a lens
-of people whose skills are lacking or those whose skills are overflowing, we can consider that everyone has much that
-they can give to the team. Some people in the group might have more years of experience, but everyone can have a
-slightly different focus and have picked different disciplines, different languages, different frameworks, and different
-paradigms to follow and for which to have a passion. It reminds me of this quote from Daniel Kwan, co-director of
-*Everything Everywhere All at Once*, when he gave his acceptance speech for Best Director at the 95th Academy Awards:
-
-> If our movie has greatness and genius, it is only because they have greatness and genius flowing through their hearts
-> and souls and minds, and they gave that precious gift to our film. The world is opening up to the fact that genius
-> does not stem from individuals like us onstage, but rather, genius emerges from the collective. We are all products of
-> our context. We are all descendants of something and someone. \[...\] There is greatness in every single person. It
-> doesn't matter who they are. You have a genius that is waiting to erupt. You just need to find the right people to
-> unlock that. Thank you so much to everyone who has unlocked my genius.
+**Mob programming** is a method of [working collaboratively](/thoughts/working-collaboratively) in which a small team of
+software developers all work on one problem together with one person at the keyboard at a time. This can help prevent
+knowledge silos and increase knowledge sharing throughout the team that is working within a given context.
 
 A common concern that people share with this style of working is that it feels as though the speed at which the team can
 deliver results must be slower in order to accommodate this style of working, because it requires everyone to be

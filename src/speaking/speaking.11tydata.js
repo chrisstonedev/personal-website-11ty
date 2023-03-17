@@ -6,7 +6,7 @@ module.exports = {
 			const backlinks = [];
 			for (const talk of data.collections.thoughts.concat(data.collections.speaking)) {
 				const talkContent = talk.template.frontMatter.content;
-				const outboundLinks = (talkContent.match(/\[[^\[\]|\n\r]+]\([^\[\]|\n\r]+\)/g) || [])
+				const outboundLinks = (talkContent.match(/\[[^\[\]|\n\r]+]\([^\[\])|\n\r]+\)/g) || [])
 					.map(link => link.slice(1, -1).split('](')[1]);
 				if (!outboundLinks.some(link => link.localeCompare(data.page.filePathStem, undefined, {sensitivity: 'accent'}) === 0)) {
 					continue;
