@@ -1,6 +1,12 @@
 ---
 title: Buried in Technical Debt?
 date: 2021-10-09
+conferences:
+  - Atlanta Code Camp 2021
+  - Big Mountain Data & Dev 2021
+  - Festive Tech Calendar 2021
+  - Devnexus 2022
+  - St. Louis Java User's Group
 ---
 
 Have you ever taken a shortcut to complete a task, assuring yourself that you would go back and clean it up and do it

@@ -1,6 +1,7 @@
 ---
 title: "Scully: The Angular Jamstack Is Out There"
 date: 2022-07-22
+conferences: [ Scenic City Summit 2022, Atlanta Developers' Conference 2022, Connect.Tech 2022 ]
 ---
 
 Angular is a powerful web application framework that helps us build impressive enterprise applications, but as static "
