@@ -12,7 +12,7 @@ body {
 
 header {
     background: #cce;
-    padding: 1em;
+    padding: 0.5em 1em;
     top: 0;
 }
 
@@ -47,6 +47,10 @@ nav > ul {
     row-gap: 8px;
 }
 
+nav > ul > li {
+    padding: 0.25em 0;
+}
+
 a, a:visited {
     color: #00f;
 }
@@ -59,8 +63,9 @@ h1 {
     margin-block-start: 0;
 }
 
-#nav-link-home {
-    font-weight: 700;
+.nav-link-active {
+    border-bottom: 3px solid fuchsia;
+    font-weight: bold;
 }
 
 table, th, td {

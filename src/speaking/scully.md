@@ -17,3 +17,9 @@ This talk has been given at the following events:
 - [Scenic City Summit 2022](https://sceniccitysummit.com/2022-schedule/) (July 2022; in-person)
 - [Atlanta Developers' Conference 2022](https://www.atldevcon.com/schedule) (September 2022; in-person)
 - [Connect.Tech 2022](https://2022.connect.tech/session/?id=351073) (November 2022; in-person)
+
+
+## Slides
+
+The slides for the most recent revision of the presentation can be found on
+[Google Slides](https://docs.google.com/presentation/d/1yo1rwowzje6MBiLz1udCs2VsqxYzDfVqnThRTIdybCY/edit).

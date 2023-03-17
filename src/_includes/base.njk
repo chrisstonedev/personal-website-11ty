@@ -1,35 +1,35 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>{{ title }}</title>
-    <link rel="stylesheet" href="/style.css">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>{{ title }}</title>
+	<link rel="stylesheet" href="/style.css">
 </head>
 <body>
 <header>
-    <nav>
-        <ul>
-            <li><a href="/" id="nav-link-home">Chris Stone</a></li>
-            <li><a href="/thoughts">Thoughts</a></li>
-            <li><a href="/speaking">Speaking</a></li>
-            <li><a href="/development">Development</a></li>
-            <li><a href="/contact">Contact</a></li>
-        </ul>
-    </nav>
+	<nav>
+		<ul>
+			<li class="{{ 'nav-link-active' if '/' === page.url }}"><a href="/">Chris Stone</a></li>
+			<li class="{{ 'nav-link-active' if '/thoughts' in page.url }}"><a href="/thoughts">Thoughts</a></li>
+			<li class="{{ 'nav-link-active' if '/speaking' in page.url }}"><a href="/speaking">Speaking</a></li>
+			<li class="{{ 'nav-link-active' if '/projects' in page.url }}"><a href="/projects">Projects</a></li>
+			<li class="{{ 'nav-link-active' if '/contact' in page.url }}"><a href="/contact">Contact</a></li>
+		</ul>
+	</nav>
 </header>
 <main>
-    <article>
-        <h1>{{ title }}</h1>
-        {% block main %}
-            {{ content | safe }}
-        {% endblock %}
-    </article>
-    <footer>
-        <p>2023 Chris Stone. Views expressed on this website are my own and are not necessarily shared by any other
-            entity.</p>
-    </footer>
+	<article>
+		<h1>{{ title }}</h1>
+		{% block main %}
+			{{ content | safe }}
+		{% endblock %}
+	</article>
+	<footer>
+		<p>2023 Chris Stone. Views expressed on this website are my own and are not necessarily shared by any other
+			entity.</p>
+	</footer>
 </main>
 </body>
 </html>

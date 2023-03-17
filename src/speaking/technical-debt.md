@@ -16,8 +16,10 @@ your team to take action becomes increasingly difficult. In this talk, we will d
 debt, how to convince other people in the organization of the importance of making regular “minimum payments,” and some
 creative strategies to keep in mind for software projects with excessive “accrued interest.”
 
-This talk about technical debt and the [Urgent-Important matrix](/thoughts/urgent-important-matrix) has been presented
-at the following events:
+This talk about technical debt also covers subjects such as the
+[Urgent-Important matrix](/thoughts/urgent-important-matrix).
+
+It has been presented at the following events:
 
 - [Atlanta Code Camp 2021](https://web.archive.org/web/20210619025348/https://atlantacodecamp.com/2021/Schedule)
   (October 2021; in-person; archived link)
@@ -27,3 +29,14 @@ at the following events:
   2021; virtual; archived link)
 - [Devnexus 2022](https://devnexus.com/archive/devnexus2022/presentations/6812/) (April 2022; in-person)
 - [St. Louis Java User's Group](https://www.meetup.com/gatewayjug/events/287572422/) (October 2022; virtual)
+
+## Slides
+
+The slides for the most recent revision of the presentation can be found on
+[Google Slides](https://docs.google.com/presentation/d/1jc5m9-xPV5eJ-VKD2QcpDOlgDWaJzQMhVm2eWanhRno/edit).
+
+## Recordings
+
+This presentation was recorded twice, at Festive Tech Calendar 2021 and St. Louis Java User's Group:
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/videoseries?list=PL0wn6TdD-reNHq4yaTPjtjeain5ik58OL" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>

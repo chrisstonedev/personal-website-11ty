@@ -13,5 +13,5 @@ to set up new projects and run actual tests. And even though both have their adv
 better fit for our team when we tried both hands-on, and we will poll to see which testing tool is able to win more
 hearts and minds.
 
-This talk has been submitted at multiple events and has been accepted once but, due to logistical challenges, it has not
-yet been presented.
+This talk has been submitted at multiple events and has been accepted once but, due to logistical challenges, it was not
+presented.

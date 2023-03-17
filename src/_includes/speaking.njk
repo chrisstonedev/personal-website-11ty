@@ -6,13 +6,15 @@
 		{%- for post in collections.speaking -%}
 			<li>
 				<a href="{{ post.url }}">{{ post.data.title }}</a>
-				<ul>
-					{%- for conference in post.data.conferences -%}
-						<li>
-							{{ conference }}
-						</li>
-					{%- endfor -%}
-				</ul>
+				{% if post.data.conferences %}
+					<ul>
+						{%- for conference in post.data.conferences -%}
+							<li>
+								{{ conference }}
+							</li>
+						{%- endfor -%}
+					</ul>
+				{% endif %}
 			</li>
 		{%- endfor -%}
 	</ul>

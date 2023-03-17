@@ -1,6 +1,6 @@
 ---
-title: Development
-layout: "development.njk"
+title: Projects
+layout: "projects.njk"
 eleventyExcludeFromCollections: true
 ---
 
