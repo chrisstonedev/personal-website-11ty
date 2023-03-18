@@ -1,11 +1,12 @@
-# Personal Website (11ty)
+# Personal Website (Eleventy)
 
-I am currently researching several Jamstack site generators that I could use over my Angular/Scully combination for my
-current personal website. This repository tracks my learning progress of the **11ty** framework with a rewrite of my
-personal site as the proof of concept.
+My personal website was previously written in Angular and used the Scully library to turn it into a static site. Wanting
+to even more easily produce a static site that did not need hardly any JavaScript code at all, I started testing new
+versions with various frameworks. This repository tracks my learning progress of the **Eleventy** framework with a
+rewrite of my personal site as the proof of concept. This proof of concept proved to be easy to use, quick to build, and
+satisfying to see results, so it replaced my existing Angular site.
 
-If it turns out that this version of the website might be good enough to be able to replace the original site, then that
-will be done.
+[![Netlify Status](https://api.netlify.com/api/v1/badges/bbeff905-f565-4b19-9557-165201ebafa5/deploy-status)](https://app.netlify.com/sites/chrisstonedev-11ty/deploys)
 
 ## Development
 

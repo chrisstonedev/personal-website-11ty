@@ -8,6 +8,7 @@ function nthIndexOf(string, searchString, occurrence) {
 }
 
 module.exports = function (eleventyConfig) {
+	eleventyConfig.addPassthroughCopy('./img/');
 	eleventyConfig.addPassthroughCopy('./src/style.css');
 	eleventyConfig.addPassthroughCopy('./src/favicon.ico');
 	eleventyConfig.addFilter('mostRecentRevisions', (post) => {

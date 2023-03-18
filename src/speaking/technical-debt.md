@@ -30,6 +30,8 @@ It has been presented at the following events:
 - [Devnexus 2022](https://devnexus.com/archive/devnexus2022/presentations/6812/) (April 2022; in-person)
 - [St. Louis Java User's Group](https://www.meetup.com/gatewayjug/events/287572422/) (October 2022; virtual)
 
+![Chris Stone giving Buried in Technical Debt talk at Atlanta Code Camp 2021](/img/technical-debt-event-atlanta-code-camp.jpeg)
+
 ## Slides
 
 The slides for the most recent revision of the presentation can be found on
