@@ -65,6 +65,7 @@ a:active {
 }
 
 h1 {
+    font-size: 1.75em;
     margin-block-start: 0;
 }
 
@@ -140,4 +141,14 @@ table, th, td {
 
 article img {
     max-width: 100%;
+}
+
+blockquote {
+    border-inline-start: 0.5em solid #97b;
+    margin-inline-start: 0;
+    padding-inline-start: 1.5em;
+}
+
+p {
+    line-height: 1.4;
 }
