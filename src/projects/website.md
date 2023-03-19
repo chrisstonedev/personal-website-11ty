@@ -1,10 +1,10 @@
 ---
-title: Personal Website
+title: chrisstone.dev
 ---
 
-My **personal website** uses Eleventy as a static site generator. It features information on talks I have presented as
-part of my technical speaking as well as projects I currently maintain. It also has a section dedicated to thoughts on
-various topics, ranging from summaries of certain concepts to blog-like articles.
+**chrisstone.dev** is my personal website. It currently uses Eleventy as a static site generator. It features
+information on talks I have presented as part of my technical speaking as well as projects I currently maintain. It also
+has a section dedicated to thoughts on various topics, ranging from summaries of certain concepts to blog-like articles.
 
 The website is deployed on Netlify.
 
