@@ -16,7 +16,7 @@ your team to take action becomes increasingly difficult. In this talk, we will d
 debt, how to convince other people in the organization of the importance of making regular “minimum payments,” and some
 creative strategies to keep in mind for software projects with excessive “accrued interest.”
 
-This talk about technical debt also covers subjects such as the
+This talk about [technical debt](/thoughts/technical-debt) also covers subjects such as the
 [Urgent-Important matrix](/thoughts/urgent-important-matrix).
 
 It has been presented at the following events:

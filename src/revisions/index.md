@@ -4,7 +4,9 @@ layout: "base.njk"
 tags: [ revisions ]
 ---
 
-- 2023-03-18 - Added image to [Buried in Technical Debt?](/speaking/technical-debt).
+- 2023-03-19 - Added thoughts on [technical debt](/thoughts/technical-debt).
+- 2023-03-18 - Added project page for [this website](/projects/website) and added image to
+  [Buried in Technical Debt?](/speaking/technical-debt).
 - 2023-03-17 - Added slides and recordings for [Buried in Technical Debt?](/speaking/technical-debt) and slides for
   [Scully: The Angular Jamstack Is Out There](/speaking/scully) and renamed [Projects](/projects) section.
 - 2023-03-16 - Added thoughts on [working collaboratively](/thoughts/working-collaboratively) and
