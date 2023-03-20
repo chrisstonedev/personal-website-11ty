@@ -1,5 +1,6 @@
 ---
 title: Thoughts
+description: Here are some thoughts that I have on various subjects. As opposed to writing complete blog articles, this format allows me to write as much or as little on any topic about which I feel like writing.
 layout: "thoughts.njk"
 eleventyExcludeFromCollections: true
 ---

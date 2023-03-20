@@ -1,5 +1,6 @@
 ---
 title: Why Code Alone When You Could Be Remote Mob Programming?
+description: Why Code Alone is a talk about remote mob programming and working collaboratively that has been submitted at multiple events but has yet to be accepted.
 date: 2023-04-05
 ---
 

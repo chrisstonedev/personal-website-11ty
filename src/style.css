@@ -152,3 +152,17 @@ blockquote {
 p {
     line-height: 1.4;
 }
+
+.skip-to-main-content-link {
+    background-color: #bbf;
+    color: #55f;
+    opacity: 0;
+    padding: 1em;
+    position: absolute;
+    transition: 0.2s;
+    z-index: -1;
+}
+.skip-to-main-content-link:focus {
+    opacity: 1;
+    z-index: 0;
+}

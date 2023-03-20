@@ -1,5 +1,6 @@
 ---
 title: Software Crafters Atlanta
+description: Software Crafters Atlanta is a monthly meetup for programmers that are passionate about the craft of development.
 ---
 
 **Software Crafters Atlanta** is a monthly meetup for programmers that are passionate about the craft of development. I

@@ -1,5 +1,6 @@
 ---
 title: Revisions
+description: A list of revisions made on the website, sorted by date.
 layout: "base.njk"
 tags: [ revisions ]
 ---
