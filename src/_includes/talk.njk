@@ -9,10 +9,6 @@
 			{% for link in backlinks %}
 				<li class="backlink">
 					<a href="{{ link.url }}" class="backlink__link">{{ link.title }}</a>
-					<div class="backlink-preview" role="none">
-						<h3>{{ link.title }}</h3>
-						{{ link.preview | renderMarkdownLinks | safe }}
-					</div>
 				</li>
 			{% endfor %}
 		</ul>
