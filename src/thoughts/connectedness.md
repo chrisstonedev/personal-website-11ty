@@ -19,10 +19,10 @@ One paragraph on the official website in particular speaks to me:[^2]
 > If we are all part of a larger picture, then we must not harm others because we will be harming ourselves. We must not
 > exploit because we will be exploiting ourselves. Your awareness of these responsibilities creates your value system.
 
-We must be very aware of and work against systems of oppression. Designing for accessibility to create experiences that
-everyone can use is very important and can never be ignored. Addressing issues in diversity, equity, inclusion, and
-belonging is something we must take very seriously, considering all explicit and implicit biases that we can work to
-address. We can refuse to build and maintain systems of fraud and war.
+We must be very aware of and work against systems of oppression. Designing for accessibility to create things that
+everyone can experience is very important and can never be ignored. We must create diverse, equitable, and inclusive
+environments in which everyone feels they belong, and that can only be done by analyzing and dismantling our explicit
+and implicit biases. And we can—and we must—refuse to build or maintain systems of fraud or war.
 
 [^1]: Connectedness and CliftonStrengths are registered trademarks of Gallup, Inc.
 [^2]: Gallup,
