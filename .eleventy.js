@@ -17,7 +17,7 @@ module.exports = function (eleventyConfig) {
 	});
 
 	const markdownIt = require('markdown-it');
-	const md = markdownIt({html: true, linkify: true})
+	const md = markdownIt({html: true, linkify: false})
 		.use(require('markdown-it-footnote'))
 		.use(require('markdown-it-attrs'))
 		.use(require('markdown-it-external-links'), {externalClassName: 'external-link',});

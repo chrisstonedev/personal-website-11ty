@@ -18,7 +18,7 @@ their [website](https://www.gallup.com/cliftonstrengths/en/252137/home.aspx).
 
 These are my own Top 5 themes:
 
-1. Connectedness
+1. [Connectedness](/thoughts/connectedness)
 2. Restorative
 3. Learner
 4. Empathy

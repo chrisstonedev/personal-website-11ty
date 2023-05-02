@@ -5,6 +5,7 @@ layout: "base.njk"
 tags: [ revisions ]
 ---
 
+- 2023-05-01 - Added thoughts on [Connectedness](/thoughts/connectedness).
 - 2023-04-16 - Added thoughts on [CliftonStrengths](/thoughts/cliftonstrengths).
 - 2023-03-19 - Added thoughts on [technical debt](/thoughts/technical-debt).
 - 2023-03-18 - Added project page for [chrisstone.dev](/projects/website) and added image to
