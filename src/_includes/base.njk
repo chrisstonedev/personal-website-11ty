@@ -15,10 +15,16 @@
 	<a href="#main" class="skip-to-main-content-link">Skip to main content</a>
 	<nav>
 		<ul>
-			<li class="{{ 'nav-link-active' if '/' === page.url }}"><a href="/">Chris Stone</a></li>
-			<li class="{{ 'nav-link-active' if '/thoughts' in page.url }}"><a href="/thoughts">Thoughts</a></li>
-			<li class="{{ 'nav-link-active' if '/speaking' in page.url }}"><a href="/speaking">Speaking</a></li>
-			<li class="{{ 'nav-link-active' if '/projects' in page.url }}"><a href="/projects">Projects</a></li>
+			<li class="{{ 'nav-link-active' if page.url === '/' }}"><a href="/">Chris Stone</a></li>
+			<li class="{{ 'nav-link-active' if '/thoughts' in page.url or tags[0] === 'thoughts' }}">
+				<a href="/thoughts">Thoughts</a>
+			</li>
+			<li class="{{ 'nav-link-active' if '/speaking' in page.url or tags[0] === 'speaking' }}">
+				<a href="/speaking">Speaking</a>
+			</li>
+			<li class="{{ 'nav-link-active' if '/projects' in page.url or tags[0] === 'projects' }}">
+				<a href="/projects">Projects</a>
+			</li>
 			<li class="{{ 'nav-link-active' if '/contact' in page.url }}"><a href="/contact">Contact</a></li>
 		</ul>
 	</nav>

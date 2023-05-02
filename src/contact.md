@@ -1,7 +1,7 @@
 ---
 title: Contact
 description: Chris Stone can be reached through several online services.
-layout: "base.njk"
+layout: base.njk
 eleventyExcludeFromCollections: true
 ---
 

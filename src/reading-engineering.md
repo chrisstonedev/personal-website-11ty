@@ -1,6 +1,8 @@
 ---
 title: reading.engineering
 description: reading.engineering is a list of recommended books for software engineering and technical professionals.
+layout: base.njk
+tags: [ projects ]
 ---
 
 **reading.engineering** is a list of recommended books for software engineering and technical professionals. This

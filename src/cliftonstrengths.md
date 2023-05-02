@@ -2,6 +2,8 @@
 title: CliftonStrengths
 description: CliftonStrengths, formerly known as StrengthsFinder, is a personality and talent assessment developed by Don Clifton and Gallup. It is based on a model of positive psychology, defining a total of 34 themes and ranking them for an individual, identifying areas of skill, experience, or interest.
 date: 2023-04-16
+layout: thought.njk
+tags: [ thoughts ]
 ---
 
 **CliftonStrengths**[^1], formerly known as StrengthsFinder[^1], is a personality and talent assessment developed by Don
@@ -18,7 +20,7 @@ their [website](https://www.gallup.com/cliftonstrengths/en/252137/home.aspx).
 
 These are my own Top 5 themes:
 
-1. [Connectedness](/thoughts/connectedness)
+1. [Connectedness](/connectedness)
 2. Restorative
 3. Learner
 4. Empathy
@@ -46,9 +48,9 @@ graduated from college and I was early into my first full-time role as a softwar
 appetite for learning technical skills (Learner, which is still #3 for me now, was previously #1) was giving way to an
 interest in sociotechnical systems and the bigger picture of how to write software that has higher quality with a
 consideration for ethics and accessibility. I had gone into and out of management. I learned about pair programming and
-had been [mob programming](/thoughts/mob-programming) for over a year. I even had become more spiritual and learned so
-many more things about myself and why I think and feel the way I do. So while it is recommended that people trust and
-believe that the results they get one year will still represent them years in the future, I knew that there had to be
-changes that reflect the journey I had taken since first taking the assessment.
+had been [mob programming](/mob-programming) for over a year. I even had become more spiritual and learned so many more
+things about myself and why I think and feel the way I do. So while it is recommended that people trust and believe that
+the results they get one year will still represent them years in the future, I knew that there had to be changes that
+reflect the journey I had taken since first taking the assessment.
 
 [^1]: CliftonStrengths, StrengthsFinders, and the names of all 34 strengths are registered trademarks of Gallup, Inc.

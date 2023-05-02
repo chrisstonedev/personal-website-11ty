@@ -1,7 +1,7 @@
 ---
 title: Speaking
 description: Speaking about technical topics helps me synthesize topics that I am trying to learn as well as share the things that I have learned with a wider audience.
-layout: "speaking.njk"
+layout: speaking.njk
 eleventyExcludeFromCollections: true
 ---
 

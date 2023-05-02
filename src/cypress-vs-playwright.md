@@ -2,6 +2,8 @@
 title: "Cypress Vs. Playwright: The Great Test Framework Debate"
 description: Cypress Vs. Playwright is a talk that has been submitted at multiple events and has been accepted once but, due to logistical challenges, it was not presented.
 date: 2022-10-19
+layout: talk.njk
+tags: [ speaking ]
 ---
 
 Cypress and Playwright are two excellent popular modern frameworks for testing web applications. They are open source,

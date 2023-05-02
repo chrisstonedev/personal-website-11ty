@@ -2,6 +2,8 @@
 title: Why Code Alone When You Could Be Remote Mob Programming?
 description: Why Code Alone is a talk about remote mob programming and working collaboratively that has been submitted at multiple events but has yet to be accepted.
 date: 2023-04-05
+layout: talk.njk
+tags: [ speaking ]
 ---
 
 Remote mob programming is a practice in which all software developers on a team, even if they live across the country or
@@ -14,6 +16,5 @@ understanding, but making a permanent shift in how a team operates can be compli
 highlight some techniques that all software teams can start trying today for more effective pairing and collaborating,
 and I might even possibly convince you just how valuable remote mob programming can be.
 
-This talk about [mob programming](/thoughts/mob-programming)
-and [working collaboratively](/thoughts/working-collaboratively) has been submitted at multiple events but has yet to be
-accepted.
+This talk about [mob programming](/mob-programming) and [working collaboratively](/working-collaboratively) has been
+submitted at multiple events but has yet to be accepted.

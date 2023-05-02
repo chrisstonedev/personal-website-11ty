@@ -1,7 +1,7 @@
 ---
 title: Chris Stone
 description: Chris Stone is a software developer with full-stack experience and an interest in accessibility and design.
-layout: "home.njk"
+layout: home.njk
 ---
 
 Hello!
@@ -9,10 +9,10 @@ Hello!
 My name is Chris Stone.
 
 I am a software developer with full-stack experience and an interest in accessibility and design. I am a proponent of
-[mob programming](/thoughts/mob-programming) and [working collaboratively](/thoughts/working-collaboratively). I look
-for the simplest possible solution to problems because I view code as a means to a value feature, and the best answer is
-the most readable and the most maintainable. I use test-driven development where possible to keep the code-writing
-process consistent.
+[mob programming](/mob-programming) and [working collaboratively](/working-collaboratively). I look for the simplest
+possible solution to problems because I view code as a means to a value feature, and the best answer is the most
+readable and the most maintainable. I use test-driven development where possible to keep the code-writing process
+consistent.
 
 I am also a [public speaker](/speaking) and I have given talks at several technical events. Putting a talk together
 helps give me confidence that I understand a subject well enough to be able to teach concepts to others, and I enjoy the

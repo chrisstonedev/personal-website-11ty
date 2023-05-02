@@ -1,6 +1,8 @@
 ---
 title: chrisstone.dev
 description: chrisstone.dev is my personal website, featuring information on talks I have presented as part of my technical speaking, projects I currently maintain, and thoughts on various topics.
+layout: base.njk
+tags: [ projects ]
 ---
 
 **chrisstone.dev** is my personal website. It currently uses Eleventy as a static site generator. It features

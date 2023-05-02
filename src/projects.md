@@ -1,7 +1,7 @@
 ---
 title: Projects
 description: A list of projects that Chris Stone maintains.
-layout: "projects.njk"
+layout: projects.njk
 eleventyExcludeFromCollections: true
 ---
 
