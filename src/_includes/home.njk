@@ -2,9 +2,4 @@
 
 {% block main %}
     {{ content | safe }}
-    {%- for post in collections.revisions -%}
-        <h2>{{ post.data.title }}</h2>
-        {{ post.data.content | mostRecentRevisions | safe }}
-        <a href="{{ post.url }}">View more revisions</a>
-    {%- endfor -%}
 {% endblock %}
