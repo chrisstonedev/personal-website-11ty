@@ -4,7 +4,7 @@ module.exports = function (eleventyConfig) {
 	eleventyConfig.addPassthroughCopy('./src/favicon.ico');
 
 	const markdownIt = require('markdown-it');
-	const md = markdownIt({html: true, linkify: false})
+	const md = markdownIt({html: true, linkify: false, typographer: true})
 		.use(require('markdown-it-footnote'))
 		.use(require('markdown-it-attrs'))
 		.use(require('markdown-it-external-links'), {externalClassName: 'external-link',});

@@ -21,5 +21,5 @@ others is also reduced, especially if they brought in product owners and UX desi
 them join the working group.
 
 And the speed at which code is written is a very misleading metric, because, ideally, the code that you produce through
-mob programming needs less rework, and less attention to improve in future iterations, because the quality--which also
-is tricky to measure--is ideally higher.
+mob programming needs less rework, and less attention to improve in future iterations, because the quality---which also
+is tricky to measure---is ideally higher.
