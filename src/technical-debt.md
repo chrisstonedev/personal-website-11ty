@@ -2,6 +2,7 @@
 title: Technical Debt
 description: Technical debt is a metaphor coined by Ward Cunningham to describe code that is written that does not align with the best solution due to a limited understanding of the problem.
 date: 2023-03-19
+date-updated: 2023-07-12
 layout: thought.njk
 tags: [ thoughts ]
 ---
@@ -40,6 +41,8 @@ Consider a kitchen, which seems to only exist for you to prepare and eat food, r
 cleaning it up? Well, we acknowledge that, if we do not clean up after ourselves periodically, then we get a mess that
 is too overwhelming to clean, and it is going to make us sick living in it.
 
+![A messy kitchen that has not been cleaned over time](/img/technical-debt-kitchen.jpg)
+
 Relating that to a web app, you may have an app that is build on top of a framework where new major versions
 consistently are released, usually on an annual basis. Imagine you have an Angular 2 project, and you use
 the [Angular Update Guide](https://update.angular.io) to plan out the effort of handling all possible breaking changes
@@ -53,6 +56,8 @@ updating Angular 2 to each newest major version as it is released should be almo
 waiting and performing a huge update of 14 major versions all at once; however, you are less likely to get approval to
 take time away from product work with a huge, overwhelming project, and working on things a little bit at a time could
 have been much more manageable and acceptable.
+
+![A 28-page report from the Angular Update Guide of all of the steps that need attention to upgrade an Angular 2 project to Angular 16](/img/technical-debt-angular.jpg)
 
 Considering how older versions of frameworks lose support for security and stability updates, it can be a very
 frightening problem to suddenly realize that you need to be current after having not prioritized it. So even if you may
