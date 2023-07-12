@@ -28,4 +28,4 @@ Atlanta with my wife and two cats.
 
 > Hello, Modern Web ATL! If you just attended my talk, you can get the slides on
 > the [Buried in Technical Debt](/buried-in-technical-debt) talk page and read the text version as
-> my [technical debt](/technical-debt) thoughts page.
+> my [technical debt](/technical-debt) thoughts page. Also, feel free to [connect](/contact) with me!
