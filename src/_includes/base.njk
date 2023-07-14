@@ -7,7 +7,11 @@
 	<link rel="stylesheet" href="/style.css">
 	<title>{{ title if title === 'Chris Stone' else title + ' - Chris Stone' }}</title>
 	{% block meta %}
-		<meta name="description" content="{{ description }}">
+		<meta name="description" property="og:description" content="{{ description }}">
+		<meta property="og:title" content="{{ title if title === 'Chris Stone' else title + ' - Chris Stone' }}">
+		<meta property="og:url" content="https://chrisstone.dev{{ page.url }}">
+		<meta property="og:type" content="article">
+		<meta name="author" content="Chris Stone">
 	{% endblock %}
 </head>
 <body>
