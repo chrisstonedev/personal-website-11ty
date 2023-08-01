@@ -1,6 +1,6 @@
 ---
 title: Contact
-description: Chris Stone can be reached through several online services.
+description: Chris Stone is available on several social networks.
 layout: base.njk
 eleventyExcludeFromCollections: true
 ---

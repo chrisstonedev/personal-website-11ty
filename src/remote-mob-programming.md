@@ -1,6 +1,6 @@
 ---
 title: "Remote Mob Programming: An Introvert's Tale of Working Collaboratively"
-description: Why Code Alone is a talk about remote mob programming and working collaboratively that has been submitted at multiple events but has yet to be accepted.
+description: Remote Mob Programming is a talk about remote mob programming and working collaboratively that has been submitted at multiple events but has yet to be accepted.
 date: 2023-04-05
 layout: talk.njk
 tags: [ speaking ]
