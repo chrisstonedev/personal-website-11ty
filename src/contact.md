@@ -21,4 +21,3 @@ You can reach me and follow my latest progress at one of the following social ne
 - [TikTok](https://www.tiktok.com/@chrisstonedev)
 - [Twitch](https://www.twitch.tv/chrisstonedev)
 - [The Storygraph](https://app.thestorygraph.com/profile/chrisstonedev)
-- [Twitter](https://www.twitter.com/chrisstonedev/)
