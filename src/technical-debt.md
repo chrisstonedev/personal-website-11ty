@@ -1,6 +1,6 @@
 ---
 title: Technical Debt
-description: Technical debt is a metaphor coined by Ward Cunningham to describe code that is written that does not align with the best solution due to a limited understanding of the problem.
+description: Technical debt is a metaphor that is used to describe code that no longer aligns with the best solution once our limited understanding of a problem improves.
 date: 2023-03-19
 date-updated: 2023-07-12
 layout: thought.njk
