@@ -36,11 +36,10 @@ module.exports = function (eleventyConfig) {
 			});
 			textRows.push(textRow);
 
-			return textRows.reduce((textSvg, row, i) => textSvg + `<text style="font-family: sans-serif;" x="50" y="${topY + (i * lineHeight)}" fill="#003" font-size="${fontSizeInPt}pt" font-weight="${fontWeight}">${row}</text>`, '');
+			return textRows.reduce((textSvg, row, i) => {
+				return textSvg + `<text font-family="Verdana" x="50" y="${topY + (i * lineHeight)}" fill="#003" font-size="${fontSizeInPt}pt" font-weight="${fontWeight}">${row}</text>`;
+			}, '');
 		}
-
-		const titleText = createTextSvgFromString(title, 35, 100, 70, 60, 700);
-		const descriptionText = createTextSvgFromString(description, 65, 300, 50, 36, 400);
 
 		let urlText = '';
 		if (pageUrl !== '/') {
@@ -49,30 +48,31 @@ module.exports = function (eleventyConfig) {
 			let underlineLength = 10;
 			switch (sectionName) {
 				case 'Thoughts':
-					underlineLength = 165;
+					underlineLength = 190;
 					break;
 				case 'Speaking':
-					underlineLength = 160;
+					underlineLength = 185;
 					break;
 				case 'Projects':
-					underlineLength = 140;
+					underlineLength = 165;
 					break;
 				case 'Contact':
-					underlineLength = 135;
+					underlineLength = 155;
 					break;
 			}
-			urlText = `<text style="font-family: sans-serif;" x="1150" y="590" fill="#00f" font-size="36pt" font-weight="700" text-anchor="end">${sectionName}</text>
-<line style="stroke: fuchsia; stroke-width: 5px;" x1="${1150 - underlineLength}" y1="610" x2="1150" y2="610"/>
-<text style="font-family: sans-serif;" x="395" y="590" fill="#00f" font-size="36pt" font-weight="400">/ ${slug}</text>`;
+			urlText = `<text font-family="Verdana" x="1150" y="590" fill="#00f" font-size="36pt" font-weight="700" text-anchor="end">${sectionName}</text>
+<line stroke="fuchsia" stroke-width="5" x1="${1150 - underlineLength}" y1="610" x2="1150" y2="610"/>
+<text font-family="Verdana" x="420" y="590" fill="#00f" font-size="36pt" font-weight="400">/</text>
+<text font-family="Verdana" x="445" y="590" fill="#00f" font-size="36pt" font-weight="400">${slug}</text>`;
 		}
 
 		let svg = `<svg width="1200" height="628" viewbox="0 0 1200 628" xmlns="http://www.w3.org/2000/svg">
 	<rect x="0" y="0" width="1200" height="528" rx="0" ry="0" fill="#ddf" />
 	<rect x="0" y="528" width="1200" height="100" rx="0" ry="0" fill="#cce" />
 	<g>
-		${titleText}
-		${descriptionText}
-		<text style="font-family: sans-serif;" x="150" y="590" fill="#00f" font-size="36pt" font-weight="${pageUrl === '/' ? 700 : 400}">chrisstone.dev</text>
+		${(createTextSvgFromString(title, 30, 100, 70, 60, 700))}
+		${(createTextSvgFromString(description, 55, 300, 50, 36, 400))}
+		<text font-family="Verdana" x="150" y="590" fill="#00f" font-size="36pt" font-weight="${pageUrl === '/' ? 700 : 400}">chrisstone.dev</text>
 		${urlText}
 	</g>
 </svg>`;

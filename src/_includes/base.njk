@@ -11,7 +11,8 @@
 	<meta property="og:url" content="https://chrisstone.dev{{ page.url }}">
 	<meta property="og:type" content="article">
 	<meta name="author" content="Chris Stone">
-	<meta property="og:image" content="https://chrisstone.dev{% generateOpenGraphImage title, page.fileSlug, description, page.url, tags[0] %}" />{% endblock %}
+	<meta property="og:image" content="https://chrisstone.dev{% generateOpenGraphImage title, page.fileSlug, description, page.url, tags[0] %}" />
+	<meta name="twitter:card" content="summary_large_image">{% endblock %}
 </head>
 <body>
 <header>
