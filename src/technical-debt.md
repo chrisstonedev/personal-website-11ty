@@ -27,7 +27,7 @@ As the concept of technical debt became useful for teams, even more terms for sp
 I have a talk, "[Buried in Technical Debt](/buried-in-technical-debt)," that further defines technical debt and ways to
 handle it in a project.
 
-## Responses to technical debt
+## The beliefs that lead to increased technical debt
 
 I have spent time on several teams that had let their technical debt grow into large projects. Thinking about those
 times, I considered the reasons that some people may think that can lead to these situations.

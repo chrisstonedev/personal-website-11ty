@@ -27,12 +27,12 @@ These are my own Top 5 themes:
 5. Deliberative
 
 As useful as CliftonStrengths can be as a tool for self-discovery and for finding opportunities of focus in one's own
-path, it can also be a very useful tool for team-building purposes. Having a team bring in their Top 5 themes from a
-previous taking of the assessment (or having them take it for the first time), and sharing them with the group, and then
-going around the room to comment on how they see those themes manifest in the way they see their fellow team members
-work can help bring an understanding of how everyone approaches certain situations. It is interesting to see which
-themes end up being in common with multiple team members and which themes are completely unique to some people and help
-complement the strengths that others have.
+path, it can also be an interesting tool to use in a team to get to know one another better. Having a team bring in
+their Top 5 themes from a previous taking of the assessment (or having them take it for the first time), and sharing
+them with the group, and then going around the room to comment on how they see those themes manifest in the way they see
+their fellow team members work can help bring an understanding of how everyone approaches certain situations. It is
+interesting to see which themes end up being in common with multiple team members and which themes are completely unique
+to some people and help complement the strengths that others have.
 
 Because CliftonStrengths results are just a starting point for a conversation about we think and work, this system
 should never be used to make hiring decisions or any other significant method of classifying and grouping people. People
