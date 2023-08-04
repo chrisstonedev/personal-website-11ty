@@ -1,7 +1,8 @@
 ---
 title: "Remote Mob Programming: An Introvert's Tale of Working Collaboratively"
 description: Remote Mob Programming is a talk about remote mob programming and working collaboratively that has been submitted at multiple events but has yet to be accepted.
-date: 2023-04-05
+date: 2023-09-09
+conferences: [ Atlanta Developers' Conference 2023 ]
 layout: talk.njk
 tags: [ speaking ]
 ---
@@ -17,5 +18,7 @@ and social challenges. And even if you prefer to work on your own or are not eve
 will gain a new perspective in how creating and maintaining things together—both within teams and across departments—can
 deliver better results and instill a sense of connectedness.
 
-This talk about [mob programming](/mob-programming) and [working collaboratively](/working-collaboratively) has been
-submitted at multiple events but has yet to be accepted.
+This talk about [mob programming](/mob-programming) and [working collaboratively](/working-collaboratively) will be
+given at the following event:
+
+- [Atlanta Developers' Conference 2023](https://www.atldevcon.com/speakers) (September 2023; in-person)
