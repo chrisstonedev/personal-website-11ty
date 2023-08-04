@@ -2,7 +2,7 @@
 title: Divide and Conquer
 description: Divide and conquer is a strategy that involves taking a complex matter and breaking it up into small batches that can be more easily completed than the whole.
 date: 2023-03-13
-layout: thought.njk
+layout: article.njk
 tags: [ thoughts ]
 ---
 

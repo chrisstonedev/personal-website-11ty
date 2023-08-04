@@ -2,7 +2,7 @@
 title: Connectedness
 description: Connectedness is one of 34 themes in the CliftonStrengths assessment, belonging to the Relationship Building domain.
 date: 2023-05-01
-layout: thought.njk
+layout: article.njk
 tags: [ thoughts ]
 ---
 

@@ -3,7 +3,7 @@ title: Urgent-Important Matrix
 description: The Urgent-Important matrix is a decision matrix that is used for time management.
 date: 2023-03-16
 date-updated: 2023-07-01
-layout: thought.njk
+layout: article.njk
 tags: [ thoughts ]
 ---
 

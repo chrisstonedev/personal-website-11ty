@@ -3,7 +3,7 @@ title: "Scully: The Angular Jamstack Is Out There"
 description: "Scully: The Angular Jamstack Is Out There is a talk about the static site generator that has been presented at Scenic City Summit 2022 and Connect.Tech 2022."
 date: 2022-07-22
 conferences: [ Scenic City Summit 2022, Atlanta Developers' Conference 2022, Connect.Tech 2022 ]
-layout: talk.njk
+layout: article.njk
 tags: [ speaking ]
 ---
 

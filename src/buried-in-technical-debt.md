@@ -9,7 +9,7 @@ conferences:
     - Devnexus 2022
     - St. Louis Java User's Group
     - Modern Web ATL
-layout: talk.njk
+layout: article.njk
 tags: [ speaking ]
 ---
 
