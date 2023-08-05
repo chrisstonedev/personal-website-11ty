@@ -33,6 +33,17 @@ attempt as part of the Breaking2 project, he said the following in a documentary
 > it's really a circle. You cannot train alone and expect to run a fast time. There's a formula: 100% of me is nothing
 > compared to 1% of the whole team. And that's teamwork. That's what I value.
 
+Greta Gerwig, director of *Barbie*, shared in an interview about her appreciation of everyone who put in the work to
+help make such a big project come together and her desire to be humble and share credit with everyone, regardless of
+title, who contributed to making things happen:[^3]
+
+> Every film I make has to come from a personal place, and I've honestly always wanted to credit a
+> movie---there's \[...\] "Written By," "Directed By," and then, there's a credit where you can say, "A Film By," which
+> is a director's credit, but I've always actually wanted to do "A Film By" and then have a card with every single
+> person who worked on the film because I feel like, what I love about movies is it's a collective art form, and I
+> wanted to do that, but I was told that I'm not allowed to.
+
 [^1]: [Daniel Kwan and Daniel Scheinert Accept the Oscar for Directing](https://www.youtube.com/watch?v=-YeKsXCXJx8&t=73s)
 on YouTube.
 [^2]: [Breaking2](https://vimeo.com/292387412#t=1281s) documentary on Vimeo.
+[^3]: [BARBIE director: Greta Gerwig special interview](https://www.youtube.com/watch?v=ydpPlY4OPfk) on YouTube.
