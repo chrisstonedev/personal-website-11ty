@@ -11,7 +11,11 @@ module.exports = function (eleventyConfig) {
 	const md = markdownIt({html: true, linkify: false, typographer: true})
 			.use(require('markdown-it-footnote'))
 			.use(require('markdown-it-attrs'))
-			.use(require('markdown-it-external-links'), {externalClassName: 'external-link',});
+			.use(require('markdown-it-external-links'), {externalClassName: 'external-link'});
+	md.renderer.rules.footnote_block_open = () => (
+			'<h2>References</h2>\n' +
+			'<ol class="references-list">\n'
+	);
 	eleventyConfig.addFilter('renderMarkdownLinks', string => {
 		return md.render(string);
 	});
