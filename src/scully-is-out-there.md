@@ -21,6 +21,8 @@ This talk has been given at the following events:
 - [Atlanta Developers' Conference 2022](https://www.atldevcon.com/schedule) (September 2022; in-person)
 - [Connect.Tech 2022](https://2022.connect.tech/session/?id=351073) (November 2022; in-person)
 
+![Chris Stone giving Scully: The Angular Static Site Is Out There talk at Atlanta Developers' Conference 2022](/img/scully-event-adc.jpeg
+){.speaking-image}
 
 ## Slides
 

@@ -138,3 +138,7 @@ sup {
 .urgent-important-table th, .urgent-important-table td {
 	padding: 1em 0.5em;
 }
+
+.speaking-image {
+	max-width: 800px;
+}
