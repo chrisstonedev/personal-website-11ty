@@ -54,7 +54,7 @@ on [Google Slides](https://docs.google.com/presentation/d/1jc5m9-xPV5eJ-VKD2QcpD
 This presentation was recorded twice, at Festive Tech Calendar 2021 and St. Louis Java User's Group. See both in the
 playlist below:
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/videoseries?list=PL0wn6TdD-reNHq4yaTPjtjeain5ik58OL" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<iframe style="width: 100%; max-width: 560px;" width="560" height="315" src="https://www.youtube.com/embed/videoseries?list=PL0wn6TdD-reNHq4yaTPjtjeain5ik58OL" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 ## Lightning talk version
 
