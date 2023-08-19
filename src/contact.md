@@ -12,8 +12,8 @@ You can reach me and follow my latest progress at one of the following social ne
 - [YouTube](https://www.youtube.com/@chrisstonedev)
 - [Exercism](https://exercism.org/profiles/chrisstonedev)
 - [Sessionize](https://sessionize.com/chrisstonedev)
+- [TikTok](https://www.tiktok.com/@chrisstonedev)
 
 [//]: # (- [Tumblr]&#40;https://www.tumblr.com/chrisstonedev&#41;)
-[//]: # (- [TikTok]&#40;https://www.tiktok.com/@chrisstonedev&#41;)
 [//]: # (- [Twitch]&#40;https://www.twitch.tv/chrisstonedev&#41;)
 [//]: # (- [The Storygraph]&#40;https://app.thestorygraph.com/profile/chrisstonedev&#41;)
