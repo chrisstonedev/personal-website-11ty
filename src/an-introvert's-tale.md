@@ -1,6 +1,6 @@
 ---
 title: "Remote Mob Programming: An Introvert's Tale of Working Collaboratively"
-description: Remote Mob Programming is a talk about remote mob programming and working collaboratively that has been submitted at multiple events but has yet to be accepted.
+description: I have given a talk at conferences about my experience with remote mob programming and how I prefer it despite identifying as an introvert.
 date: 2023-09-09
 conferences: [ Atlanta Developers' Conference 2023 ]
 layout: article.njk
