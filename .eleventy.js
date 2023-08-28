@@ -6,6 +6,7 @@ module.exports = function (eleventyConfig) {
 	eleventyConfig.addPassthroughCopy(`./${inputDirectory}/img/`, {dot: false});
 	eleventyConfig.addPassthroughCopy(`./${inputDirectory}/style.css`);
 	eleventyConfig.addPassthroughCopy(`./${inputDirectory}/favicon.ico`);
+	eleventyConfig.addPassthroughCopy(`./${inputDirectory}/_redirects`);
 
 	const markdownIt = require('markdown-it');
 	const md = markdownIt({html: true, linkify: false, typographer: true})
