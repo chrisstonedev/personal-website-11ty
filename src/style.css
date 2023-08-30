@@ -12,6 +12,8 @@ body {
 
 header {
 	background: #cce;
+	border-radius: 0 0 2em;
+	box-shadow: 0 0.125em 0.25em rgba(0, 0, 100, 0.5);
 	top: 0;
 }
 

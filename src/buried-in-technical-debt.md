@@ -3,12 +3,13 @@ title: Buried in Technical Debt?
 description: Buried in Technical Debt is a talk about software maintenance and time management that has been presented at Devnexus 2022 and several local meetups.
 date: 2021-10-09
 conferences:
-    - Atlanta Code Camp 2021
-    - Big Mountain Data & Dev 2021
-    - Festive Tech Calendar 2021
-    - Devnexus 2022
-    - St. Louis Java User's Group
-    - Modern Web ATL
+  - Atlanta Code Camp 2021
+  - Big Mountain Data & Dev 2021
+  - Festive Tech Calendar 2021
+  - Devnexus 2022
+  - St. Louis Java User's Group
+  - Modern Web ATL
+  - devopsdays Atlanta 2023
 layout: article.njk
 tags: [ speaking ]
 ---
@@ -60,7 +61,8 @@ playlist below:
 
 The lightning talk version of "Buried on Technical Debt?" has been presented at the following events:
 
-- [Modern Web ATL](https://www.meetup.com/modernwebatl/events/293885490/) (July 2023; in-person; lightning talk version)
+- [Modern Web ATL](https://www.meetup.com/modernwebatl/events/293885490/) (July 2023; in-person)
+- [devopsdays Atlanta 2023](https://devopsdays.org/events/2023-atlanta/program/chris-stone) (September 2023; in-person)
 
 ![Chris Stone giving Buried in Technical Debt talk at Modern Web ATL](/img/technical-debt-event-modern-web-atl.jpg
 ){.speaking-image}
