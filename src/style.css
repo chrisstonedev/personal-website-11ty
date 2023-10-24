@@ -145,3 +145,14 @@ sup {
 	max-width: 800px;
 	width: 100%;
 }
+
+.project {
+	background: #ffffff80;
+	border-radius: 10px;
+	margin-bottom: 1em;
+	padding: 0.5em;
+}
+
+.project h2 {
+	margin-top: 0;
+}
