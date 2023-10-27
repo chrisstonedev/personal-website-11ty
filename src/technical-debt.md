@@ -18,7 +18,7 @@ As the concept of technical debt became useful for teams, even more terms for sp
 - Build debt - build and deployment pipelines are outdated, fragile, and hard to maintain
 - ...and just about anything in a software project that you can fall behind on if you don't keep up with it.
 
-I have a talk, "[Buried in Technical Debt](/buried-in-technical-debt)," that further defines technical debt and ways to handle it in a project.
+I have a talk, "[[buried-in-technical-debt|Buried in Technical Debt]]," that further defines technical debt and ways to handle it in a project.
 
 ## The beliefs that lead to increased technical debt
 
@@ -52,13 +52,13 @@ As new work comes up, try to push back against requests to rush something out in
 
 As urgent priorities are resolved, more urgent priorities will arrive. It is rare for there to not be something that feels urgent, so waiting for that moment when there is nothing urgent is not a good strategy. Also, when people say that we will come back to something at a later time without actually making specifics about how that will work specifically, it is extremely likely that "later" is a time that never comes. We can't do everything at once, but we need to make a plan.
 
-When considering, technical debt tasks are often considered Important but Not Urgent when classified using an [Urgent-Important matrix](/urgent-important-matrix), so time should be scheduled for it. Make some kind of budget and spend time on it at a regular rate. Maybe this looks like picking up 1 card that is tied to engineering maintenance for every 3 or 4 cards that came from product management priorities, or maybe this looks like about 20% of time spent on engineering tasks spent on maintenance.
+When considering, technical debt tasks are often considered Important but Not Urgent when classified using an [[urgent-important-matrix|Urgent-Important matrix]], so time should be scheduled for it. Make some kind of budget and spend time on it at a regular rate. Maybe this looks like picking up 1 card that is tied to engineering maintenance for every 3 or 4 cards that came from product management priorities, or maybe this looks like about 20% of time spent on engineering tasks spent on maintenance.
 
 ### "We assembled a perfect team of perfect engineers so we don't need to do this."
 
 Nobody's perfect. We are always learning, and our partial understanding of the world is always improving. It is not uncommon for engineers to find old code that they themselves had written and to wonder how they could have written something so inferior to what they could write now.
 
-Regardless of perceived skill level or experience of engineers on a team, there is always a benefit to getting multiple perspectives as the code is being written to get the best quality ahead of time, so consider [mob programming](/mob-programming) or pair programming to shift the code review process earlier.
+Regardless of perceived skill level or experience of engineers on a team, there is always a benefit to getting multiple perspectives as the code is being written to get the best quality ahead of time, so consider [[mob-programming|mob programming]] or pair programming to shift the code review process earlier.
 
 ### "Our technical debt is so out of control, we need to just rewrite the entire thing."
 

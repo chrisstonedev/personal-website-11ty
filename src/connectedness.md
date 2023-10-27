@@ -7,9 +7,9 @@ layout: article.njk
 tags:
   - thoughts
 ---
-**Connectedness**[^1] is one of 34 themes in the [CliftonStrengths](/cliftonstrengths) assessment, belonging to the Relationship Building domain. More information about how this theme is defined can be found on their [website](https://www.gallup.com/cliftonstrengths/en/252197/connectedness-theme.aspx).
+**Connectedness**[^1] is one of 34 themes in the [[CliftonStrengths]] assessment, belonging to the Relationship Building domain. More information about how this theme is defined can be found on their [website](https://www.gallup.com/cliftonstrengths/en/252197/connectedness-theme.aspx).
 
-Connectedness is important to me in a working context. To me, it speaks to taking the backgrounds and skills that we all bring to the table to help one another but then putting ego aside and celebrate the combination of everything that went into the process to create something that no person could have created all on their own. The work becomes a product of the collective. It means that [working collaboratively](/working-collaboratively) is important, and it is important to make sure it is done thoughtfully and carefully.
+Connectedness is important to me in a working context. To me, it speaks to taking the backgrounds and skills that we all bring to the table to help one another but then putting ego aside and celebrate the combination of everything that went into the process to create something that no person could have created all on their own. The work becomes a product of the collective. It means that [[working-collaboratively|working collaboratively]] is important, and it is important to make sure it is done thoughtfully and carefully.
 
 One paragraph on the official website in particular speaks to me:[^2]
 

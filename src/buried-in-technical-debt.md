@@ -15,7 +15,7 @@ layout: article.njk
 tags:
   - speaking
 ---
-**Buried in Technical Debt?** was my first talk I started giving at technical events. Constantly being slightly updated to reflect my improving understanding of the concept and how to apply it (which is ironic, given that sounds like the definition of [technical debt](/technical-debt)), this talk is now available in both a full hour-long format and a condensed 5-minute lightning talk version. Both versions also cover related subjects such as the [Urgent-Important matrix](/urgent-important-matrix).
+**Buried in Technical Debt?** was my first talk I started giving at technical events. Constantly being slightly updated to reflect my improving understanding of the concept and how to apply it (which is ironic, given that sounds like the definition of [[technical-debt|technical debt]]), this talk is now available in both a full hour-long format and a condensed 5-minute lightning talk version. Both versions also cover related subjects such as the [[urgent-important-matrix|Urgent-Important matrix]].
 
 ## Full talk
 

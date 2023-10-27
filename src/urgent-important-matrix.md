@@ -57,7 +57,7 @@ On a personal level, this would look like cleaning up after oneself and regularl
 
 On a software team, most new product requirements would qualify under this label. The work that is recommended by a product manager is believed to be the work that can best help the customers and the product, and there will usually be some estimate of effort requested for planning purposes, but in many cases, even when a deadline demand is made, there can be an appeal process to push the deadline some amount of time to make sure that what gets released is of the best quality it can be; if teams are expected to treat new product requirements as both urgent and important, then there will be a risk of a full stream of incoming work that is both urgent and important as the defects from the work that was rushed out by a stressed out team begin to be reported by customers.
 
-Work that is needed to pay back on [technical debt](/technical-debt) will also usually belong in this quadrant, and making time to perform that technical maintenance will be helpful to mitigate future potential issues to the platform.
+Work that is needed to pay back on [[technical-debt|technical debt]] will also usually belong in this quadrant, and making time to perform that technical maintenance will be helpful to mitigate future potential issues to the platform.
 
 ### Urgent but Not Important
 
