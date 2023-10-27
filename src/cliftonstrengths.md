@@ -2,8 +2,10 @@
 title: CliftonStrengths
 description: CliftonStrengths is a personality and talent assessment based on a model of positive psychology, defining a total of 34 themes and ranking them for an individual, identifying areas of skill, experience, or interest.
 date: 2023-04-16
+date-updated: 2023-04-16
 layout: article.njk
-tags: [ thoughts ]
+tags:
+  - thoughts
 ---
 **CliftonStrengths**[^1], formerly known as StrengthsFinder[^1], is a personality and talent assessment developed by Don Clifton and Gallup. It is based on a model of positive psychology, defining a total of 34 themes and ranking them for an individual, identifying areas of skill, experience, or interest.
 

@@ -2,8 +2,10 @@
 title: Mob Programming
 description: Mob programming is a method of working collaboratively in which a small team of software developers all work on one problem together with one person at the keyboard at a time.
 date: 2023-03-13
+date-updated: 2023-03-13
 layout: article.njk
-tags: [ thoughts ]
+tags:
+  - thoughts
 ---
 **Mob programming** is a method of [working collaboratively](/working-collaboratively) in which a small team of software developers all work on one problem together with one person at the keyboard at a time. This can help prevent knowledge silos and increase knowledge sharing throughout the team that is working within a given context.
 

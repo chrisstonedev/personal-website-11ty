@@ -2,9 +2,12 @@
 title: "Remote Mob Programming: An Introvert's Tale of Working Collaboratively"
 description: I have given a talk at conferences about my experience with remote mob programming and how I prefer it despite identifying as an introvert.
 date: 2023-09-09
-conferences: [ Atlanta Developers' Conference 2023 ]
+date-updated: 2023-09-09
+conferences:
+  - Atlanta Developers' Conference 2023
 layout: article.njk
-tags: [ speaking ]
+tags:
+  - speaking
 ---
 Why would an introverted person prefer to only write code with other people in all-workday-long Zoom calls? After all, writing code is considered by some to be a solo activity, with pair programming being a "once in a while" activity. But despite being introverted and typically needing my alone time, I have loved working this way for over two years now, and I believe that the best code I have helped write is code that was written collaboratively.
 

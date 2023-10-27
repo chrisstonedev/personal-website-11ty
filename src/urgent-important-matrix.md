@@ -4,7 +4,8 @@ description: The Urgent-Important matrix is a decision matrix that is used for t
 date: 2023-03-16
 date-updated: 2023-07-01
 layout: article.njk
-tags: [ thoughts ]
+tags:
+  - thoughts
 ---
 The **Urgent-Important matrix** is a decision matrix that is used for time management. It is a useful tool for managing an increasingly large backlog of to-do items that needs to be reduced to a more manageable list. Evaluating work in the two-dimensional space of being either urgent or not urgent and also being either important or not important produces a matrix with four quadrants.
 
