@@ -4,7 +4,6 @@ description: Chris Stone is available on several social networks.
 layout: base.njk
 eleventyExcludeFromCollections: true
 ---
-
 You can reach me and follow my latest progress at one of the following social networks.
 
 - [LinkedIn](https://www.linkedin.com/in/chrisstonedev/)
