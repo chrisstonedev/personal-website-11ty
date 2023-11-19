@@ -13,6 +13,6 @@ Why would an introverted person prefer to only write code with other people in a
 
 Come learn what mob programming is and how it can possibly be effective in an organization. Listen to stories of how this style of work is possible in a remote job, and understand not just the potential benefits but also the technical and social challenges. And even if you prefer to work on your own or are not even a software developer yourself, you will gain a new perspective in how creating and maintaining things together—both within teams and across departments—can deliver better results and instill a sense of connectedness.
 
-This talk about [mob programming](/mob-programming) and [working collaboratively](/working-collaboratively) will be given at the following event:
+This talk about [mob programming](/mob-programming) and [working collaboratively](/working-collaboratively) has been given at the following event:
 
 - [Atlanta Developers' Conference 2023](https://www.atldevcon.com/speakers) (September 2023; in-person)
