@@ -156,3 +156,29 @@ sup {
 .project h2 {
 	margin-top: 0;
 }
+
+.homepage-sections {
+	display: grid;
+	gap: 1em;
+	grid-template-columns: 1fr 1fr 1fr;
+	padding: 0;
+}
+
+@media (max-width: 600px) {
+	.homepage-sections {
+		grid-template-columns: 1fr;
+	}
+}
+
+.homepage-sections > a {
+	background: rgba(255, 255, 255, .25);
+	border: 2px solid black;
+	border-radius: 4px;
+	display: block;
+	padding: 0 20px;
+}
+
+.homepage-sections > a > p {
+	display: inline-block;
+	margin-top: 0;
+}
