@@ -1,16 +1,8 @@
+const {otherPageLinksToThisOne} = require("./utils");
 module.exports = {
 	/** @param {{collections: {thoughts: array, speaking: array}, page: {filePathStem: string}}} data */
 	backlinks: (data) => {
 		const backlinks = [];
-
-		/**
-		 * @param {string[]} outboundLinkUrls
-		 * @param {string} currentPagePath
-		 * @returns {boolean}
-		 */
-		const otherPageLinksToThisOne = (outboundLinkUrls, currentPagePath) => outboundLinkUrls.some(link =>
-				link.localeCompare(currentPagePath, undefined, {sensitivity: 'accent'}) === 0
-		);
 
 		for (const otherPage of data.collections.thoughts.concat(data.collections.speaking)) {
 			const otherContent = otherPage.template.frontMatter.content;
