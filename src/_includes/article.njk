@@ -5,9 +5,10 @@
 	<h2>Backlinks</h2>
 	{% if backlinks.length > 0 %}
 		<ul class="backlinks-container">
-			{% for link in backlinks %}
+			{% for backlink in backlinks %}
 				<li class="backlink">
-					<a href="{{ link.url }}" class="backlink__link">{{ link.title }}</a>
+					<h3><a href="{{ backlink.url }}" class="backlink__link">{{ backlink.title }}</a></h3>
+					<blockquote>{{ backlink.preview | renderMarkdownLinks | safe }}</blockquote>
 				</li>
 			{% endfor %}
 		</ul>
