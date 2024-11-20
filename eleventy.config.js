@@ -72,17 +72,20 @@ export default function (eleventyConfig) {
 			sectionName = sectionName.charAt(0).toUpperCase() + sectionName?.slice(1);
 			let underlineLength = 10;
 			switch (sectionName) {
-				case 'Thoughts':
-					underlineLength = 190;
+				case 'Contact':
+					underlineLength = 155;
 					break;
-				case 'Speaking':
-					underlineLength = 185;
+				case 'Notes':
+					underlineLength = 117;
 					break;
 				case 'Projects':
 					underlineLength = 165;
 					break;
-				case 'Contact':
-					underlineLength = 155;
+				case 'Speaking':
+					underlineLength = 185;
+					break;
+				case 'Thoughts':
+					underlineLength = 190;
 					break;
 			}
 			urlText = `<text font-family="Verdana" x="1150" y="590" fill="#00f" font-size="36pt" font-weight="700" text-anchor="end">${sectionName}</text>
