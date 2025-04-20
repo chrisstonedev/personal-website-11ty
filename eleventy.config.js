@@ -1,6 +1,11 @@
-const sharp = require("sharp");
+import sharp from "sharp";
+import markdownIt from 'markdown-it';
+import markdownItFootnote from 'markdown-it-footnote';
+import markdownItAttrs from 'markdown-it-attrs';
+import markdownItExternalLinks from 'markdown-it-external-links';
 
-module.exports = function (eleventyConfig) {
+/** @param {import("@11ty/eleventy").UserConfig} eleventyConfig*/
+export default function (eleventyConfig) {
 	const inputDirectory = 'src';
 	const outputDirectory = 'public';
 	eleventyConfig.addPassthroughCopy(`./${inputDirectory}/img/`, {dot: false});
@@ -8,11 +13,10 @@ module.exports = function (eleventyConfig) {
 	eleventyConfig.addPassthroughCopy(`./${inputDirectory}/favicon.ico`);
 	eleventyConfig.addPassthroughCopy(`./${inputDirectory}/_redirects`);
 
-	const markdownIt = require('markdown-it');
 	const md = markdownIt({html: true, linkify: false, typographer: true})
-			.use(require('markdown-it-footnote'))
-			.use(require('markdown-it-attrs'))
-			.use(require('markdown-it-external-links'), {externalClassName: 'external-link'});
+			.use(markdownItFootnote)
+			.use(markdownItAttrs)
+			.use(markdownItExternalLinks, {externalClassName: 'external-link'});
 	md.renderer.rules.footnote_block_open = () => (
 			'<h2>References</h2>\n' +
 			'<ol class="references-list">\n'

@@ -1,27 +1,27 @@
-const {otherPageLinksToThisOne, generatePreview} = require("../src/_data/utils");
-const {backlinks} = require("../src/_data/eleventyComputed");
-const {test, expect, describe} = require("@jest/globals");
+import {describe, expect, test} from "@jest/globals";
+import {generatePreview, otherPageLinksToThisOne} from "../src/_data/utils.js";
+import {backlinks} from "../src/_data/eleventyComputed.js";
 
 describe('backlinks tests', () => {
-	test('standard test', () => {
+	test('standard test', async () => {
 		const data = {
 			collections: {
 				thoughts: [
 					{
 						data: {title: 'Good Title'},
 						template: {
-							frontMatter: {
+							read: async () => ({
 								content: 'Good Title is an article about things.\n\n' +
 										'It contains [content](/content) that includes a link to [testing backlinks](/testing-backlinks).',
-							},
+							}),
 						},
 						url: '/good-test',
 					}, {
 						data: {title: 'Bad Title'},
 						template: {
-							frontMatter: {
+							read: async () => ({
 								content: 'content that does not include a link to any page.',
-							},
+							}),
 						},
 						url: '/bad-test',
 					}
@@ -35,7 +35,7 @@ describe('backlinks tests', () => {
 			title: 'Good Title',
 			preview: 'It contains content that includes a link to **testing backlinks**.'
 		};
-		expect(backlinks(data)).toStrictEqual([expected]);
+		expect(await backlinks(data)).toStrictEqual([expected]);
 	});
 });
 
