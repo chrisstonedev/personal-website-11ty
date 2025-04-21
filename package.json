@@ -21,5 +21,8 @@
     "markdown-it-external-links": "^0.0.6",
     "markdown-it-footnote": "^4.0.0",
     "sharp": "^0.33.4"
+  },
+  "dependencies": {
+    "reveal.js": "^5.2.1"
   }
 }

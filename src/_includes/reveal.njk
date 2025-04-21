@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<link rel="stylesheet" href="/reveal/reveal.css">
+	<link rel="stylesheet" href="/reveal/white.css" id="theme">
+	<title>{{ title if title === 'Chris Stone' else title + ' - Chris Stone' }}</title>
+	<meta name="description" property="og:description" content="{{ description }}">
+	<meta property="og:title" content="{{ title if title === 'Chris Stone' else title + ' - Chris Stone' }}">
+	<meta property="og:url" content="https://chrisstone.dev{{ page.url }}">
+	<meta property="og:type" content="article">
+	<meta name="author" content="Chris Stone">
+	<meta property="og:image" content="https://chrisstone.dev{% generateOpenGraphImage title, page.fileSlug, description, page.url, tags[0] %}" />
+	<meta name="twitter:card" content="summary_large_image">
+</head>
+<body>
+<div class="reveal">
+	<div class="slides">
+		<section data-markdown>
+			<script type="text/template">
+				{{ content }}
+			</script>
+		</section>
+	</div>
+</div>
+<script src="/reveal/reveal.js"></script>
+<script src="/reveal/markdown.js"></script>
+<script src="/reveal/highlight.js"></script>
+<script src="/reveal/notes.js"></script>
+<script src="/reveal/math.js"></script>
+<script>
+	Reveal.initialize({
+		controls: true,
+		progress: true,
+		history: true,
+		center: true,
+		plugins: [ RevealMarkdown, RevealHighlight, RevealNotes, RevealMath.KaTeX ]
+	});
+</script>
+</body>
+</html>

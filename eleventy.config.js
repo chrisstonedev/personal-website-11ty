@@ -12,6 +12,22 @@ export default function (eleventyConfig) {
 	eleventyConfig.addPassthroughCopy(`./${inputDirectory}/style.css`);
 	eleventyConfig.addPassthroughCopy(`./${inputDirectory}/favicon.ico`);
 	eleventyConfig.addPassthroughCopy(`./${inputDirectory}/_redirects`);
+	eleventyConfig.addPassthroughCopy({
+		"node_modules/reveal.js/dist/reveal.css": "reveal/reveal.css",
+		"node_modules/reveal.js/dist/reveal.js": "reveal/reveal.js",
+		"node_modules/reveal.js/dist/theme/fonts/source-sans-pro/source-sans-pro.css": "reveal/fonts/source-sans-pro/source-sans-pro.css",
+		"node_modules/reveal.js/dist/theme/fonts/source-sans-pro/source-sans-pro-italic.ttf": "reveal/fonts/source-sans-pro/source-sans-pro-italic.ttf",
+		"node_modules/reveal.js/dist/theme/fonts/source-sans-pro/source-sans-pro-italic.woff": "reveal/fonts/source-sans-pro/source-sans-pro-italic.woff",
+		"node_modules/reveal.js/dist/theme/fonts/source-sans-pro/source-sans-pro-regular.ttf": "reveal/fonts/source-sans-pro/source-sans-pro-regular.ttf",
+		"node_modules/reveal.js/dist/theme/fonts/source-sans-pro/source-sans-pro-regular.woff": "reveal/fonts/source-sans-pro/source-sans-pro-regular.woff",
+		"node_modules/reveal.js/dist/theme/fonts/source-sans-pro/source-sans-pro-semibold.ttf": "reveal/fonts/source-sans-pro/source-sans-pro-semibold.ttf",
+		"node_modules/reveal.js/dist/theme/fonts/source-sans-pro/source-sans-pro-semibold.woff": "reveal/fonts/source-sans-pro/source-sans-pro-semibold.woff",
+		"node_modules/reveal.js/dist/theme/white.css": "reveal/white.css",
+		"node_modules/reveal.js/plugin/highlight/highlight.js": "reveal/highlight.js",
+		"node_modules/reveal.js/plugin/markdown/markdown.js": "reveal/markdown.js",
+		"node_modules/reveal.js/plugin/math/math.js": "reveal/math.js",
+		"node_modules/reveal.js/plugin/notes/notes.js": "reveal/notes.js",
+	});
 
 	const md = markdownIt({html: true, linkify: false, typographer: true})
 			.use(markdownItFootnote)
