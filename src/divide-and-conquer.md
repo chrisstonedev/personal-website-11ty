@@ -5,7 +5,7 @@ date: 2023-03-13
 date-updated: 2023-03-13
 layout: article.njk
 tags:
-  - thoughts
+  - notes
 ---
 **Divide and conquer** is a strategy that involves taking a complex matter and breaking it up into small batches that can be more easily completed than the whole.
 

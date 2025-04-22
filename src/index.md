@@ -14,8 +14,8 @@ I also have experience [public speaking](/speaking) and I have given talks at se
 Outside of software, my hobbies include playing video games (especially role-playing games with good stories), reading tarot cards, cooking and eating vegan food, running for exercise, and trying to find time to read more books. I live in Atlanta with my wife and two cats.
 
 <nav class="homepage-sections">
-<a href="/thoughts">
-<h2>Thoughts</h2>
+<a href="/notes">
+<h2>Notes</h2>
 <p>Articles I write about things I have learned.</p>
 </a>
 <a href="/projects">

@@ -1,7 +1,6 @@
 /**
  * @param {string[]} outboundLinkUrls
  * @param {string} currentPagePath
- * @returns {boolean}
  */
 export function otherPageLinksToThisOne(outboundLinkUrls, currentPagePath) {
 	return outboundLinkUrls.some(link => link.localeCompare(currentPagePath, undefined, {sensitivity: 'accent'}) === 0);
@@ -10,16 +9,18 @@ export function otherPageLinksToThisOne(outboundLinkUrls, currentPagePath) {
 /**
  * @param {string} paragraph
  * @param {string} currentPagePath
- * @returns {string}
  */
 export function generatePreview(paragraph, currentPagePath) {
-	function replacer(match, p1, p2) {
-		if (p2 === currentPagePath) {
-			return '**' + p1 + '**';
+	function replacer(match, squareBracketContents, _, parenthesesContents) {
+		if (parenthesesContents === currentPagePath) {
+			return `**${squareBracketContents}**`;
 		}
-		return p1;
+		if (parenthesesContents === undefined) {
+			return '';
+		}
+		return squareBracketContents;
 	}
 
-	const regex = /\[(.*?)]\((.*?)\)/g
+	const regex = /\[([^\]]*)](\((.*?)\))?/g
 	return paragraph.replace(regex, replacer);
 }

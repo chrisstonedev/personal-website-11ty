@@ -3,7 +3,7 @@ import {generatePreview, otherPageLinksToThisOne} from "./utils.js";
 export async function backlinks(data) {
 	const backlinks = [];
 
-	for (const otherPage of [...data.collections.thoughts, ...data.collections.speaking]) {
+	for (const otherPage of [...data.collections.notes, ...data.collections.speaking]) {
 		const pageTemplate = await otherPage.template.read();
 		const paragraphs = pageTemplate.content.split('\n');
 		let backlinkFound = false;

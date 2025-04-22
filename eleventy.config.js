@@ -114,10 +114,19 @@ export default function (eleventyConfig) {
 
 		return `/${openGraphImageOutputDirectory}/${filename}.png`;
 	});
-	eleventyConfig.setLibrary('md', md);
-	eleventyConfig.addCollection('speakingByLastPresented', function (config) {
-		return config.getFilteredByTag('speaking')
-				.sort((a, b) => b.data['last-presented'] - a.data['last-presented']);
+	eleventyConfig.addNunjucksFilter("preview", function (content) {
+		if (!content) {
+			return null;
+		}
+		let paragraphContent = content.split("<p>");
+		paragraphContent =
+				paragraphContent.length > 2 ? paragraphContent[1].split("</p>")[0] : null;
+		if (!paragraphContent) {
+			return null;
+		}
+		return paragraphContent;
 	});
+
+	eleventyConfig.setLibrary('md', md);
 	return {dir: {input: inputDirectory, output: outputDirectory}};
 }

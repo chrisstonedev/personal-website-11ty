@@ -5,7 +5,7 @@ date: 2023-05-01
 date-updated: 2023-05-01
 layout: article.njk
 tags:
-  - thoughts
+  - notes
 ---
 **Connectedness**[^1] is one of 34 themes in the [CliftonStrengths](/cliftonstrengths) assessment, belonging to the Relationship Building domain. More information about how this theme is defined can be found on their [website](https://www.gallup.com/cliftonstrengths/en/252197/connectedness-theme.aspx).
 

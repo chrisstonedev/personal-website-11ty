@@ -5,7 +5,7 @@ date: 2023-03-16
 date-updated: 2023-03-16
 layout: article.njk
 tags:
-  - thoughts
+  - notes
 ---
 **Working collaboratively** is a style of working in which everyone brings their strengths to the table. Ideally, instead of seeing certain people as senior or as junior to one another, and instead of thinking about a dynamic through a lens of people whose skills are lacking or those whose skills are overflowing, we can consider that everyone has much that they can give to the team. Some people in the group might have more years of experience, but everyone can have a slightly different focus and have picked different disciplines, different languages, different frameworks, and different paradigms to follow and for which to have a passion.
 

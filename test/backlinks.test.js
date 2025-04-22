@@ -6,7 +6,7 @@ describe('backlinks tests', () => {
 	test('standard test', async () => {
 		const data = {
 			collections: {
-				thoughts: [
+				notes: [
 					{
 						data: {title: 'Good Title'},
 						template: {
@@ -60,6 +60,8 @@ describe('generatePreview tests', () => {
 		['Remove link to [other page](/other-page).', 'Remove link to other page.'],
 		['Remove links to [multiple](/multiple) [pages](/pages).', 'Remove links to multiple pages.'],
 		['Adds bold to [matched page](/matched-page).', 'Adds bold to **matched page**.'],
+		['**Title** adds bold to [matched page](/matched-page).', '**Title** adds bold to **matched page**.'],
+		['**Title**[^1] adds bold to [matched page](/matched-page).', '**Title** adds bold to **matched page**.'],
 	])(`when checking if '%s' links to '/testing-backlinks', it should be %s`,
 			(paragraph, expected) => {
 				expect(generatePreview(paragraph, '/matched-page')).toBe(expected);
