@@ -3,6 +3,7 @@ title: "Remote Mob Programming: An Introvert's Tale of Working Collaboratively"
 description: I have given a talk at conferences about my experience with remote mob programming and how I prefer it despite identifying as an introvert.
 date: 2023-09-09
 date-updated: 2023-09-09
+last-presented: 2023-09-09
 conferences:
   - Atlanta Developers' Conference 2023
 layout: article.njk

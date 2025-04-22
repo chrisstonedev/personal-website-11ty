@@ -3,6 +3,7 @@ title: Buried in Technical Debt?
 description: Buried in Technical Debt is a talk about software maintenance and time management that has been presented at Devnexus 2022 and several local meetups.
 date: 2021-10-09
 date-updated: 2021-10-09
+last-presented: 2023-09-01
 conferences:
   - Atlanta Code Camp 2021
   - Big Mountain Data & Dev 2021

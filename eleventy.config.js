@@ -115,5 +115,9 @@ export default function (eleventyConfig) {
 		return `/${openGraphImageOutputDirectory}/${filename}.png`;
 	});
 	eleventyConfig.setLibrary('md', md);
+	eleventyConfig.addCollection('speakingByLastPresented', function (config) {
+		return config.getFilteredByTag('speaking')
+				.sort((a, b) => b.data['last-presented'] - a.data['last-presented']);
+	});
 	return {dir: {input: inputDirectory, output: outputDirectory}};
 }

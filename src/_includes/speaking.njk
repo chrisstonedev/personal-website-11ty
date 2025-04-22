@@ -2,7 +2,7 @@
 
 {% block main %}
 	{{ content | safe }}
-	{%- for post in collections.speaking -%}
+	{%- for post in collections.speakingByLastPresented -%}
 		<h2><a href="{{ post.url }}">{{ post.data.title }}</a></h2>
 		{% if post.data.conferences %}
 			<ul>
@@ -13,6 +13,5 @@
 				{%- endfor -%}
 			</ul>
 		{% endif %}
-		</h2>
 	{%- endfor -%}
 {% endblock %}
