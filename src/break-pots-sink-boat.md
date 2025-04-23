@@ -11,6 +11,4 @@ tags:
 
 The proverb can be used in project management when evaluating possible approaches that can be made. Sometimes, it can be very valuable to consider multiple options and have backup plans, but when one path is clearly the optimal path, spending extra time to support a possible inferior backup plan may not be the right call.
 
-For example, imagine a
-
 [^1]: [破釜沉舟 - Wiktionary, the free dictionary](https://en.wiktionary.org/wiki/%E7%A0%B4%E9%87%9C%E6%B2%89%E8%88%9F).
