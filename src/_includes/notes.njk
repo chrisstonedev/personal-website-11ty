@@ -4,9 +4,14 @@
 	{{ content | safe }}
 	<h2>Most recently updated</h2>
 	<ul>
-		{%- for post in collections.notes | reverse | slice(3) | first -%}
+		{%- for post in collections.notes | sort(true, false, "data.date-updated") | limit(4) -%}
 			<li>
-				<a href="{{ post.url }}">{{ post.data.title }}</a> ({{ post.data.date | htmlDate | safe }})
+				<a href="{{ post.url }}">{{ post.data.title }}</a>
+				{% if post.data.date.toString() === post.data["date-updated"].toString() %}
+					(posted {{ post.data.date | htmlDate | safe }})
+				{% else %}
+					(posted {{ post.data.date | htmlDate | safe }}, last updated {{ post.data["date-updated"] | htmlDate | safe }})
+				{% endif %}
 				<blockquote>{{ post.content | preview | safe }}</blockquote>
 			</li>
 		{%- endfor -%}

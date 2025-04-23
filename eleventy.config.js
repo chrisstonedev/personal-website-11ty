@@ -129,7 +129,9 @@ export default function (eleventyConfig) {
 		}
 		return paragraphContent;
 	});
-
+	eleventyConfig.addFilter('limit', function(arr, limit) {
+		return arr.slice(0, limit);
+	});
 	eleventyConfig.setLibrary('md', md);
 	return {dir: {input: inputDirectory, output: outputDirectory}};
 }
