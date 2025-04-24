@@ -10,13 +10,6 @@ Atlanta Cloud Conference 2025
 
 ---
 
-## Goals today
-
-- Share an appreciation of automated tests
-- Inspire writing tests
-
----
-
 ## Reasons to test
 
 - Code coverage <!-- .element: class="fragment" data-fragment-index="2" -->
@@ -30,7 +23,7 @@ Atlanta Cloud Conference 2025
 	- delete tests that are no longer useful
 
 ---
-
+<span>hello</span>
 ## Types of tests
 
 - Unit
@@ -94,6 +87,25 @@ Something else
 ---
 
 ## Delete tests that no longer serve you
+
+---
+
+## Goals today
+
+<div style="display: flex">
+<div>
+
+- Share an appreciation of automated tests
+- Inspire writing tests
+
+</div>
+<div>
+
+- Share an appreciation of automated tests1
+- Inspire writing tests
+
+</div>
+</div>
 
 ---
 

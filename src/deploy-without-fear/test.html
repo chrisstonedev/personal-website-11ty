@@ -1,0 +1,232 @@
+---
+title: 'Deploy Without Fear Using Automated Tests'
+description: A conference talk about the usefulness of different types of automated tests.
+layout: revealHtml.njk
+---
+
+<section>
+	<h1>Deploy Without Fear Using Automated Tests</h1>
+	<p>Atlanta Cloud Conference 2025</p>
+</section>
+<section>
+	<h2>Goals today</h2>
+	<ul>
+		<li>Share an appreciation of automated tests</li>
+		<li>Inspire writing tests</li>
+	</ul>
+</section>
+<section data-auto-animate>
+	<h2>Reasons to test</h2>
+	<h3 class="fragment custom faded">Code coverage</h3>
+	<h3 class="fragment custom faded">Regression detection</h3>
+	<h3 class="fragment custom faded">Write simple code</h3>
+	<h3 class="fragment custom faded">Executable documentation</h3>
+</section>
+<section data-auto-animate>
+	<h2>Reasons to test</h2>
+	<h3>Code coverage</h3>
+	<aside class="notes">Hello</aside>
+</section>
+<section data-auto-animate>
+	<h2>Reasons to test</h2>
+	<h3>Regression detection</h3>
+	<ul>
+		<li>CI/CD</li>
+		<li>delete flaky tests, team should have faith in the test suite</li>
+	</ul>
+	<aside class="notes">Hello</aside>
+</section>
+<section data-auto-animate>
+	<h2>Reasons to test</h2>
+	<h3>Write simple code</h3>
+	<ul>
+		<li>TDD</li>
+	</ul>
+	<aside class="notes">Hello</aside>
+</section>
+<section data-auto-animate>
+	<section data-auto-animate>
+		<h2>Reasons to test</h2>
+		<h3>Executable documentation</h3>
+		<div style="display: flex">
+			<p>Extensive documentation</p>
+			<p>Imagine a Confluence screenshot</p>
+		</div>
+	</section>
+	<section data-auto-animate>
+		<h2>Reasons to test</h2>
+		<h3>Executable documentation</h3>
+		<pre><code data-id="comment-animation" data-trim data-noescape data-line-numbers class="language-ts">
+// add numbers (oh, and replace this example with a better one!)
+const x = 1 + 2;
+  </code></pre>
+		<p>Comments can lie</p>
+	</section>
+	<section data-auto-animate>
+		<h2>Reasons to test</h2>
+		<h3>Executable documentation</h3>
+		<pre><code data-id="comment-animation" data-trim data-noescape data-line-numbers class="language-ts">
+// add numbers (oh, and replace this example with a better one!)
+const x = '1' + '2';
+  </code></pre>
+		<p>Comments can lie</p>
+	</section>
+	<section data-auto-animate>
+		<h2>Reasons to test</h2>
+		<h3>Executable documentation</h3>
+		<pre><code data-trim data-noescape data-line-numbers class="language-ts">
+// pretend there is a test here
+  </code></pre>
+		<p>A test will fail if it becomes untrue.</p>
+	</section>
+</section>
+<section>
+	<h2>Types of tests</h2>
+	<ul>
+		<li>Unit</li>
+		<li>Integration</li>
+		<li>End-to-end</li>
+	</ul>
+	<aside class="notes">Hello</aside>
+</section>
+<section>
+	<h2>Which type to pick</h2>
+	<ul>
+		<li>pyramid and trophy</li>
+		<li>explain, the lowest level that gives value</li>
+		<li>
+			show simple examples
+			<ul>
+				<li>
+					test that business logic occurs where everything else passes through
+					<ul>
+						<li>
+							we can test at all levels, but get all our value from the unit
+							test
+						</li>
+					</ul>
+				</li>
+				<li>
+					test that we write a good database query
+					<ul>
+						<li>
+							we can make a unit test, but we need to use mocks, so we don't get
+							value
+						</li>
+						<li>integration is the lowest level with value</li>
+					</ul>
+				</li>
+				<li>
+					test that a user can record audio and submit a message
+					<ul>
+						<li>
+							we could write various integration tests but how can we prove that
+							one leads to another and everything feeds into one another?
+						</li>
+					</ul>
+				</li>
+				<li>
+					test that... think about not having
+					<ul>
+						<li>
+							hmm... I don't know, but the point is to convince that there are
+							some ideas that don't have any testing value
+						</li>
+					</ul>
+				</li>
+			</ul>
+		</li>
+	</ul>
+</section>
+<section data-auto-animate>
+	<section data-background="#0000ff">
+		<h2>how to get started?</h2>
+		<ul>
+			<li>TDD - start new unit tests with</li>
+			<li>
+				scary area you're afraid to make changes in? start by making a test
+			</li>
+			<li>
+				code all mixed up so it's tough to write simple unit or integration
+				tests? maybe starting with an end-to-end would be good
+				<ul>
+					<li>
+						maybe that really is the lowest level that gives you value until you
+						can rearchitect the code
+					</li>
+				</ul>
+			</li>
+			<li class="fragment" data-fragment-index="0">
+				Item 1
+				<aside class="notes">First fragment</aside>
+			</li>
+			<li class="fragment" data-fragment-index="1" data-notes="Second fragment">
+				Item 2
+			</li>
+		</ul>
+		<aside class="notes">Something here</aside>
+	</section>
+	<section>
+		<h2>how to get started?</h2>
+		<ul>
+			<li>TDD - start new unit tests with</li>
+			<li>
+				scary area you're afraid to make changes in? start by making a test
+			</li>
+			<li>
+				code all mixed up so it's tough to write simple unit or integration
+				tests? maybe starting with an end-to-end would be good
+			</li>
+		</ul>
+		<aside class="notes">Something else</aside>
+	</section>
+</section>
+<section>
+	<h2>remember</h2>
+	<ul>
+		<li>start small and get it in the CI/CD pipelines</li>
+		<li>make a commitment to add to test suites over time</li>
+	</ul>
+</section>
+<section>
+	<h2>Delete tests that no longer serve you</h2>
+</section>
+<section>
+	<h2>Test until fear turns into boredom</h2>
+	<p>Kent Back</p>
+</section>
+<section>
+	<h2>Test where your code gives you fear</h2>
+</section>
+<section>
+	<h2>Refactoring means not changing what happens!!</h2>
+</section>
+<section>
+	<h2>unit integration and end to end test definitions</h2>
+</section>
+<section>
+	<h2>
+		you can use any of these tools to test anything, but you may not want to
+	</h2>
+	<ul>
+		<li>
+			examples of tests with checkboxes
+			<ul>
+				<li>do we get value from this test?</li>
+				<li>let’s pick the fastest test that gives us value</li>
+				<li>
+					unit test is no if mocking everything out makes it pass trivially
+				</li>
+			</ul>
+		</li>
+	</ul>
+</section>
+<section>
+	<h2>Linters?</h2>
+</section>
+<section>
+	<p>TDD</p>
+</section>
+<section>
+	<h2>test behavior, not implementation!!!</h2>
+</section>

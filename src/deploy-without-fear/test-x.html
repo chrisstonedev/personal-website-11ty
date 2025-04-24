@@ -1,0 +1,111 @@
+---
+title: "Deploy Without Fear Using Automated Tests"
+description: A conference talk about the usefulness of different types of automated tests.
+layout: revealHtml.njk
+templateEngineOverride: false
+---
+<div class="slides" style="width: 960px; height: 700px; inset: 50% auto auto 50%; transform: translate(-50%, -50%) scale(0.8448);">
+	<section data-markdown="" data-markdown-parsed="true" style="top: 113.5px; display: block;" class="present"><h1 id="deploy-without-fear-using-automated-tests">Deploy Without Fear Using Automated Tests</h1>
+		<p>Atlanta Cloud Conference 2025</p>
+	</section><section data-markdown="" data-markdown-parsed="true" style="top: 245px; display: block;" class="future" hidden="" aria-hidden="true"><h2 id="goals-today">Goals today</h2>
+	<ul>
+		<li>Share an appreciation of automated tests</li>
+		<li>Inspire writing tests</li>
+	</ul>
+</section><section data-markdown="" data-markdown-parsed="true" style="top: 26.5px; display: block;" hidden="" aria-hidden="true" class="future"><h2 id="reasons-to-test">Reasons to test</h2>
+	<ul>
+		<li class="fragment" data-fragment-index="1">Code coverage <!-- --></li>
+		<li class="fragment" data-fragment-index="0">Regression detector <!-- --><ul>
+			<li>CI/CD</li>
+			<li>delete flaky tests, team should have faith in the test suite</li>
+		</ul>
+		</li>
+		<li>helps us write simple code<ul>
+			<li>TDD</li>
+		</ul>
+		</li>
+		<li>executable documentation<ul>
+			<li>comments can lie, tests will fail if they lie</li>
+			<li>delete tests that are no longer useful</li>
+		</ul>
+		</li>
+	</ul>
+</section><section data-markdown="" data-markdown-parsed="true" style="top: 218px; display: none;" hidden="" aria-hidden="true" class="future"><h2 id="types-of-tests">Types of tests</h2>
+	<ul>
+		<li>Unit</li>
+		<li>Integration</li>
+		<li>End-to-end</li>
+	</ul>
+	<aside class="notes"><p>Hello</p>
+	</aside></section><section data-markdown="" data-markdown-parsed="true" style="top: 350px; display: none;" hidden="" aria-hidden="true" class="future"><h2 id="which-type-to-pick">Which type to pick</h2>
+	<ul>
+		<li>pyramid and trophy</li>
+		<li>explain, the lowest level that gives value</li>
+		<li>show simple examples<ul>
+			<li>test that business logic occurs where everything else passes through<ul>
+				<li>we can test at all levels, but get all our value from the unit test</li>
+			</ul>
+			</li>
+			<li>test that we write a good database query<ul>
+				<li>we can make a unit test, but we need to use mocks, so we don't get value</li>
+				<li>integration is the lowest level with value</li>
+			</ul>
+			</li>
+			<li>test that a user can record audio and submit a message<ul>
+				<li>we could write various integration tests but how can we prove that one leads to another and everything feeds into one another?</li>
+			</ul>
+			</li>
+			<li>test that... think about not having<ul>
+				<li>hmm... I don't know, but the point is to convince that there are some ideas that don't have any testing value</li>
+			</ul>
+			</li>
+		</ul>
+		</li>
+	</ul>
+</section><section style="top: 350px; display: none;" hidden="" aria-hidden="true" class="stack future" data-previous-indexv="0"><section data-markdown="" data-markdown-parsed="true" data-auto-animate="" data-background="#0000ff" style="top: 350px; display: none;" class="has-dark-background"><!-- -->
+	<!-- -->
+	<h2 id="how-to-get-started">how to get started?</h2>
+	<ul>
+		<li>TDD - start new unit tests with</li>
+		<li>scary area you're afraid to make changes in? start by making a test</li>
+		<li>code all mixed up so it's tough to write simple unit or integration tests? maybe starting with an end-to-end would be good<ul>
+			<li>maybe that really is the lowest level that gives you value until you can rearchitect the code</li>
+		</ul>
+		</li>
+		<li class="fragment" data-fragment-index="0">Item 1 <!-- --></li>
+		<li class="fragment" data-fragment-index="1">Item 2 <!-- --></li>
+	</ul>
+	<aside class="notes"><p>Something here</p>
+	</aside></section><section data-markdown="" data-markdown-parsed="true" data-auto-animate="" class="future" aria-hidden="true" style="top: 350px; display: none;"><!-- -->
+	<h2 id="how-to-get-started">how to get started?</h2>
+	<ul>
+		<li>TDD - start new unit tests with</li>
+		<li>scary area you're afraid to make changes in? start by making a test</li>
+		<li>code all mixed up so it's tough to write simple unit or integration tests? maybe starting with an end-to-end would be good</li>
+	</ul>
+	<aside class="notes"><p>Something else</p>
+	</aside></section></section><section data-markdown="" data-markdown-parsed="true" style="top: 350px; display: none;" hidden="" aria-hidden="true" class="future"><h2 id="remember">remember</h2>
+	<ul>
+		<li>start small and get it in the CI/CD pipelines</li>
+		<li>make a commitment to add to test suites over time</li>
+	</ul>
+</section><section data-markdown="" data-markdown-parsed="true" style="top: 350px; display: none;" hidden="" aria-hidden="true" class="future"><h2 id="delete-tests-that-no-longer-serve-you">Delete tests that no longer serve you</h2>
+</section><section data-markdown="" data-markdown-parsed="true" style="top: 350px; display: none;" hidden="" aria-hidden="true" class="future"><h2 id="test-until-fear-turns-into-boredom">Test until fear turns into boredom</h2>
+	<p>Kent Back</p>
+</section><section data-markdown="" data-markdown-parsed="true" style="top: 350px; display: none;" hidden="" aria-hidden="true" class="future"><h2 id="test-where-your-code-gives-you-fear">Test where your code gives you fear</h2>
+</section><section data-markdown="" data-markdown-parsed="true" style="top: 350px; display: none;" hidden="" aria-hidden="true" class="future"><h2 id="refactoring-means-not-changing-what-happens">Refactoring means not changing what happens</h2>
+</section><section data-markdown="" data-markdown-parsed="true" style="top: 350px; display: none;" hidden="" aria-hidden="true" class="future"><h2 id="unit-integration-and-end-to-end-test-definitions">unit integration and end to end test definitions</h2>
+</section><section data-markdown="" data-markdown-parsed="true" style="top: 350px; display: none;" hidden="" aria-hidden="true" class="future"><h2 id="you-can-use-any-of-these-tools-to-test-anything-but-you-may-not-want-to">you can use any of these tools to test anything, but you may not want to</h2>
+	<ul>
+		<li>examples of tests with checkboxes<ul>
+			<li>do we get value from this test?</li>
+			<li>let’s pick the fastest test that gives us value</li>
+			<li>unit test is no if mocking everything out makes it pass trivially</li>
+		</ul>
+		</li>
+	</ul>
+</section><section data-markdown="" data-markdown-parsed="true" style="top: 350px; display: none;" hidden="" aria-hidden="true" class="future"><h2 id="linters">Linters?</h2>
+</section><section data-markdown="" data-markdown-parsed="true" style="top: 350px; display: none;" hidden="" aria-hidden="true" class="future"><p>TDD</p>
+</section><section data-markdown="" data-markdown-parsed="true" style="top: 350px; display: none;" hidden="" aria-hidden="true" class="future"><h2 id="test-behavior-not-implementation">test behavior, not implementation</h2>
+</section>
+</div>

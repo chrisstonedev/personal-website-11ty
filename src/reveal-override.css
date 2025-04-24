@@ -1,0 +1,15 @@
+:root {
+	--r-heading-text-transform: initial;
+}
+.fragment.blur {
+	filter: blur(5px);
+}
+.fragment.blur.visible {
+	filter: none;
+}
+.fragment.faded {
+	opacity: 0.3;
+}
+.fragment.faded.visible {
+	opacity: 1;
+}

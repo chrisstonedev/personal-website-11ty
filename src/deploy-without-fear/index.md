@@ -24,9 +24,11 @@ There are several tools we can use for testing applications, and various levels 
 
 I will answer these questions and more based on my experience and opinions as a full-stack software engineer who has written tests at every level. I will also demonstrate how I helped take an application with low test coverage and began introducing new tests using libraries like Playwright and React Testing Library, and adding them in our GitHub Actions workflows.
 
-[//]: # (## Slides)
+## Slides
 
-[//]: # ()
-[//]: # (- <a href="/deploy-without-fear/slides" target="_blank">View slides</a>)
-
-[//]: # (- <a href="/deploy-without-fear/slides/?print-pdf" target="_blank">Download/print slides</a>)
+- Markdown
+  - <a href="/deploy-without-fear/slides" target="_blank">View slides</a>
+  - <a href="/deploy-without-fear/slides/?print-pdf" target="_blank">Download/print slides</a>
+- HTML
+	- <a href="/deploy-without-fear/test" target="_blank">View slides</a>
+	- <a href="/deploy-without-fear/test/?print-pdf" target="_blank">Download/print slides</a>
