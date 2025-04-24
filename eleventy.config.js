@@ -142,6 +142,10 @@ export default function (eleventyConfig) {
 			return `/${openGraphImageOutputDirectory}/${filename}.png`;
 		},
 	);
+	eleventyConfig.addShortcode(
+		'getParentOpenGraphImage',
+		(pageUrl) => `/img/preview/${pageUrl.split('/')[1]}.png`,
+	);
 	eleventyConfig.addNunjucksFilter('preview', function (content) {
 		if (!content) {
 			return null;
