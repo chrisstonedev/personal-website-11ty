@@ -6,6 +6,7 @@
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<link rel="stylesheet" href="/reveal/reveal.css">
 	<link rel="stylesheet" href="/reveal/white.css" id="theme">
+	<link rel="stylesheet" href="/reveal-override.css">
 	<title>{{ title if title === 'Chris Stone' else title + ' - Chris Stone' }}</title>
 	<meta name="description" property="og:description" content="{{ description }}">
 	<meta property="og:title" content="{{ title if title === 'Chris Stone' else title + ' - Chris Stone' }}">
@@ -18,11 +19,7 @@
 <body>
 <div class="reveal">
 	<div class="slides">
-		<section data-markdown>
-			<script type="text/template">
-				{{ content }}
-			</script>
-		</section>
+		{{ content | safe }}
 	</div>
 </div>
 <script src="/reveal/reveal.js"></script>
@@ -32,11 +29,13 @@
 <script src="/reveal/math.js"></script>
 <script>
 	Reveal.initialize({
-		controls: true,
+		controls: false,
 		progress: true,
-		history: true,
+		history: false,
 		center: true,
-		plugins: [ RevealMarkdown, RevealHighlight, RevealNotes, RevealMath.KaTeX ]
+		plugins: [ RevealMarkdown, RevealHighlight, RevealNotes, RevealMath.KaTeX ],
+		pdfSeparateFragments: false,
+		hash: true,
 	});
 </script>
 </body>
