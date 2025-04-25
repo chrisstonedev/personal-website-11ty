@@ -58,20 +58,129 @@ layout: reveal.njk
 <section data-auto-animate>
 	<h2>Why do I write tests?</h2>
 	<ul>
-		<li>Other things</li>
+		<li class="fragment" data-fragment-index="0">I get scared 😭</li>
+		<li class="fragment">I see code I don't understand</li>
+		<li class="fragment">I'm worried the deployment had problems</li>
 	</ul>
+	<img
+		class="fragment"
+		data-fragment-index="0"
+		src="/img/deploy-without-fear-slides-im-scared.png"
+		alt="I don't know what any of this is and I'm scared"
+	/>
 	<aside class="notes">
-		...and while I can't answer these questions on behalf of your team, I hope
-		that I can inspire you to think critically about some of these and maybe
-		even gain some energy to fight for some good patterns.
+		So why do I write tests? ...and while I can't answer these questions on
+		behalf of your team, I hope that I can inspire you to think critically about
+		some of these and maybe even gain some energy to fight for some good
+		patterns.
 	</aside>
 </section>
 <section data-auto-animate>
-	<h2>Reasons to test</h2>
-	<h3 class="fragment custom faded">Code coverage</h3>
-	<h3 class="fragment custom faded">Regression detection</h3>
-	<h3 class="fragment custom faded">Write simple code</h3>
-	<h3 class="fragment custom faded">Executable documentation</h3>
+	<h2>Dealing with fear</h2>
+	<blockquote style="width: 100%; font-size: 22pt">
+		I must not fear. Fear is the mind-killer. Fear is the little-death that
+		brings total obliteration. I will face my fear. I will permit it to pass
+		over me and through me. And when it has gone past I will turn the inner eye
+		to see its path. Where the fear has gone there will be nothing. Only I will
+		remain.
+	</blockquote>
+	<figure
+		style="
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+			gap: 2em;
+			justify-items: center;
+			align-items: center;
+		"
+	>
+		<img
+			src="/img/deploy-without-fear-slides-dune.jpg"
+			alt="Dune by Frank Herbert"
+			style="height: 300px"
+		/>
+		<figcaption><em>Dune</em> by Frank Herbert</figcaption>
+	</figure>
+	<aside class="notes">
+		There are a couple of books that tackle dealing with this kind of fear. In
+		Dune, it is said, "I must not fear. Fear is the mind-killer." In other
+		words, this too shall pass, so let's face the fear and understand that
+		things will be OK eventually. For my specific fear, though, we can do better
+		than that.
+	</aside>
+</section>
+<section data-auto-animate>
+	<h2>Dealing with fear</h2>
+	<blockquote data-id="transformQuote">
+		Test until fear is transformed into boredom.
+	</blockquote>
+	<figure
+		style="
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+			justify-items: center;
+			align-items: center;
+		"
+	>
+		<img
+			src="/img/deploy-without-fear-slides-tdd-by-example.jpg"
+			alt="Test-Driven Development by Example by Kent Beck"
+			style="height: 400px"
+		/>
+		<figcaption>
+			<em>Test-Driven Development<br />By Example</em><br />by Kent Beck
+		</figcaption>
+	</figure>
+	<aside class="notes"></aside>
+</section>
+<section data-auto-animate>
+	<h2>Dealing with fear</h2>
+	<blockquote data-id="transformQuote">
+		Test until fear is transformed into boredom.
+	</blockquote>
+	<p class="fragment">
+		If something in our application scares me,<br />that's where I write a test.
+	</p>
+	<p class="fragment">
+		If I don't worry about something not working,<br />then I don't worry about
+		testing any further.
+	</p>
+	<aside class="notes">
+		<p>
+			I think about this quote whenever I am asked where we should start writing
+			tests or where the bounds of our testing should be.
+		</p>
+		<ul>
+			<li>
+				If something in our application scares me, that's where I write a test.
+			</li>
+		</ul>
+		<ul>
+			<li>
+				If I don't worry about something not working, then I don't worry about
+				testing any further. This is overgeneralizing what is honestly a
+				difficult problem of how and why to write tests, but I really like this
+				as a starting point, and I'll show some examples of how I use this on my
+				team throughout the talk.
+			</li>
+		</ul>
+	</aside>
+</section>
+<section data-auto-animate>
+	<h2>Why do I write tests?</h2>
+	<ul>
+		<li>I get scared</li>
+		<li class="fragment custom faded">Code coverage</li>
+		<li class="fragment custom faded">Regression detection</li>
+		<li class="fragment custom faded">Write simple code</li>
+		<li class="fragment custom faded">Executable documentation</li>
+	</ul>
+	<aside class="notes">
+		<p>
+			Ok, so, back to why I would write tests, there's the desire to test away
+			the fears I have with the application, but we can think of a few more
+			things too.
+		</p>
+	</aside>
 </section>
 <section data-auto-animate>
 	<h2>Reasons to test</h2>

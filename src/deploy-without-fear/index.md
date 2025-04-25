@@ -11,7 +11,7 @@ layout: article.njk
 tags:
   - speaking
 ---
-This talk about automated testing will be given at the following events:
+This talk about automated testing has been given at the following events:
 
 - [Atlanta Cloud Conference 2025](https://atlantacloudconference.com/schedule) (April 2025; in-person)
 - [devopsdays Atlanta 2025](https://devopsdays.org/events/2025-atlanta/program/chris-stone) (April 2025; in-person)
@@ -24,9 +24,11 @@ There are several tools we can use for testing applications, and various levels 
 
 I will answer these questions and more based on my experience and opinions as a full-stack software engineer who has written tests at every level. I will also demonstrate how I helped take an application with low test coverage and began introducing new tests using libraries like Playwright and React Testing Library, and adding them in our GitHub Actions workflows.
 
-[//]: # (## Slides)
+## Slides
 
-[//]: # ()
-[//]: # (- <a href="/deploy-without-fear/slides" target="_blank">View slides</a>)
+- <a href="/deploy-without-fear/slides" target="_blank">View slides</a>
+- <a href="/deploy-without-fear/slides/?print-pdf" target="_blank">Download/print slides</a>
 
-[//]: # (- <a href="/deploy-without-fear/slides/?print-pdf" target="_blank">Download/print slides</a>)
+## Related music
+
+<iframe allow="autoplay *; encrypted-media *;" frameborder="0" height="150" style="width:100%;max-width:660px;overflow:hidden;background:transparent;" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation" src="https://embed.music.apple.com/us/album/feel-the-fear/1587482045?i=1587482140"></iframe>
