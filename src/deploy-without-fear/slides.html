@@ -85,15 +85,16 @@ layout: reveal.njk
 	<h3>Regression detection</h3>
 	<ul>
 		<li>CI/CD</li>
-		<li>delete flaky tests, team should have faith in the test suite</li>
+		<li>Address flaky tests, team should have faith in the test suite</li>
 	</ul>
 	<aside class="notes">Hello</aside>
 </section>
 <section data-auto-animate>
 	<h2>Reasons to test</h2>
-	<h3>Write simple code</h3>
+	<h3>Write <strike>simple code</strike> (will think about this)</h3>
 	<ul>
 		<li>TDD</li>
+		<li>Tests will help drive simple design to avoid accidental complexity.</li>
 	</ul>
 	<aside class="notes">Hello</aside>
 </section>
@@ -139,7 +140,7 @@ const x = '1' + '2';
 	<section data-auto-animate>
 		<h2>Reasons to test</h2>
 		<h3>Executable documentation</h3>
-		<h4>What does it mean to have effective documentation?</h4>
+		<h4>What does it mean for writing to be effective?</h4>
 		<ul>
 			<li class="fragment custom faded">Readable</li>
 			<li class="fragment custom faded">Relevant</li>
@@ -166,6 +167,10 @@ const x = '1' + '2';
 	<aside class="notes">
 		What does it mean to have effective documentation?
 	</aside>
+</section>
+<section data-auto-animate data-auto-animate-restart>
+	<blockquote>Test until fear turns into boredom.</blockquote>
+	<p>Kent Beck</p>
 </section>
 <section data-auto-animate data-auto-animate-restart>
 	<section data-auto-animate>
@@ -218,32 +223,13 @@ const x = '1' + '2';
 			</figure>
 		</div>
 		<p class="fragment">Pick the lowest level that gives value.</p>
-	</section>
-	<section data-auto-animate>
-		<h2>Types of tests</h2>
-		<h3>Which type to pick</h3>
-		<p>
-			you can use any of these tools to test anything, but you may not want to
-		</p>
-		<ul>
-			<li>
-				examples of tests with checkboxes
-				<ul>
-					<li>do we get value from this test?</li>
-					<li>let’s pick the fastest test that gives us value</li>
-					<li>
-						unit test is no if mocking everything out makes it pass trivially
-					</li>
-				</ul>
-			</li>
-		</ul>
 		<aside class="notes">
-			test that business logic occurs where everything else passes through. we
-			can test at all levels, but get all our value from the unit test
+			<p>
+				you can use any of these tools to test anything, but you may not want to
+			</p>
 		</aside>
 	</section>
 	<section data-auto-animate>
-		<h2>Types of tests</h2>
 		<h3>Which type to pick</h3>
 		<pre><code data-trim data-noescape data-line-numbers class="language-ts">
 // pretend there is business logic here
@@ -251,6 +237,7 @@ const x = '1' + '2';
 		<table data-id="test-types-table">
 			<thead>
 				<tr>
+					<th></th>
 					<th style="text-align: center">Unit</th>
 					<th style="text-align: center">Integration</th>
 					<th style="text-align: center">End-to-end</th>
@@ -258,6 +245,31 @@ const x = '1' + '2';
 			</thead>
 			<tbody>
 				<tr>
+					<th>Value</th>
+					<td
+						class="fragment"
+						data-fragment-index="2"
+						style="text-align: center"
+					>
+						✅
+					</td>
+					<td
+						class="fragment"
+						data-fragment-index="1"
+						style="text-align: center"
+					>
+						✅
+					</td>
+					<td
+						class="fragment"
+						data-fragment-index="0"
+						style="text-align: center"
+					>
+						✅
+					</td>
+				</tr>
+				<tr>
+					<th>Effort</th>
 					<td
 						class="fragment"
 						data-fragment-index="2"
@@ -288,14 +300,63 @@ const x = '1' + '2';
 		</aside>
 	</section>
 	<section data-auto-animate>
-		<h2>Types of tests</h2>
 		<h3>Which type to pick</h3>
-		<pre><code data-trim data-noescape data-line-numbers class="language-ts">
-// pretend there is a database query here
+		<pre><code data-trim data-noescape data-line-numbers style="height: 300px">
+var dbStaticResources []db.StaticResource
+query := s.dbClient.
+    Model(db.StaticResource{}).
+    WithContext(ctx).
+    Distinct().
+    Select(
+       "static_resources.id",
+       "static_resources.grade",
+       "static_resources.title",
+    )
+
+if input != nil {
+    if input.ResourceType.IsValid() {
+       query = query.Where("static_resource_type = ?", input.ResourceType)
+    }
+    if len(input.Grades) > 0 {
+       query = query.Where("grade IN (?)", input.Grades)
+    }
+    if len(input.SubjectAreas) > 0 {
+       query = query.Joins(`INNER JOIN subject_area_resource_mappings ON
+             subject_area_resource_mappings.static_resource_id=static_resources.id             AND subject_area_resource_mappings.deleted_at IS NULL`).
+          Where("subject_area_resource_mappings.subject_area_id IN (?)", input.SubjectAreas)
+    }
+    if len(input.TaskTypes) > 0 {
+       query = query.Joins(`INNER JOIN task_type_resource_mappings ON
+             task_type_resource_mappings.static_resource_id=static_resources.id             AND task_type_resource_mappings.deleted_at IS NULL`).
+          Where("task_type_resource_mappings.task_type_id IN (?)", input.TaskTypes)
+    }
+    if len(input.Keywords) > 0 {
+       query = query.Joins(`LEFT JOIN keywords_resource_mappings ON
+             keywords_resource_mappings.static_resource_id=static_resources.id             AND keywords_resource_mappings.deleted_at IS NULL`).
+          Joins(`LEFT JOIN keywords ON keywords.id=keywords_resource_mappings.keyword_id
+             AND keywords.deleted_at IS NULL`)
+
+       innerQuery := s.dbClient.WithContext(ctx)
+       for index := range input.Keywords {
+          innerQuery = innerQuery.Or("keywords.keyword ~* ? OR static_resources.title ~* ?",
+             fmt.Sprintf(`.*%s.*`, input.Keywords[index]),
+             fmt.Sprintf(`.*%s.*`, input.Keywords[index]))
+       }
+       query = query.Where(innerQuery)
+    }
+}
+
+err := query.Joins("File", func(db *gorm.DB) *gorm.DB {
+    return db.Select("id", "url", "thumbnail_url")
+}).Find(&dbStaticResources, "static_resources.is_archived = false").Error
+if err != nil && !errors.Is(err, gorm.ErrRecordNotFound) {
+    return nil, fmt.Errorf("services.GetAll: Error running query find: %w", err)
+}
   </code></pre>
 		<table data-id="test-types-table">
 			<thead>
 				<tr>
+					<th></th>
 					<th style="text-align: center">Unit</th>
 					<th style="text-align: center">Integration</th>
 					<th style="text-align: center">End-to-end</th>
@@ -303,16 +364,10 @@ const x = '1' + '2';
 			</thead>
 			<tbody>
 				<tr>
+					<th>Effort</th>
 					<td
 						class="fragment"
-						data-fragment-index="2"
-						style="text-align: center"
-					>
-						❌
-					</td>
-					<td
-						class="fragment"
-						data-fragment-index="1"
+						data-fragment-index="0"
 						style="text-align: center"
 					>
 						✅
@@ -324,17 +379,78 @@ const x = '1' + '2';
 					>
 						✅
 					</td>
+					<td
+						class="fragment"
+						data-fragment-index="1"
+						style="text-align: center"
+					>
+						❌
+					</td>
+				</tr>
+				<tr>
+					<th>Value</th>
+					<td
+						class="fragment"
+						data-fragment-index="4"
+						style="text-align: center"
+					>
+						❌
+					</td>
+					<td
+						class="fragment"
+						data-fragment-index="3"
+						style="text-align: center"
+					>
+						✅
+					</td>
+					<td
+						class="fragment"
+						data-fragment-index="2"
+						style="text-align: center"
+					>
+						✅
+					</td>
 				</tr>
 			</tbody>
 		</table>
 		<aside class="notes">
-			test that we write a good database query. we can make a unit test, but we
-			need to use mocks, so we don't get value. integration is the lowest level
-			with value
+			<p>
+				How about this example? We have some complicated logic here but all it
+				does is determine what SQL we end up using to hit the database. First of
+				all, what kind of tests are feasible for code like this? All of them, I
+				can write any of these types to see that this works. We do have a lot of
+				conditions that we may want to check all at once though. If we really
+				want to test various conditions here, and if we think about the setup
+				required...
+			</p>
+			<ul>
+				<li>
+					It won't be tough to set up some mocks for a unit test or seed some
+					data for an integration test...
+				</li>
+				<li>
+					But if we wanted to do something more end-to-end, then we could be
+					looking at duplicating this test and all of its setup multiple times.
+				</li>
+				<li>
+					But that's not to say we can't get the value for which we're looking
+					if we go down that path.
+				</li>
+				<li>
+					But we can get that value from integration tests that actually hit the
+					database too.
+				</li>
+				<li>
+					But I'm actually not sure that we get much value from a unit test
+					here. If we set up a mock for our database, even if we verify the
+					actual SQL, we get to return whatever data we say that database should
+					return and we have no idea if the SQL is correct. So for this example,
+					an integration test feels like the right level.
+				</li>
+			</ul>
 		</aside>
 	</section>
 	<section data-auto-animate>
-		<h2>Types of tests</h2>
 		<h3>Which type to pick</h3>
 		<pre><code data-trim data-noescape data-line-numbers class="language-ts">
 // test that a user can record audio and submit a message
@@ -342,6 +458,7 @@ const x = '1' + '2';
 		<table data-id="test-types-table">
 			<thead>
 				<tr>
+					<th></th>
 					<th style="text-align: center">Unit</th>
 					<th style="text-align: center">Integration</th>
 					<th style="text-align: center">End-to-end</th>
@@ -349,9 +466,10 @@ const x = '1' + '2';
 			</thead>
 			<tbody>
 				<tr>
+					<th>Effort</th>
 					<td
 						class="fragment"
-						data-fragment-index="2"
+						data-fragment-index="0"
 						style="text-align: center"
 					>
 						❌
@@ -361,11 +479,35 @@ const x = '1' + '2';
 						data-fragment-index="1"
 						style="text-align: center"
 					>
+						✅
+					</td>
+					<td
+						class="fragment"
+						data-fragment-index="2"
+						style="text-align: center"
+					>
+						✅
+					</td>
+				</tr>
+				<tr>
+					<th>Value</th>
+					<td
+						class="fragment"
+						data-fragment-index="4"
+						style="text-align: center"
+					>
 						❌
 					</td>
 					<td
 						class="fragment"
-						data-fragment-index="0"
+						data-fragment-index="4"
+						style="text-align: center"
+					>
+						❌
+					</td>
+					<td
+						class="fragment"
+						data-fragment-index="3"
 						style="text-align: center"
 					>
 						✅
@@ -374,54 +516,43 @@ const x = '1' + '2';
 			</tbody>
 		</table>
 		<aside class="notes">
-			test that a user can record audio and submit a message. we could write
-			various integration tests but how can we prove that one leads to another
-			and everything feeds into one another?
-		</aside>
-	</section>
-	<section data-auto-animate>
-		<h2>Types of tests</h2>
-		<h3>Which type to pick</h3>
-		<pre><code data-trim data-noescape data-line-numbers class="language-ts">
-// test that... think about not having
-  </code></pre>
-		<table data-id="test-types-table">
-			<thead>
-				<tr>
-					<th style="text-align: center">Unit</th>
-					<th style="text-align: center">Integration</th>
-					<th style="text-align: center">End-to-end</th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr>
-					<td
-						class="fragment"
-						data-fragment-index="2"
-						style="text-align: center"
-					>
-						❌
-					</td>
-					<td
-						class="fragment"
-						data-fragment-index="1"
-						style="text-align: center"
-					>
-						❌
-					</td>
-					<td
-						class="fragment"
-						data-fragment-index="0"
-						style="text-align: center"
-					>
-						❌
-					</td>
-				</tr>
-			</tbody>
-		</table>
-		<aside class="notes">
-			test that... think about not having. hmm... I don't know, but the point is
-			to convince that there are some ideas that don't have any testing value
+			<p>
+				Now let's suppose that we have a need to test that a user can record
+				audio and submit a message. We could write various integration tests but
+				how can we prove that one leads to another and everything feeds into one
+				another?
+			</p>
+			<ul>
+				<li>
+					I can think of this in terms of the human behavior of what they want
+					to perform and what they hope to see, but it would require so many
+					interconnected units, there is basically no way to unit test this. We
+					could unit test various points along the way but that doesn't address
+					the goal for this test we want to write.
+				</li>
+				<li>
+					We could maybe put something together with several key integration
+					tests that hit APIs that we know it will require.
+				</li>
+				<li>
+					And we could also write a full end-to-end test of the entire process
+					that a user experiences.
+				</li>
+				<li>
+					Which honestly is fitting our need. If we had concerns about just the
+					upload feature or just the displaying of recordings feature, we could
+					do those in integration tests...
+				</li>
+				<li>
+					But for this, we decide that the value we hope to achieve is that the
+					user not only will eventually see this info but that they instantly
+					see it as soon as they navigate to that page. To truly test that full
+					user experience, which we do feel is a critical need for our
+					application, we decide that, despite the longer runtime and trickier
+					maintainability of end-to-end tests, that that is the right level for
+					this.
+				</li>
+			</ul>
 		</aside>
 	</section>
 </section>
@@ -469,10 +600,6 @@ const x = '1' + '2';
 	<h2>Delete tests that no longer serve you</h2>
 </section>
 <section data-auto-animate data-auto-animate-restart>
-	<h2>Test until fear turns into boredom</h2>
-	<p>Kent Back</p>
-</section>
-<section data-auto-animate data-auto-animate-restart>
 	<h2>Test where your code gives you fear</h2>
 </section>
 <section data-auto-animate data-auto-animate-restart>
@@ -486,4 +613,83 @@ const x = '1' + '2';
 </section>
 <section data-auto-animate data-auto-animate-restart>
 	<h2>test behavior, not implementation</h2>
+</section>
+<section>
+	<h2>You have to start somewhere</h2>
+	<p>Test the change you want to see in the world</p>
+	<p class="fragment">Be the change you want to see in the world</p>
+	<aside class="notes">
+		<p>
+			Ideally, we should be testing the changes that we want to make in the app.
+			That can be tough when no pattern exists yet. And it's not always a good
+			time to make that investment into creating tests where there aren't any.
+			But if it's something you're passionate about...
+		</p>
+		<ul>
+			<li>
+				Maybe it's up to you to <strong>be</strong> the change you want to see
+				in your codebase. Stand up for it and champion the cause.
+			</li>
+		</ul>
+	</aside>
+</section>
+<section>
+	<h2>Adding front-end tests</h2>
+	<pre><code data-trim data-line-numbers="|19-25,27|12,15,26">
+const keywords: MockedResponse&lt;GetKeywordsQuery> = {
+	request: {
+		query: GetKeywordsDocument,
+	},
+	result: {
+		data: {
+			keyword: [{ id: '1234', keyword: 'hello' }],
+		},
+	},
+};
+it('should add new keyword', async () => {
+	const onChange = vi.fn();
+	render(
+		&lt;MockedProvider mocks={[keywords]}>
+			&lt;AddKeywordTags onChange={onChange} />
+		&lt;/MockedProvider>
+	);
+
+	const combobox = screen.getByRole('combobox');
+	await waitFor(() => expect(combobox).not.toBeDisabled(), {
+		timeout: 500,
+	});
+	await userEvent.type(combobox, 'world');
+	expect(screen.getByDisplayValue('world')).toBeInTheDocument();
+	await userEvent.keyboard('{enter}');
+	expect(onChange).not.toHaveBeenCalled();
+	expect(screen.getByText('Add a new keyword')).toBeVisible();
+});
+  </code></pre>
+	<aside class="notes">
+		<p>
+			On my current team, we inherited a project that had all kinds of front-end
+			components but not a single front-end test. It was something that always
+			bothered us and it did not make sense for us to go in and start adding
+			hundreds of tests when we could be working on feature work. But when we
+			started tackling something that behaved a bit strange in the front-end, it
+			was our opportunity.
+		</p>
+		<ul>
+			<li>
+				Notice that we are trying to keep this behavior-focused. We want to
+				think of this less as what data outputs do we want for given data
+				inputs, but rather what result should a user see when they interact in
+				certain ways.
+			</li>
+			<li>
+				Sometimes, though, it can be hard to truly get out of implementation
+				details. This here is not ideal; we are mocking a function and asking
+				about whether it got called. The reason for this is that the way this
+				component had been written, this would be incorporated on a form, and it
+				would manage all change events and form states. We could do this another
+				way if we wanted to test the entire form on which this component is
+				used, but that is more than we wanted to test for this story.
+			</li>
+		</ul>
+	</aside>
 </section>

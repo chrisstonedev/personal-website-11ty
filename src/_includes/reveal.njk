@@ -6,6 +6,7 @@
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<link rel="stylesheet" href="/reveal/reveal.css">
 	<link rel="stylesheet" href="/reveal/white.css" id="theme">
+	<link rel="stylesheet" href="/highlight/a11y-light.css">
 	<link rel="stylesheet" href="/reveal-override.css">
 	<title>{{ title if title === 'Chris Stone' else title + ' - Chris Stone' }}</title>
 	<meta name="description" property="og:description" content="{{ description }}">
@@ -29,13 +30,13 @@
 <script>
 	Reveal.initialize({
 		controls: false,
-		progress: true,
-		history: false,
-		center: true,
-		plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ],
-		pdfSeparateFragments: false,
 		hash: true,
-		showNotes: true,
+		history: false,
+		navigationMode: 'linear',
+		pdfSeparateFragments: false,
+		plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ],
+		progress: true,
+		showNotes: false,
 	});
 </script>
 </body>

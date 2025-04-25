@@ -14,6 +14,8 @@ export default function (eleventyConfig) {
 	eleventyConfig.addPassthroughCopy(`./${inputDirectory}/favicon.ico`);
 	eleventyConfig.addPassthroughCopy(`./${inputDirectory}/_redirects`);
 	eleventyConfig.addPassthroughCopy({
+		'node_modules/highlight.js/styles/a11y-light.css':
+			'highlight/a11y-light.css',
 		'node_modules/reveal.js/dist/reveal.css': 'reveal/reveal.css',
 		'node_modules/reveal.js/dist/reveal.js': 'reveal/reveal.js',
 		'node_modules/reveal.js/dist/theme/fonts/source-sans-pro/source-sans-pro.css':

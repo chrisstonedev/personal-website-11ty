@@ -24,6 +24,7 @@
     "sharp": "^0.33.4"
   },
   "dependencies": {
+    "highlight.js": "^11.11.1",
     "reveal.js": "^5.2.1"
   }
 }
