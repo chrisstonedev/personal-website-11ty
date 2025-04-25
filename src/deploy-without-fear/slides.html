@@ -6,28 +6,59 @@ layout: reveal.njk
 
 <section>
 	<h1 class="r-fit-text">Deploy Without Fear<br />Using Automated Tests</h1>
-	<p>Chris Stone</p>
-	<p>Atlanta Cloud Conference 2025</p>
+	<div
+		style="display: grid; grid-template-columns: 2fr 1fr; align-items: center"
+	>
+		<p>Chris Stone<br /><a href="/">https://chrisstone.dev</a></p>
+		<a href="/deploy-without-fear"
+			><img
+				src="/img/deploy-without-fear-2d-code.svg"
+				alt="QR code for talk notes and slides"
+		/></a>
+	</div>
+	<aside class="notes">
+		Hello everyone! Thank you for coming to my talk. I'm Chris, and I'm going to
+		talk about automated tests, and I'm going to talk about fear. If you go to
+		chrisstone.dev or scan this QR code, you can get talk notes and the slides.
+	</aside>
 </section>
 <section
 	data-background="/img/deploy-without-fear-slides-sponsor-slide.png"
 	data-background-size="contain"
-></section>
-<section>
-	<h2>Goals today</h2>
-	<ul>
-		<li>Share my appreciation of automated tests</li>
-		<li>Inspire writing tests</li>
-	</ul>
+>
+	<aside class="notes">
+		I am happy to be here at Atlanta Cloud Conference, and I want to express my
+		gratitude to the organizers, the sponsors, the volunteers, my fellow
+		speakers, and everyone who came out today.
+	</aside>
 </section>
 <section>
-	<h2>Challenges teams face with testing</h2>
+	<h2>My goals today</h2>
 	<ul>
-		<li><strong>How</strong> should tests best be written?</li>
-		<li><strong>Who</strong> is empowered to own testing?</li>
-		<li><strong>What</strong> is the right thing to test?</li>
-		<li><strong>What</strong> is the right thing to test?</li>
-		<li>Not knowing what to test</li>
+		<li>Share lessons learned adding automated testing on various teams</li>
+		<li>Show my appreciation of automated tests and what they can do for us</li>
+		<li>Teach some basics of types of tests</li>
+		<li>Inspire people here to write some great tests</li>
+	</ul>
+	<aside class="notes">My goals today...</aside>
+</section>
+<section>
+	<h2>Why don't people write tests?</h2>
+	<ul>
+		<li>Not sure what to test</li>
+		<li>Not sure what a "good test" looks like</li>
+		<li>Someone else is in charge of the tests</li>
+	</ul>
+	<aside class="notes">
+		...and while I can't answer these questions on behalf of your team, I hope
+		that I can inspire you to think critically about some of these and maybe
+		even gain some energy to fight for some good patterns. Also...
+	</aside>
+</section>
+<section data-auto-animate>
+	<h2>Why do I write tests?</h2>
+	<ul>
+		<li>Other things</li>
 	</ul>
 	<aside class="notes">
 		...and while I can't answer these questions on behalf of your team, I hope
@@ -110,15 +141,27 @@ const x = '1' + '2';
 		<h3>Executable documentation</h3>
 		<h4>What does it mean to have effective documentation?</h4>
 		<ul>
-			<li class="fragment custom faded">
-				Readable
-				<aside class="notes">
+			<li class="fragment custom faded">Readable</li>
+			<li class="fragment custom faded">Relevant</li>
+			<li class="fragment custom faded">Applicable</li>
+		</ul>
+		<aside class="notes">
+			<p>Hi</p>
+			<ul>
+				<li>
 					For one, tests should be readable. Just like with any code that we
 					write, we optimize for readability.
-				</aside>
-			</li>
-			<li class="fragment custom faded">Relevant</li>
-		</ul>
+				</li>
+				<li>
+					For one, tests should be readable. Just like with any code that we
+					write, we optimize for readability.
+				</li>
+				<li>
+					For one, tests should be readable. Just like with any code that we
+					write, we optimize for readability.
+				</li>
+			</ul>
+		</aside>
 	</section>
 	<aside class="notes">
 		What does it mean to have effective documentation?
@@ -129,6 +172,22 @@ const x = '1' + '2';
 		<h2>Types of tests</h2>
 		<ul>
 			<li>Unit</li>
+			<li>Integration</li>
+			<li>End-to-end</li>
+		</ul>
+		<aside class="notes">Hello!z</aside>
+	</section>
+	<section data-auto-animate>
+		<h2>Types of tests</h2>
+		<ul>
+			<li>
+				Unit
+				<ul class="fragment grow">
+					<li>a</li>
+					<li>b</li>
+					<li>c</li>
+				</ul>
+			</li>
 			<li>Integration</li>
 			<li>End-to-end</li>
 		</ul>
