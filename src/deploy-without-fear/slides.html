@@ -9,7 +9,10 @@ layout: reveal.njk
 	<div
 		style="display: grid; grid-template-columns: 2fr 1fr; align-items: center"
 	>
-		<p>Chris Stone<br /><a href="/">https://chrisstone.dev</a></p>
+		<div>
+			<p>Chris Stone<br />Senior Software Engineer<br />Flashlight Learning</p>
+			<p><a href="/">https://chrisstone.dev</a></p>
+		</div>
 		<a href="/deploy-without-fear"
 			><img
 				src="/img/deploy-without-fear-2d-code.svg"
@@ -582,7 +585,7 @@ it("should only alert when less than average", () => {
 				<img
 					src="/img/deploy-without-fear-slides-test-pyramid.png"
 					alt="Test Pyramid"
-					style="height: 50%"
+					style="height: 250px"
 				/>
 				<figcaption>Test Pyramid</figcaption>
 			</figure>
@@ -590,12 +593,14 @@ it("should only alert when less than average", () => {
 				<img
 					src="/img/deploy-without-fear-slides-test-trophy.jpg"
 					alt="Test Pyramid"
-					style="height: 50%"
+					style="height: 250px"
 				/>
 				<figcaption>Test Trophy</figcaption>
 			</figure>
 		</div>
-		<p class="fragment">Pick the lowest level that gives value.</p>
+		<p class="fragment">
+			<strong>Pick the lowest level that gives value.</strong>
+		</p>
 		<aside class="notes">
 			<p>
 				That alone sort of simplifies the whole concept, and it's possible to
@@ -1394,7 +1399,8 @@ it('should add new keyword', async () => {
 					Notice that we are trying to keep this behavior-focused. We want to
 					think of this less as what data outputs do we want for given data
 					inputs, but rather what result should a user see when they interact in
-					certain ways.
+					certain ways. As much as you can help it, you want your tests to focus
+					on the behavior, not the implementation details.
 				</li>
 				<li>
 					Sometimes, though, it can be hard to truly get out of implementation
@@ -1517,7 +1523,10 @@ jobs:
 	<div
 		style="display: grid; grid-template-columns: 2fr 1fr; align-items: center"
 	>
-		<p>Chris Stone<br /><a href="/">https://chrisstone.dev</a></p>
+		<div>
+			<p>Chris Stone<br />Senior Software Engineer<br />Flashlight Learning</p>
+			<p><a href="/">https://chrisstone.dev</a></p>
+		</div>
 		<a href="/deploy-without-fear"
 			><img
 				src="/img/deploy-without-fear-2d-code.svg"
