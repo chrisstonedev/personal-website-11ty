@@ -187,7 +187,7 @@ layout: reveal.njk
 	<h3>Code coverage</h3>
 	<p>100% is not realistic and not useful.</p>
 	<p>You can increase coverage while not testing things of value.</p>
-	<aside class="notes">Hello</aside>
+	<aside class="notes">Code coverage</aside>
 </section>
 <section data-auto-animate>
 	<h2>Reasons to test</h2>
@@ -553,8 +553,8 @@ if err != nil && !errors.Is(err, gorm.ErrRecordNotFound) {
 					But I'm actually not sure that we get much value from a unit test
 					here. If we set up a mock for our database, even if we verify the
 					actual SQL, we get to return whatever data we say that database should
-					return and we have no idea if the SQL is correct. So for this example,
-					an integration test feels like the right level.
+					return, and we have no idea if the SQL is correct. So for this
+					example, an integration test feels like the right level.
 				</li>
 			</ul>
 		</aside>
@@ -709,13 +709,7 @@ if err != nil && !errors.Is(err, gorm.ErrRecordNotFound) {
 	<h2>Delete tests that no longer serve you</h2>
 </section>
 <section data-auto-animate data-auto-animate-restart>
-	<h2>Test where your code gives you fear</h2>
-</section>
-<section data-auto-animate data-auto-animate-restart>
 	<h2>Refactoring means not changing what happens</h2>
-</section>
-<section data-auto-animate data-auto-animate-restart>
-	<h2>unit integration and end-to-end test definitions</h2>
 </section>
 <section data-auto-animate data-auto-animate-restart>
 	<h2>Linters?</h2>
@@ -737,14 +731,325 @@ if err != nil && !errors.Is(err, gorm.ErrRecordNotFound) {
 		<ul>
 			<li>
 				Maybe it's up to you to <strong>be</strong> the change you want to see
-				in your codebase. Stand up for it and champion the cause.
+				in your codebase. Stand up for it and champion the cause. I'll share
+				some stories of how I and my team did just that on an application that
+				was originally written by a third party and did not have much test
+				coverage.
 			</li>
 		</ul>
 	</aside>
 </section>
 <section>
-	<h2>Adding front-end tests</h2>
-	<pre><code data-trim data-line-numbers="|19-25,27|12,15,26">
+	<section data-auto-animate>
+		<h2>Adding back-end tests</h2>
+		<ul>
+			<li class="fragment">
+				The more we prepare data in the backend for how the frontend will use
+				it, the more we can rely on quick back-end unit tests.
+			</li>
+			<li class="fragment">
+				Difference between a unit and integration test may just be whether an
+				interface is <strong>mocked</strong> or if its
+				<strong>implementation</strong> is actually used.
+			</li>
+		</ul>
+		<img src="/img/testify.png" alt="Testify logo" class="fragment" />
+		<aside class="notes">
+			<p>
+				One nice thing about this project is that there were back-end tests,
+				just not a lot of them. But at least it gave us a starting point.
+			</p>
+			<ul>
+				<li>
+					Something to consider in general with back-end development is that, if
+					you know how the front-end will interact with this data, and you can
+					do all of your in-memory modifications in the back-end, then you can
+					unit test those modifications in what will generally be your fastest
+					tests to run of all.
+				</li>
+				<li>
+					There are several libraries out there for all kinds of languages, and
+					the tool is not going to be what determines if it is unit or
+					integration, it is whether dependencies behind interfaces are mocked
+					or if we actually allow the code to hit a test database or a test API.
+				</li>
+				<li>
+					Our back-end is Go, and the project used Testify, which we continue to
+					use; it is a great library. On .NET projects, I have used NUnit and
+					xUnit. There are many options for your needs.
+				</li>
+			</ul>
+		</aside>
+	</section>
+	<section data-auto-animate>
+		<h2>Adding back-end tests</h2>
+		<pre><code data-trim data-line-numbers data-id="endToEndSample" class="language-go">
+func TestMyFunction(t *testing.T) {
+	var myTests = []struct {
+		inputValue     int
+		expectedOutput string
+	}{
+		{inputValue: 2, expectedOutput: "critical"},
+		{inputValue: 3, expectedOutput: "low"},
+		{inputValue: 10, expectedOutput: "high"},
+	}
+	for _, tt := range myTests {
+		actualOutput, actualError := MyFunction(tt.inputValue)
+		require.Equal(t, tt.expectedOutput, actualOutput)
+	}
+}
+		</code></pre>
+		<aside class="notes">
+			Here is a super simplified example of a unit test we can have. Let's say
+			that we are tracking some sort of numerical data, and we have discrete
+			levels at which we need to display a text state. We can set up many test
+			cases and have them quickly check this business logic in a function that
+			only has that one purpose, and then we can trust that value when it get
+			passed back to the front-end.
+		</aside>
+	</section>
+</section>
+<section>
+	<section data-auto-animate>
+		<h2>Adding end-to-end tests</h2>
+		<ul>
+			<li class="fragment">
+				Highest and smallest on both the pyramid and the trophy
+			</li>
+			<li class="fragment">
+				That doesn't mean to not write them; they can be very helpful
+			</li>
+		</ul>
+		<img
+			src="/img/playwright.svg"
+			alt="Playwright logo"
+			height="200px"
+			class="fragment"
+		/>
+		<aside class="notes">
+			<p>
+				On my team, we inherited an application that had been developed by a
+				third party, and testing was not in a great state. There were a few unit
+				tests, no integration tests, and the only end-to-end tests that existed
+				hadn't been run in a year, so many just failed now.
+			</p>
+			<ul>
+				<li>
+					End-to-end tests are on the top of the pyramid, and it is generally
+					agreed that they take the longest to run, and it can hurt to see them
+					fail.
+				</li>
+				<li>
+					But that does not mean to avoid them. They are a powerful tool, and
+					end-to-end test libraries have only improved with time. Many teams
+					have success with libraries like Selenium and Cypress...
+				</li>
+				<li>
+					But we chose Playwright as our tool of choice. It runs very fast, it
+					comes with support for different browsers out of the box, and there is
+					a very strong community behind it.
+				</li>
+			</ul>
+		</aside>
+	</section>
+	<section data-auto-animate>
+		<h2>Adding end-to-end tests</h2>
+		<pre><code data-trim data-line-numbers="|7,11-13|20|" data-id="endToEndSample" class="language-ts">
+test('teacher can create new assignment',
+		async ({ page }) => {
+	await this.page.goto('/login');
+	await this.page
+      .locator('.MuiCircularProgress-svg')
+      .waitFor({ state: 'hidden' });
+	await this.page.getByRole('combobox').fill(districts.newDistrict.districtName);
+	await this.page
+		.getByRole('option', { name: district, exact: true })
+		.click();
+	await this.page.getByRole('textbox', { name: 'Username' }).fill(users.teacher.email);
+	await this.page.getByRole('textbox', { name: 'Password' }).fill(process.env.USER_PASSWORD!);
+	await this.page.getByRole('button', { name: 'Login' }).click();
+	await expect(this.page.getByLabel('account of current user')).toContainText(
+		`${users.superAdmin.firstName} ${users.superAdmin.lastName}`,
+	);
+	await this.page.getByRole('button', { name: 'create Assignment' }).click();
+	await this.page
+		.getByRole('main')
+		.getByRole('button', { name: '​', exact: true })
+		.click();
+	await this.page.getByText(className).click();
+	// ...
+});
+  </code></pre>
+		<p>We started with Playwright Codegen</p>
+		<aside class="notes">
+			<p>
+				Starting is actually very easy. Once you have set up a Playwright
+				project, while there is certainly a learning curve to understand how to
+				best use it, it is possible to dive right into creating tests using
+				their test code generation tool. It will open up a browser and record
+				all actions you take and generate a test for you.
+			</p>
+			<ul>
+				<li>
+					As you can see, it even tries to use semantic information from your
+					page to determine reliable locators.
+				</li>
+				<li>
+					But you can still get weird results if your app is not accessible. In
+					this case, I am trying to click on what I think is a drop-down select
+					element, but it is actually constructed of other components, where the
+					drop-down arrow is a button that has no text, so we look for a button
+					with absolutely no text. Just looking at this should be a red flag
+					because, if our test can't target anything more specific about this
+					button and its perceived role, then what hope does someone using a
+					screen reader have? But this is the best it can do for now, so we make
+					note of that for our accessibility audit we aim to have.
+				</li>
+				<li>
+					But at least we have a test now. But it's not very readable, is it? It
+					could be much, much worse, but if someone wanted to know, what is the
+					purpose of this test, it might take a while to truly understand.
+				</li>
+			</ul>
+		</aside>
+	</section>
+	<section data-auto-animate>
+		<h2>Adding end-to-end tests</h2>
+		<pre><code data-trim data-line-numbers="|3-7" data-id="endToEndSample" class="language-ts">
+test('teacher can create new assignment',
+		async ({ loginPage, header, teacherPage }) => {
+	await loginPage.login(
+		districts.newDistrict.districtName,
+		users.teacher.email,
+		process.env.USER_PASSWORD!,
+	);
+	await expect(header.usernameButton).toContainText(
+		`${users.teacher.firstName} ${users.teacher.lastName}`,
+	);
+	await teacherPage.createNewAssignment();
+	await teacherPage.chooseClass(classes.newClass.className);
+	// ...
+});
+  </code></pre>
+		<p>We refactored with Page Object Model</p>
+		<aside class="notes">
+			<p>
+				So we then took some time and refactored our test code to using the Page
+				Object Model pattern. We are performing the exact same operations here
+				as before, but everything related to logging in can be abstracted into a
+				function, and the idea of clicking a button called Create to create an
+				assignment could benefit from some readability. It's in a better
+				direction now. Page Object Model always feels a little bit controversial
+				to me though, because if we just abstract every single line, then we are
+				hiding the true functionality, and it's easy now to change what these
+				functions do without remembering to change their names. But I still
+				ultimately enjoy this pattern because it does increase readability, and
+				we can understand the intent of a test much easier.
+			</p>
+			<ul>
+				<li>
+					One of our next big changes to the app was around the login process.
+					We got about a dozen tests up and running, and every single one of
+					them needed to go to a brand-new session and login as a user all over
+					again. It can be very time intensive, not to mention it looks like
+					suspicious behavior.
+				</li>
+			</ul>
+		</aside>
+	</section>
+	<section data-auto-animate>
+		<h2>Adding end-to-end tests</h2>
+		<pre><code data-trim data-line-numbers="|1" data-id="endToEndSample" class="language-ts">
+test.use({ storageState: StorageStates.teacher });
+test('teacher can create new assignment',
+		async ({ teacherPage }) => {
+	await teacherPage.page.goto('/');
+	await teacherPage.createNewAssignment();
+	await teacherPage.chooseClass(classes.newClass.className);
+	// ...
+});
+  	</code></pre>
+		<p>Took advantage of Storage State</p>
+		<aside class="notes">
+			<p>
+				So we took advantage of the storage state feature. We have a few users
+				we may need to log in as for various tests, so before any actual tests
+				get run, we log in as each of these users and save the state of the
+				browser context.
+			</p>
+			<ul>
+				<li>
+					Then, all of our tests simply need to call out which state they need,
+					and the test starts with them already authenticated. This saves us a
+					lot of time when running our tests.
+				</li>
+			</ul>
+		</aside>
+	</section>
+</section>
+<section>
+	<section data-auto-animate>
+		<h2>Adding front-end tests</h2>
+		<ul>
+			<li class="fragment" data-fragment-index="0">
+				Many libraries exist that help with both unit tests and integration
+				tests.
+			</li>
+			<li class="fragment" data-fragment-index="1">
+				Some front-end testing may be considered "component testing".
+			</li>
+		</ul>
+		<div style="display: flex; align-items: center; justify-content: center">
+			<img
+				src="/img/vite.svg"
+				alt="Vite logo"
+				height="200px"
+				class="fragment"
+				data-fragment-index="2"
+			/>
+			<span class="fragment" data-fragment-index="3">➡️</span>
+			<img
+				src="/img/vitest.svg"
+				alt="Vitest logo"
+				height="200px"
+				class="fragment"
+				data-fragment-index="3"
+			/>
+		</div>
+		<aside class="notes">
+			<p>
+				Now that we covered the critical paths with end-to-end testing, our
+				attention turned to the fact that we had no testing in our front-end.
+			</p>
+			<ul>
+				<li>
+					There are many libraries for front-end testing in web development, and
+					many of them can be used for both unit and integration testing.
+				</li>
+				<li>
+					There is also a lot of support for component testing. As for what
+					component testing is, it depends on who you ask. In my experience, if
+					you were to ask me, I still think of my tests as being unit or
+					integration based on whether I am testing a very small amount of
+					isolated behavior or if I am testing the integration between different
+					parts of my code or the integration of my code with a database or API
+					layer.
+				</li>
+				<li>
+					We use Vite as the build engine for our React app. There are several
+					libraries we could have chosen...
+				</li>
+				<li>
+					But ultimately picked Vitest. It works much like Jest but has a
+					similar build configuration to Vite, so they play nicely together, and
+					it seemed like a good choice for a new library for this project.
+				</li>
+			</ul>
+		</aside>
+	</section>
+	<section data-auto-animate>
+		<h2>Adding front-end tests</h2>
+		<pre><code data-trim data-line-numbers="|19-25,27|12,15,26">
 const keywords: MockedResponse&lt;GetKeywordsQuery> = {
 	request: {
 		query: GetKeywordsDocument,
@@ -774,31 +1079,53 @@ it('should add new keyword', async () => {
 	expect(screen.getByText('Add a new keyword')).toBeVisible();
 });
   </code></pre>
+		<aside class="notes">
+			<p>
+				On my current team, we inherited a project that had all kinds of
+				front-end components but not a single front-end test. It was something
+				that always bothered us, and it did not make sense for us to go in and
+				start adding hundreds of tests when we could be working on feature work.
+				But when we started tackling something that behaved a bit strange in the
+				front-end, it was our opportunity.
+			</p>
+			<ul>
+				<li>
+					Notice that we are trying to keep this behavior-focused. We want to
+					think of this less as what data outputs do we want for given data
+					inputs, but rather what result should a user see when they interact in
+					certain ways.
+				</li>
+				<li>
+					Sometimes, though, it can be hard to truly get out of implementation
+					details. This here is not ideal; we are mocking a function and asking
+					about whether it got called. The reason for this is that the way this
+					component had been written, this would be incorporated on a form, and
+					it would manage all change events and form states. We could do this
+					another way if we wanted to test the entire form on which this
+					component is used, but that is more than we wanted to test for this
+					story.
+				</li>
+			</ul>
+		</aside>
+	</section>
+</section>
+<section>
+	<h1>Thank you!</h1>
+	<div
+		style="display: grid; grid-template-columns: 2fr 1fr; align-items: center"
+	>
+		<p>Chris Stone<br /><a href="/">https://chrisstone.dev</a></p>
+		<a href="/deploy-without-fear"
+			><img
+				src="/img/deploy-without-fear-2d-code.svg"
+				alt="QR code for talk notes and slides"
+		/></a>
+	</div>
 	<aside class="notes">
-		<p>
-			On my current team, we inherited a project that had all kinds of front-end
-			components but not a single front-end test. It was something that always
-			bothered us and it did not make sense for us to go in and start adding
-			hundreds of tests when we could be working on feature work. But when we
-			started tackling something that behaved a bit strange in the front-end, it
-			was our opportunity.
-		</p>
-		<ul>
-			<li>
-				Notice that we are trying to keep this behavior-focused. We want to
-				think of this less as what data outputs do we want for given data
-				inputs, but rather what result should a user see when they interact in
-				certain ways.
-			</li>
-			<li>
-				Sometimes, though, it can be hard to truly get out of implementation
-				details. This here is not ideal; we are mocking a function and asking
-				about whether it got called. The reason for this is that the way this
-				component had been written, this would be incorporated on a form, and it
-				would manage all change events and form states. We could do this another
-				way if we wanted to test the entire form on which this component is
-				used, but that is more than we wanted to test for this story.
-			</li>
-		</ul>
+		And that is about it! There is so much more we could dive into on this
+		subject, but I hope that I helped you all see how valuable automated tests
+		can be and to start adding some new tests so you can get over any fears you
+		have of deploying and start being excited to continuously integrate! Thanks
+		everyone.
 	</aside>
 </section>
