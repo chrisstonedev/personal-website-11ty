@@ -106,7 +106,7 @@ layout: reveal.njk
 		</ul>
 	</aside>
 </section>
-<section data-auto-animate>
+<section data-auto-animate data-auto-animate-restart>
 	<h2>Dealing with fear</h2>
 	<blockquote style="width: 100%; font-size: 22pt">
 		I must not fear. Fear is the mind-killer. Fear is the little-death that
@@ -203,7 +203,7 @@ layout: reveal.njk
 		</ul>
 	</aside>
 </section>
-<section data-auto-animate>
+<section data-auto-animate data-auto-animate-restart>
 	<h2>Why do I write tests?</h2>
 	<ul>
 		<li>I get scared</li>
@@ -356,7 +356,7 @@ layout: reveal.njk
 		</ul>
 	</aside>
 </section>
-<section data-auto-animate>
+<section>
 	<section data-auto-animate>
 		<h2>Why do I write tests?</h2>
 		<h3>Tests are the best documentation</h3>
@@ -499,8 +499,8 @@ it("should only alert when less than average", () => {
 		</aside>
 	</section>
 </section>
-<section data-auto-animate data-auto-animate-restart>
-	<section data-auto-animate>
+<section>
+	<section data-auto-animate data-auto-animate-restart>
 		<h2 style="font-size: xxx-large">Types of tests</h2>
 		<ul>
 			<li>
@@ -1033,7 +1033,7 @@ if err != nil && !errors.Is(err, gorm.ErrRecordNotFound) {
 	</aside>
 </section>
 <section>
-	<section data-auto-animate>
+	<section data-auto-animate data-auto-animate-restart>
 		<h2>Adding back-end tests</h2>
 		<ul>
 			<li class="fragment">
@@ -1103,7 +1103,7 @@ func TestMyFunction(t *testing.T) {
 	</section>
 </section>
 <section>
-	<section data-auto-animate>
+	<section data-auto-animate data-auto-animate-restart>
 		<h2>Adding end-to-end tests</h2>
 		<ul>
 			<li class="fragment">
@@ -1281,7 +1281,7 @@ test('teacher can create new assignment',
 	</section>
 </section>
 <section>
-	<section data-auto-animate>
+	<section data-auto-animate data-auto-animate-restart>
 		<h2>Adding front-end tests</h2>
 		<ul>
 			<li class="fragment" data-fragment-index="0">
@@ -1403,7 +1403,7 @@ it('should add new keyword', async () => {
 	</section>
 </section>
 <section>
-	<section data-auto-animate>
+	<section data-auto-animate data-auto-animate-restart>
 		<h2>Adding to CI/CD</h2>
 		<pre><code data-trim data-line-numbers="|25-28|30-33|20-23,30-33" class="language-yaml">
 jobs:
