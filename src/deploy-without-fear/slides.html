@@ -30,7 +30,7 @@ layout: reveal.njk
 	<aside class="notes">
 		I am happy to be here at Atlanta Cloud Conference, and I want to express my
 		gratitude to the organizers, the sponsors, the volunteers, my fellow
-		speakers, and everyone who came out today.
+		speakers, and all of you who came out today.
 	</aside>
 </section>
 <section>
@@ -39,7 +39,7 @@ layout: reveal.njk
 		<li>Share lessons learned adding automated testing</li>
 		<li>Teach some basics of types of tests</li>
 		<li>Show my appreciation of automated tests and what they can do for us</li>
-		<li>Inspire people here to write some great tests</li>
+		<li>Inspire people to start or continue writing some great tests</li>
 	</ul>
 	<aside class="notes">
 		My goals today: share lessons I have learned adding automated testing on
@@ -55,7 +55,8 @@ layout: reveal.njk
 		<li>Not sure what to test</li>
 		<li>Not sure what a "good test" looks like</li>
 		<li>Someone else is in charge of the tests</li>
-		<li>Content to test manually</li>
+		<li>Perfectly content to test manually</li>
+		<li>No good pattern in the app yet</li>
 	</ul>
 	<aside class="notes">
 		Through my career, I have heard from various people who have not had an
@@ -252,10 +253,10 @@ layout: reveal.njk
 	<h3>Regression detection</h3>
 	<ul>
 		<li class="fragment custom faded">
-			Tests should run on every commit in CI/CD
+			A good test is possible to fail someday
 		</li>
 		<li class="fragment custom faded">
-			A good test is possible to fail someday
+			Tests should run on every commit in CI/CD
 		</li>
 		<li class="fragment custom faded">
 			Address flaky tests, team should have faith in the test suite
@@ -268,14 +269,14 @@ layout: reveal.njk
 		</li>
 	</ul>
 	<aside class="notes">
-		<p>
-			Another reason is regression detection. A good test is one that could
-			conceivably fail. Imagine writing a test that tests that adding two
-			numbers together returns the sum. Addition will always be the same. A good
-			test will test something valuable and meaningful, something that would
-			scare us if it did go wrong.
-		</p>
+		<p>Another reason is regression detection.</p>
 		<ul>
+			<li>
+				A good test is one that could conceivably fail. Imagine writing a test
+				that tests that adding two numbers together returns the sum. Addition
+				will always be the same. A good test will test something valuable and
+				meaningful, something that would scare us if it did go wrong.
+			</li>
 			<li>
 				By putting these tests in our CI/CD pipelines, we get near instant
 				feedback if we have a problem so we can know the exact commit in which
@@ -400,16 +401,16 @@ export function isLevelInDanger(oldScores: number[],
 			If we have code comments, we are more likely to encounter them, and,
 			ideally, we change them if they ever become untrue. Here, we have a sample
 			function where the function is named for the intended effect, with a
-			comment explaining the business priority. Let's say a product manager it
-			must be less than the average for the alert to go off. Weeks go by, and
-			they change their mind, if it is an exact match, they want that to alert
-			too.
+			comment explaining the business priority. Let's say a product manager
+			states it must be less than the average for the alert to go off. Weeks go
+			by, and they change their mind, if it is an exact match, they want that to
+			alert too.
 		</aside>
 	</section>
 	<section data-auto-animate>
 		<h2>Why do I write tests?</h2>
 		<h3>Tests are the best documentation</h3>
-		<pre><code data-id="comment-animation" data-trim data-noescape data-line-numbers="6" class="language-ts">
+		<pre><code data-id="comment-animation" data-trim data-noescape data-line-numbers="6|4,6" class="language-ts">
 export function isLevelInDanger(oldScores: number[],
 		newScore: number) {
 	// An alert should be displayed
@@ -420,12 +421,19 @@ export function isLevelInDanger(oldScores: number[],
   	</code></pre>
 		<p>Comments can lie</p>
 		<aside class="notes">
-			So that change is made in the code. Weeks later, someone who wasn't on
-			that Slack chain is panicking. It's alerting when the new score is an
-			exact match for the average. Someone looks at this code and believes that
-			someone made a typo and promises to take out the equal sign, because they
-			believe the comment, instead of pushing back and trying to understand the
-			discrepancy.
+			<p>
+				So that change is made in the code. Weeks later, someone who wasn't on
+				that Slack chain is panicking. It's alerting when the new score is an
+				exact match for the average.
+			</p>
+			<ul>
+				<li>
+					Someone looks at this code and chooses to believe the comment, sure
+					that that someone made a typo and promises to take out the equal sign,
+					instead of pushing back and trying to understand how the discrepancy
+					formed.
+				</li>
+			</ul>
 		</aside>
 	</section>
 	<section data-auto-animate>
