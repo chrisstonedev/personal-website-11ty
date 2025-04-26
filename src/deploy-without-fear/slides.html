@@ -17,9 +17,10 @@ layout: reveal.njk
 		/></a>
 	</div>
 	<aside class="notes">
-		Hello everyone! Thank you for coming to my talk. I'm Chris, and I'm going to
-		talk about automated tests, and I'm going to talk about fear. If you go to
-		chrisstone.dev or scan this QR code, you can get talk notes and the slides.
+		Hello everyone! Thank you for coming to my talk. I'm Chris Stone, and I'm
+		going to talk about automated tests, and I'm going to talk about fear. If
+		you go to chrisstone.dev or scan this QR code, you can get talk notes and
+		the slides.
 	</aside>
 </section>
 <section
@@ -35,12 +36,18 @@ layout: reveal.njk
 <section>
 	<h2>My goals today</h2>
 	<ul>
-		<li>Share lessons learned adding automated testing on various teams</li>
-		<li>Show my appreciation of automated tests and what they can do for us</li>
+		<li>Share lessons learned adding automated testing</li>
 		<li>Teach some basics of types of tests</li>
+		<li>Show my appreciation of automated tests and what they can do for us</li>
 		<li>Inspire people here to write some great tests</li>
 	</ul>
-	<aside class="notes">My goals today...</aside>
+	<aside class="notes">
+		My goals today: share lessons I have learned adding automated testing on
+		various teams, especially those that had none originally, teach some basics
+		of the types of tests that can be written, and just generally show my
+		appreciation of testing as a software developer and maybe inspire others
+		here.
+	</aside>
 </section>
 <section>
 	<h2>Why don't people write tests?</h2>
@@ -48,11 +55,15 @@ layout: reveal.njk
 		<li>Not sure what to test</li>
 		<li>Not sure what a "good test" looks like</li>
 		<li>Someone else is in charge of the tests</li>
+		<li>Content to test manually</li>
 	</ul>
 	<aside class="notes">
-		...and while I can't answer these questions on behalf of your team, I hope
-		that I can inspire you to think critically about some of these and maybe
-		even gain some energy to fight for some good patterns. Also...
+		Through my career, I have heard from various people who have not had an
+		interest in testing, only ever wanted to test manually, did not feel
+		empowered to start testing themselves (such as if they were told only
+		certain team members can write tests), or maybe felt convinced but were
+		unsure how best to start. Well, I'm not sure I can convince everyone, but
+		I'll tell you why I'm passionate about testing myself.
 	</aside>
 </section>
 <section data-auto-animate>
@@ -61,6 +72,7 @@ layout: reveal.njk
 		<li class="fragment" data-fragment-index="0">I get scared 😭</li>
 		<li class="fragment">I see code I don't understand</li>
 		<li class="fragment">I'm worried the deployment had problems</li>
+		<li class="fragment">I'm sure I'll forget to test something manually</li>
 	</ul>
 	<img
 		class="fragment"
@@ -69,10 +81,29 @@ layout: reveal.njk
 		alt="I don't know what any of this is and I'm scared"
 	/>
 	<aside class="notes">
-		So why do I write tests? ...and while I can't answer these questions on
-		behalf of your team, I hope that I can inspire you to think critically about
-		some of these and maybe even gain some energy to fight for some good
-		patterns.
+		<p>
+			I can think of several reasons why I enjoy writing tests. First and
+			foremost...
+		</p>
+		<ul>
+			<li>I can get really scared. Anxious, nervous, worried, all of it.</li>
+			<li>
+				Maybe I'm asked to maintain code I have never seen before and is really
+				high risk.
+			</li>
+			<li>
+				I also have tech trauma. I have had so many times when I merged in code
+				that I was so sure was completely fine, only to accidentally cause a
+				major issue, and now, I look at that "squash and merge" button and start
+				panicking.
+			</li>
+			<li>
+				And maybe there are a set of steps that I am advised to always test when
+				a new release is made, but I can be forgetful. Maybe I take on a code
+				review, and I say, "looks good to me!" and it causes a problem I should
+				have caught because I only tested 19 out of 20 possible scenarios.
+			</li>
+		</ul>
 	</aside>
 </section>
 <section data-auto-animate>
@@ -101,17 +132,18 @@ layout: reveal.njk
 		<figcaption><em>Dune</em> by Frank Herbert</figcaption>
 	</figure>
 	<aside class="notes">
-		There are a couple of books that tackle dealing with this kind of fear. In
-		Dune, it is said, "I must not fear. Fear is the mind-killer." In other
-		words, this too shall pass, so let's face the fear and understand that
-		things will be OK eventually. For my specific fear, though, we can do better
-		than that.
+		Maybe this whole fear thing is just something I need to work on myself. I
+		went looking for some resources on how to deal with this. I found this one
+		textbook called *Dune*. It is said in this book, "I must not fear. Fear is
+		the mind-killer." In other words, this too shall pass, so let's face the
+		fear and understand that things will be OK eventually. For my specific fear,
+		though, I think we can do better than that.
 	</aside>
 </section>
 <section data-auto-animate>
 	<h2>Dealing with fear</h2>
 	<blockquote data-id="transformQuote">
-		Test until fear is transformed into boredom.
+		Write tests until fear is transformed into boredom.
 	</blockquote>
 	<figure
 		style="
@@ -130,12 +162,18 @@ layout: reveal.njk
 			<em>Test-Driven Development<br />By Example</em><br />by Kent Beck
 		</figcaption>
 	</figure>
-	<aside class="notes"></aside>
+	<aside class="notes">
+		The book Test-Driven Development by Kent Beck contains a well-known quote:
+		Write tests until fear is transformed into boredom. Whenever people ask me,
+		how do you know what makes a good test? Where should you start writing a
+		test? Once you start, how do you know when to finish? Well, it's kind of an
+		oversimplified answer, but...
+	</aside>
 </section>
 <section data-auto-animate>
 	<h2>Dealing with fear</h2>
 	<blockquote data-id="transformQuote">
-		Test until fear is transformed into boredom.
+		Write tests until fear is transformed into boredom.
 	</blockquote>
 	<p class="fragment">
 		If something in our application scares me,<br />that's where I write a test.
@@ -146,8 +184,8 @@ layout: reveal.njk
 	</p>
 	<aside class="notes">
 		<p>
-			I think about this quote whenever I am asked where we should start writing
-			tests or where the bounds of our testing should be.
+			I keep coming back to this quote. Write tests until fear is transformed.
+			In other words...
 		</p>
 		<ul>
 			<li>
@@ -157,7 +195,7 @@ layout: reveal.njk
 		<ul>
 			<li>
 				If I don't worry about something not working, then I don't worry about
-				testing any further. This is overgeneralizing what is honestly a
+				testing any further. Again, this is overgeneralizing what is honestly a
 				difficult problem of how and why to write tests, but I really like this
 				as a starting point, and I'll show some examples of how I use this on my
 				team throughout the talk.
@@ -171,7 +209,7 @@ layout: reveal.njk
 		<li>I get scared</li>
 		<li class="fragment custom faded">Code coverage</li>
 		<li class="fragment custom faded">Regression detection</li>
-		<li class="fragment custom faded">Write simple code</li>
+		<li class="fragment custom faded">Avoid writing superfluous code</li>
 		<li class="fragment custom faded">Executable documentation</li>
 	</ul>
 	<aside class="notes">
@@ -180,75 +218,246 @@ layout: reveal.njk
 			the fears I have with the application, but we can think of a few more
 			things too.
 		</p>
+		<ul>
+			<li>We can increase our test code coverage</li>
+			<li>We can detect regression errors</li>
+			<li>It helps us avoid writing code with unnecessary complications</li>
+			<li>
+				And it gives us a system of executable documentation. Let's dive a bit
+				deeper into each of these right now.
+			</li>
+		</ul>
 	</aside>
 </section>
 <section data-auto-animate>
-	<h2>Reasons to test</h2>
+	<h2>Why do I write tests?</h2>
 	<h3>Code coverage</h3>
-	<p>100% is not realistic and not useful.</p>
-	<p>You can increase coverage while not testing things of value.</p>
-	<aside class="notes">Code coverage</aside>
+	<ul>
+		<li>100% is not realistic and not useful.</li>
+		<li>You can increase coverage while not testing things of value.</li>
+	</ul>
+	<aside class="notes">
+		One reason I mentioned is code coverage. I want to be careful with this
+		though. A lot of teams will use code coverage as a metric, hoping that
+		coverage increases over time. I think of coverage as a nice little side
+		effect, that's why I'm mentioning this first and getting it over with. You
+		can increase coverage without creating meaningful tests, and you can reduce
+		coverage in ways that make your test suite more pleasant to maintain. So
+		while I do hope that I am covering a decent portion of my application, I
+		don't really pay the numbers themselves much attention.
+	</aside>
 </section>
 <section data-auto-animate>
-	<h2>Reasons to test</h2>
+	<h2>Why do I write tests?</h2>
 	<h3>Regression detection</h3>
 	<ul>
-		<li>CI/CD</li>
-		<li>Address flaky tests, team should have faith in the test suite</li>
+		<li class="fragment custom faded">
+			Tests should run on every commit in CI/CD
+		</li>
+		<li class="fragment custom faded">
+			A good test is possible to fail someday
+		</li>
+		<li class="fragment custom faded">
+			Address flaky tests, team should have faith in the test suite
+			<ul>
+				<li class="fragment custom faded">Fix if you can</li>
+				<li class="fragment custom faded">
+					Skip until you get the time, if necessary
+				</li>
+			</ul>
+		</li>
 	</ul>
-	<aside class="notes">Hello</aside>
+	<aside class="notes">
+		<p>
+			Another reason is regression detection. A good test is one that could
+			conceivably fail. Imagine writing a test that tests that adding two
+			numbers together returns the sum. Addition will always be the same. A good
+			test will test something valuable and meaningful, something that would
+			scare us if it did go wrong.
+		</p>
+		<ul>
+			<li>
+				By putting these tests in our CI/CD pipelines, we get near instant
+				feedback if we have a problem so we can know the exact commit in which
+				the problem originated.
+			</li>
+			<li>
+				Also, once you do get tests in a CI/CD pipeline, if tests fail, take
+				those failures seriously. If you throw your hands up and say, "it's ok,
+				some of these just fail all the time," the team will lose faith in the
+				test suite, which will lead to people no longer wanting to spend time
+				maintaining them ("they always fail, why bother trying to fix them") and
+				also cause alert fatigue ("the build always fails, it's not worth
+				checking if a serious problem is happening, it's probably just
+				flakiness").
+			</li>
+			<li>
+				If a test fails for a bad reason, try to get the time to fix it to
+				restore intended functionality if you can.
+			</li>
+			<li>
+				And worst case scenario, just skip the test until you <em>can</em> get
+				that time.
+			</li>
+		</ul>
+	</aside>
 </section>
 <section data-auto-animate>
-	<h2>Reasons to test</h2>
-	<h3>Write <strike>simple code</strike> (will think about this)</h3>
+	<h2>Why do I write tests?</h2>
+	<h3>Avoid writing superfluous code</h3>
 	<ul>
-		<li>TDD</li>
-		<li>Tests will help drive simple design to avoid accidental complexity.</li>
+		<li>Test-driven development (TDD)</li>
+		<li>
+			<span class="fragment highlight-red">Red</span>-<span
+				class="fragment highlight-green"
+				>green</span
+			>-<span class="fragment highlight-blue">refactor</span> cycle will help
+			drive simple design to avoid accidental complexity
+			<ul class="fragment fade">
+				<li>Remember, refactoring preserves behavior!</li>
+			</ul>
+		</li>
 	</ul>
-	<aside class="notes">Hello</aside>
+	<aside class="notes">
+		<p>
+			Another reason I enjoy tests is because I want to accomplish what I need
+			while writing the least amount of code as possible. I don't want to be
+			clever, I just want to get the job done in a readable and maintainable
+			way. Test-driven development can be a tough thing to wrap one's head
+			around if they have not used it before, and it's not a subject to which I
+			want to devote much time today, but the basics is that you write a test
+			first of the behavior that you want to see given a certain action. That
+			test will not pass at first; in other words...
+		</p>
+		<ul>
+			<li>
+				Red. Then, you write <em>only</em> enough code that makes the test pass,
+				which gets you to...
+			</li>
+			<li>
+				Green. That's it. Pencils down. If you made the test pass, you did
+				enough. You would then add to that test to make it fail again or maybe
+				write a new test that would fail, but not before you consider time to
+			</li>
+			<li>
+				Refactor. As long as it was green before and stays green, you can spend
+				this time to simplify the design of the code you have written as long as
+				all tests stay green.
+			</li>
+			<li>
+				As a reminder, the definition of refactoring is to improve the design of
+				existing code without changing the behavior! If you change how the app
+				works while you are refactoring, you are no longer refactoring, you are
+				instead changing how the app works. That's just a quick conceptual
+				overview of TDD, but I hope it makes sense how writing tests may
+				actually lead to code that does just what is necessary without doing too
+				much.
+			</li>
+		</ul>
+	</aside>
 </section>
 <section data-auto-animate>
 	<section data-auto-animate>
-		<h2>Reasons to test</h2>
-		<h3>Executable documentation</h3>
-		<h4>Why tests are the best documentation</h4>
-		<div style="display: flex">
-			<p>Extensive documentation</p>
-			<p>Imagine a Confluence screenshot</p>
-		</div>
+		<h2>Why do I write tests?</h2>
+		<h3>Tests are the best documentation</h3>
+		<figure>
+			<img
+				src="/img/confluence.png"
+				alt="Confluence screenshot"
+				style="height: 300px"
+			/>
+			<figcaption>Extensive documentation outside the code</figcaption>
+		</figure>
+		<aside class="notes">
+			Another reason I write test is because I want very good documentation of
+			my code. I think it is great to document decisions around our code and
+			help others explain why things are the way they are. But I'm going to
+			explain why I personally think executable documentation is the best
+			documentation. First of all, consider a huge Confluence document. Having
+			documentation that is far removed from the code means it is less likely
+			for people to encounter it in their standard work. Platforms like this can
+			be very helpful for planning meetings and for documenting decisions and
+			moment-in-time reflections. But if the purpose is to say, "this is how
+			this part of the system works," I guarantee, there will come a day when
+			that Confluence page is no longer telling the truth, and someone is going
+			to waste their time trying to reconcile a misconception.
+		</aside>
 	</section>
 	<section data-auto-animate>
-		<h2>Reasons to test</h2>
-		<h3>Executable documentation</h3>
-		<h4>Why tests are the best documentation</h4>
+		<h2>Why do I write tests?</h2>
+		<h3>Tests are the best documentation</h3>
 		<pre><code data-id="comment-animation" data-trim data-noescape data-line-numbers class="language-ts">
-// add numbers (oh, and replace this example with a better one!)
-const x = 1 + 2;
-  </code></pre>
+export function isLevelInDanger(oldScores: number[],
+		newScore: number) {
+	// An alert should be displayed
+	// if the new score is less than average.
+	const sum = oldScores.reduce((a, b) => a + b);
+	return newScore < (sum / oldScores.length);
+}
+  	</code></pre>
 		<p>Comments can lie</p>
+		<aside class="notes">
+			If we have code comments, we are more likely to encounter them, and,
+			ideally, we change them if they ever become untrue. Here, we have a sample
+			function where the function is named for the intended effect, with a
+			comment explaining the business priority. Let's say a product manager it
+			must be less than the average for the alert to go off. Weeks go by, and
+			they change their mind, if it is an exact match, they want that to alert
+			too.
+		</aside>
 	</section>
 	<section data-auto-animate>
-		<h2>Reasons to test</h2>
-		<h3>Executable documentation</h3>
-		<h4>Why tests are the best documentation</h4>
-		<pre><code data-id="comment-animation" data-trim data-noescape data-line-numbers class="language-ts">
-// add numbers (oh, and replace this example with a better one!)
-const x = '1' + '2';
-  </code></pre>
+		<h2>Why do I write tests?</h2>
+		<h3>Tests are the best documentation</h3>
+		<pre><code data-id="comment-animation" data-trim data-noescape data-line-numbers="6" class="language-ts">
+export function isLevelInDanger(oldScores: number[],
+		newScore: number) {
+	// An alert should be displayed
+	// if the new score is less than average.
+	const sum = oldScores.reduce((a, b) => a + b);
+	return newScore <= (sum / oldScores.length);
+}
+  	</code></pre>
 		<p>Comments can lie</p>
+		<aside class="notes">
+			So that change is made in the code. Weeks later, someone who wasn't on
+			that Slack chain is panicking. It's alerting when the new score is an
+			exact match for the average. Someone looks at this code and believes that
+			someone made a typo and promises to take out the equal sign, because they
+			believe the comment, instead of pushing back and trying to understand the
+			discrepancy.
+		</aside>
 	</section>
 	<section data-auto-animate>
-		<h2>Reasons to test</h2>
-		<h3>Executable documentation</h3>
-		<h4>Why tests are the best documentation</h4>
+		<h2>Why do I write tests?</h2>
+		<h3>Tests are the best documentation</h3>
+		<pre><code data-id="comment-animation" data-trim data-noescape data-line-numbers="8" class="language-ts">
+export function isLevelInDanger(oldScores: number[],
+		newScore: number) {
+	const sum = oldScores.reduce((a, b) => a + b);
+	return newScore <= (sum / oldScores.length);
+}
+  	</code></pre>
 		<pre><code data-trim data-noescape data-line-numbers class="language-ts">
-// pretend there is a test here
-  </code></pre>
+it("should only alert when less than average", () => {
+	const actual = isLevelInDanger([1, 2, 3], 2);
+	assert.deepStrictEqual(actual, false); // FAIL
+});
+  	</code></pre>
 		<p>A test will fail if it becomes untrue.</p>
+		<aside class="notes">
+			Now imagine that we had tests to test the business rule. Making that
+			change without also changing the test will cause a failure. This is a red
+			flag that a potential regression was caused. There cannot be an accident
+			now that we documented behavior that is no longer true. Sure, we could
+			forget to change that test name, but we trust our tests, and we wouldn't
+			change their behavior unless we had a reason. In essence, they are a
+			living executable document.
+		</aside>
 	</section>
 	<section data-auto-animate>
-		<h2>Reasons to test</h2>
-		<h3>Executable documentation</h3>
+		<h2>Why do I write tests?</h2>
+		<h3>Tests are the best documentation</h3>
 		<h4>What does it mean for writing to be effective?</h4>
 		<ul>
 			<li class="fragment custom faded">Readable</li>
@@ -256,56 +465,103 @@ const x = '1' + '2';
 			<li class="fragment custom faded">Applicable</li>
 		</ul>
 		<aside class="notes">
-			<p>Hi</p>
+			<p>
+				And just like any document we would write for any purpose, we have
+				several considerations we need to make. The act of writing is usually
+				intended for some audience to read, whether it is ourselves or others.
+			</p>
 			<ul>
 				<li>
-					For one, tests should be readable. Just like with any code that we
-					write, we optimize for readability.
+					For one, the things we write should be readable. Just like with any
+					code that we write, we optimize for readability. We know that code
+					that just works but is difficult for a human to interpret is bad
+					quality and that we can do better.
 				</li>
 				<li>
-					For one, tests should be readable. Just like with any code that we
-					write, we optimize for readability.
+					The things we write should also be relevant. Going back to the fear
+					thought, we should only be testing things that are worth the execution
+					time when running and are worth the human time of reading. Imagine if
+					we had a bunch of UI tests that do nothing more than mount a
+					component, assuming success because nothing was actually asserted. We
+					would be better off removing those entirely so that someone trying to
+					find meaningful tests finds something meaningful.
 				</li>
 				<li>
-					For one, tests should be readable. Just like with any code that we
-					write, we optimize for readability.
+					Our writing should also be applicable. If we have code that is too
+					difficult to refactor, but we were able to get a test around it, then
+					others who will need to test in this area will find that very useful.
+					On the other hand, a test that we write for ourselves that is not
+					likely to ever fail and is not likely to instill fear in others should
+					make us think twice about keeping it. It is totally acceptable to
+					delete tests from our suite that no longer serve us.
 				</li>
 			</ul>
 		</aside>
 	</section>
-	<aside class="notes">
-		What does it mean to have effective documentation?
-	</aside>
-</section>
-<section data-auto-animate data-auto-animate-restart>
-	<blockquote>Test until fear turns into boredom.</blockquote>
-	<p>Kent Beck</p>
 </section>
 <section data-auto-animate data-auto-animate-restart>
 	<section data-auto-animate>
-		<h2>Types of tests</h2>
-		<ul>
-			<li>Unit</li>
-			<li>Integration</li>
-			<li>End-to-end</li>
-		</ul>
-		<aside class="notes">Hello!z</aside>
-	</section>
-	<section data-auto-animate>
-		<h2>Types of tests</h2>
+		<h2 style="font-size: xxx-large">Types of tests</h2>
 		<ul>
 			<li>
 				Unit
-				<ul class="fragment grow">
-					<li>a</li>
-					<li>b</li>
-					<li>c</li>
+				<ul class="fragment" style="font-size: xx-large">
+					<li>Tests a small unit of isolated simple design code</li>
+					<li>
+						Mocks out any calls to an external dependency, data layer, or API
+						interface
+					</li>
+					<li>Runs in milliseconds</li>
 				</ul>
 			</li>
-			<li>Integration</li>
-			<li>End-to-end</li>
+			<li>
+				Integration
+				<ul class="fragment" style="font-size: xx-large">
+					<li>
+						A relatively small area of code that is allowed to talk to other
+						components or a test database interface
+					</li>
+					<li>Runs up to a few seconds</li>
+				</ul>
+			</li>
+			<li>
+				End-to-end
+				<ul class="fragment" style="font-size: xx-large">
+					<li>
+						Tests a full user behavior journey using browser protocols or
+						emulated devices
+					</li>
+					<li>Runs up to tens of seconds</li>
+				</ul>
+			</li>
 		</ul>
-		<aside class="notes">Hello!z</aside>
+		<aside class="notes">
+			<p>
+				There are dozens of kinds of tests, and many people will give you all
+				kinds of definitions. All I can tell you today is that these are the
+				definitions I have used. Some may disagree, but this is how I categorize
+				most kinds of tests, whether they are back-end, front-end, or even
+				infrastructure-focused.
+			</p>
+			<ul>
+				<li>
+					A unit test is one that tests a tiny amount of isolated simple design
+					code, mocking out any call to an external dependency, data layer, or
+					API interface. As a result, they should run very fast, in terms of
+					milliseconds.
+				</li>
+				<li>
+					Integration tests will also test a relatively small area of code, but
+					it is allowed to talk to other components or a test database
+					interface. As a result, it may take up to a few seconds to run.
+				</li>
+				<li>
+					End-to-end tests cover a full user behavior journey using browser
+					protocols or emulated devices. These tests will take the longest,
+					taking tens of seconds on average to run.
+				</li>
+			</ul>
+		</aside>
 	</section>
 	<section data-auto-animate>
 		<h2>Types of tests</h2>
@@ -334,54 +590,67 @@ const x = '1' + '2';
 		<p class="fragment">Pick the lowest level that gives value.</p>
 		<aside class="notes">
 			<p>
-				you can use any of these tools to test anything, but you may not want to
+				That alone sort of simplifies the whole concept, and it's possible to
+				consider some gray area middle ground. And you could even technically
+				pick any one of these tools and be better off in situations than you'd
+				be without any of them. But why you'd go for one over another depends on
+				various considerations.
 			</p>
+			<ul>
+				<li>
+					Mike Cohn's Testing Pyramid is referenced by many people to illustrate
+					how, starting from unit tests and going up to UI or end-to-end tests,
+					the execution gets slower as more integration is required. The idea is
+					that the level of investment at each level should go down the further
+					you go up, focusing on unit tests.
+				</li>
+				<li>
+					Kent C. Dodds' Testing Trophy is another perspective, though. Some
+					projects may not have much complicated business logic that is worth
+					testing in isolation, but the integration between components could be
+					a vital layer. I think both of these approaches give us interesting
+					things to consider. Ultimately, what I tell people is to not worry too
+					much about whether you're investing too much in one area or not, and
+					instead,
+				</li>
+				<li>
+					confirm that, when you go to write a test, you are picking the lowest
+					possible level that gives you value for the behavior that you need to
+					test, the behavior that would give you fear until you tested it.
+				</li>
+			</ul>
 		</aside>
 	</section>
 	<section data-auto-animate>
 		<h3>Which type to pick</h3>
 		<pre><code data-trim data-noescape data-line-numbers class="language-ts">
-// pretend there is business logic here
+export function isLevelInDanger(oldScores: number[],
+		newScore: number) {
+	const sum = oldScores.reduce((a, b) => a + b);
+	return newScore <= (sum / oldScores.length);
+}
   </code></pre>
 		<table data-id="test-types-table">
 			<thead>
 				<tr>
 					<th></th>
-					<th style="text-align: center">Unit</th>
+					<th
+						style="text-align: center"
+						class="fragment highlight-blue"
+						data-fragment-index="5"
+					>
+						Unit
+					</th>
 					<th style="text-align: center">Integration</th>
 					<th style="text-align: center">End-to-end</th>
 				</tr>
 			</thead>
 			<tbody>
 				<tr>
-					<th>Value</th>
-					<td
-						class="fragment"
-						data-fragment-index="2"
-						style="text-align: center"
-					>
-						✅
-					</td>
-					<td
-						class="fragment"
-						data-fragment-index="1"
-						style="text-align: center"
-					>
-						✅
-					</td>
-					<td
-						class="fragment"
-						data-fragment-index="0"
-						style="text-align: center"
-					>
-						✅
-					</td>
-				</tr>
-				<tr>
 					<th>Effort</th>
 					<td
 						class="fragment"
-						data-fragment-index="2"
+						data-fragment-index="0"
 						style="text-align: center"
 					>
 						✅
@@ -395,7 +664,31 @@ const x = '1' + '2';
 					</td>
 					<td
 						class="fragment"
-						data-fragment-index="0"
+						data-fragment-index="2"
+						style="text-align: center"
+					>
+						❌
+					</td>
+				</tr>
+				<tr>
+					<th>Value</th>
+					<td
+						class="fragment"
+						data-fragment-index="4"
+						style="text-align: center"
+					>
+						✅
+					</td>
+					<td
+						class="fragment"
+						data-fragment-index="4"
+						style="text-align: center"
+					>
+						✅
+					</td>
+					<td
+						class="fragment"
+						data-fragment-index="3"
 						style="text-align: center"
 					>
 						✅
@@ -404,8 +697,42 @@ const x = '1' + '2';
 			</tbody>
 		</table>
 		<aside class="notes">
-			test that business logic occurs where everything else passes through. we
-			can test at all levels, but get all our value from the unit test
+			<p>
+				Let's start with this example again. I know this is overly simplistic,
+				but imagine a function kind of like this that we did want to test. Let's
+				say we were doing some super complicated mapping and reducing here.
+			</p>
+			<ul>
+				<li>
+					It wouldn't take much for us to write a unit test around this. We
+					could even very easily have parameterized test cases to test several
+					conditions.
+				</li>
+				<li>
+					An integration test wouldn't take too long either, let's say the
+					calling function wanted to fetch those scores from the database, so we
+					could seed it and then set our expectation based on what we expect it
+					to get.
+				</li>
+				<li>
+					An end-to-end test is possible, but the level of effort required to
+					put it together will be a very hard sell, and parameterizing it
+					significantly may be a no-go.
+				</li>
+				<li>
+					That said, if we did put it together, and worked hard at it, we could
+					prove that it works.
+				</li>
+				<li>
+					But we could do that with unit and integration too. So our choice is
+					between a test that will take milliseconds to run in memory or a few
+					seconds to stand up a test database, seed it, and then close the
+					connection.
+				</li>
+				<li>
+					In this case, we get the value we really need from the unit test.
+				</li>
+			</ul>
 		</aside>
 	</section>
 	<section data-auto-animate>
@@ -467,7 +794,13 @@ if err != nil && !errors.Is(err, gorm.ErrRecordNotFound) {
 				<tr>
 					<th></th>
 					<th style="text-align: center">Unit</th>
-					<th style="text-align: center">Integration</th>
+					<th
+						style="text-align: center"
+						class="fragment highlight-blue"
+						data-fragment-index="5"
+					>
+						Integration
+					</th>
 					<th style="text-align: center">End-to-end</th>
 				</tr>
 			</thead>
@@ -553,8 +886,10 @@ if err != nil && !errors.Is(err, gorm.ErrRecordNotFound) {
 					But I'm actually not sure that we get much value from a unit test
 					here. If we set up a mock for our database, even if we verify the
 					actual SQL, we get to return whatever data we say that database should
-					return, and we have no idea if the SQL is correct. So for this
-					example, an integration test feels like the right level.
+					return, and we have no idea if the SQL is correct.
+				</li>
+				<li>
+					So for this example, an integration test feels like the right level.
 				</li>
 			</ul>
 		</aside>
@@ -570,7 +905,13 @@ if err != nil && !errors.Is(err, gorm.ErrRecordNotFound) {
 					<th></th>
 					<th style="text-align: center">Unit</th>
 					<th style="text-align: center">Integration</th>
-					<th style="text-align: center">End-to-end</th>
+					<th
+						style="text-align: center"
+						class="fragment highlight-blue"
+						data-fragment-index="5"
+					>
+						End-to-end
+					</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -657,7 +998,10 @@ if err != nil && !errors.Is(err, gorm.ErrRecordNotFound) {
 					user not only will eventually see this info but that they instantly
 					see it as soon as they navigate to that page. To truly test that full
 					user experience, which we do feel is a critical need for our
-					application, we decide that, despite the longer runtime and trickier
+					application,
+				</li>
+				<li>
+					we decide that, despite the longer runtime and trickier
 					maintainability of end-to-end tests, that that is the right level for
 					this.
 				</li>
@@ -666,59 +1010,8 @@ if err != nil && !errors.Is(err, gorm.ErrRecordNotFound) {
 	</section>
 </section>
 <section data-auto-animate data-auto-animate-restart>
-	<section data-auto-animate>
-		<h2>How to get started</h2>
-		<h3>TDD</h3>
-		<h3>Leave better than you found it</h3>
-		<h3>E2E</h3>
-	</section>
-	<section data-auto-animate>
-		<h2>How to get started</h2>
-		<h3>TDD</h3>
-		<p>TDD - start new unit tests with</p>
-		<aside class="notes">Something here</aside>
-	</section>
-	<section data-auto-animate>
-		<h2>How to get started</h2>
-		<h3>Leave better than you found it</h3>
-		<p>scary area you're afraid to make changes in? start by making a test</p>
-		<aside class="notes">Something here</aside>
-	</section>
-	<section data-auto-animate>
-		<h2>How to get started</h2>
-		<h3>E2E</h3>
-		<p>
-			code all mixed up so it's tough to write simple unit or integration tests?
-			maybe starting with an end-to-end would be good
-		</p>
-		<p>
-			maybe that really is the lowest level that gives you value until you can
-			rearchitect the code
-		</p>
-		<aside class="notes">Something here</aside>
-	</section>
-</section>
-<section data-auto-animate data-auto-animate-restart>
-	<h2>remember</h2>
-	<ul>
-		<li>start small and get it in the CI/CD pipelines</li>
-		<li>make a commitment to add to test suites over time</li>
-	</ul>
-</section>
-<section data-auto-animate data-auto-animate-restart>
-	<h2>Delete tests that no longer serve you</h2>
-</section>
-<section data-auto-animate data-auto-animate-restart>
-	<h2>Refactoring means not changing what happens</h2>
-</section>
-<section data-auto-animate data-auto-animate-restart>
-	<h2>Linters?</h2>
-</section>
-<section data-auto-animate data-auto-animate-restart>
-	<h2>test behavior, not implementation</h2>
-</section>
-<section>
-	<h2>You have to start somewhere</h2>
+	<h2>How to get started</h2>
+	<h3>You have to start somewhere</h3>
 	<p>Test the change you want to see in the world</p>
 	<p class="fragment">Be the change you want to see in the world</p>
 	<aside class="notes">
@@ -783,7 +1076,7 @@ if err != nil && !errors.Is(err, gorm.ErrRecordNotFound) {
 	</section>
 	<section data-auto-animate>
 		<h2>Adding back-end tests</h2>
-		<pre><code data-trim data-line-numbers data-id="endToEndSample" class="language-go">
+		<pre><code data-trim data-line-numbers class="language-go">
 func TestMyFunction(t *testing.T) {
 	var myTests = []struct {
 		inputValue     int
@@ -879,7 +1172,7 @@ test('teacher can create new assignment',
 	await this.page.getByText(className).click();
 	// ...
 });
-  </code></pre>
+  	</code></pre>
 		<p>We started with Playwright Codegen</p>
 		<aside class="notes">
 			<p>
@@ -1104,6 +1397,108 @@ it('should add new keyword', async () => {
 					another way if we wanted to test the entire form on which this
 					component is used, but that is more than we wanted to test for this
 					story.
+				</li>
+			</ul>
+		</aside>
+	</section>
+</section>
+<section>
+	<section data-auto-animate>
+		<h2>Adding to CI/CD</h2>
+		<pre><code data-trim data-line-numbers="|25-28|30-33|20-23,30-33" class="language-yaml">
+jobs:
+  build:
+    name: Lint and Test TypeScript
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Setup Node.js environment
+        uses: actions/setup-node@v3
+        with:
+          node-version: '22'
+
+      - name: Checkout repository under $GITHUB_WORKSPACE
+        uses: actions/checkout@v3
+
+      - name: Install dependencies
+        run: |
+          cd packages/apps/web
+          yarn install
+
+      - name: Lint for web-app
+        run: |
+          cd packages/apps/web
+          yarn lint
+
+      - name: Build for web-app
+        run: |
+          cd packages/apps/web
+          yarn build
+
+      - name: Test for web-app
+        run: |
+          cd packages/apps/web
+          yarn test
+		</code></pre>
+		<p>Pull request required checks</p>
+		<aside class="notes">
+			<p>
+				Tests that require manual runs are easy to get ignored and your team can
+				miss out on valuable feedback, so once you start getting some tests
+				together, even if it's just your very first one, you want to start
+				getting this in an automated run.
+			</p>
+			<ul>
+				<li>
+					In our case, we actually already had a CI pipeline that made sure that
+					every pull request to main went through a build process to verify that
+					the app was in a good state.
+				</li>
+				<li>So with that, we were able to add our testing to this step now.</li>
+				<li>
+					We also, for the first time, added lint checks. When we first ran a
+					linter in our project, we received many errors and it kind of seemed
+					overwhelming to start taking action on them, so we downgraded known
+					project errors to warnings so that new errors will fail this action
+					first before we even get to the build, and if both the lint and build
+					succeeds, the test is the last line of defense before we allow a PR to
+					be merged.
+				</li>
+			</ul>
+		</aside>
+	</section>
+	<section data-auto-animate>
+		<h2>Adding to CI/CD</h2>
+		<pre><code data-trim data-line-numbers="|7|9|10" class="language-yaml">
+jobs:
+  e2e:
+    name: Run the e2e tests
+    uses: ./.github/workflows/_shared_run_e2e_tests.yml
+    with:
+      ENVIRONMENT: prod
+    needs: [deploy-api, deploy-web-app]
+    secrets:
+      E2E_USER_PASSWORD: $&#123;{ secrets.E2E_USER_PASSWORD }}
+      SLACK_WEBHOOK_URL: $&#123;{ secrets.SLACK_WEBHOOK_URL }}
+		</code></pre>
+		<p>End-to-end tests after every deployment</p>
+		<aside class="notes">
+			<p>
+				As for end-to-end tests, we have them run on every deployment to every
+				environment, including our staging and production environments.
+			</p>
+			<ul>
+				<li>
+					We set this job to need the deployment of the main jobs that the app
+					requires to function so it does not run any sooner.
+				</li>
+				<li>
+					We use an environment secret for a user password that gets used to
+					authenticate in the tests,
+				</li>
+				<li>
+					and we have a repository secret for a Slack webhook that immediately
+					posts results, passing or failing.
 				</li>
 			</ul>
 		</aside>
