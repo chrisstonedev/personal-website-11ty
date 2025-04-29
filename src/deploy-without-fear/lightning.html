@@ -20,8 +20,11 @@ layout: reveal.njk
 		/></a>
 	</div>
 	<aside class="notes">
-		Hello everyone! I want to talk today about the joy of writing tests as a
-		full-stack developer.
+		Hello everyone! My name is Chris Stone. I am a full stack developer and I
+		also write tests. I wanted to talk today about some of the reasons I enjoy
+		writing tests and the things I value when I do write tests. There are
+		several reasons I enjoy writing tests, but most of all, the biggest reason I
+		enjoy
 	</aside>
 </section>
 <section data-auto-animate data-autoslide="15000">
@@ -72,7 +75,7 @@ layout: reveal.njk
 		<img
 			src="/img/deploy-without-fear-slides-dune.jpg"
 			alt="Dune by Frank Herbert"
-			style="height: 300px"
+			style="height: 250px"
 		/>
 		<figcaption><em>Dune</em> by Frank Herbert</figcaption>
 	</figure>
@@ -149,9 +152,10 @@ layout: reveal.njk
 <section data-auto-animate data-autoslide="15000">
 	<h2>Why do I write tests?</h2>
 	<h3>Regression detection</h3>
-	<p>Address flaky tests, team should have faith in the test suite</p>
+	<p>Address flaky tests</p>
+	<p>Team should have faith in the test suite</p>
 	<ul>
-		<li>Fix if you can</li>
+		<li>Fix flakiness if you can</li>
 		<li>Skip until you get the time, if necessary</li>
 	</ul>
 	<aside class="notes">
@@ -364,6 +368,8 @@ it("should only alert when less than average", () => {
 			devices
 		</li>
 		<li>Runs up to tens of seconds</li>
+		<li>Takes time to code and and run</li>
+		<li>Potentially good start point in a cluttered code base</li>
 	</ul>
 	<aside class="notes">
 		<p>
@@ -451,17 +457,31 @@ it("should only alert when less than average", () => {
 </section>
 <section data-auto-animate data-autoslide="15000">
 	<h3>Which type to pick</h3>
-	<pre><code data-trim data-noescape data-line-numbers class="language-ts">
+	<pre
+		style="font-size: x-large"
+	><code data-trim data-noescape data-line-numbers class="language-ts">
 export function isLevelInDanger(oldScores: number[],
 		newScore: number) {
 	const sum = oldScores.reduce((a, b) => a + b);
 	return newScore <= (sum / oldScores.length);
 }
   </code></pre>
+	<pre
+		style="font-size: x-large"
+	><code data-trim data-noescape data-line-numbers data-ln-start-from="12">
+if input != nil {
+    if input.ResourceType.IsValid() {
+       query = query.Where("static_resource_type = ?", input.ResourceType)
+    }
+    if len(input.Grades) > 0 {
+       query = query.Where("grade IN (?)", input.Grades)
+    }
+    if len(input.SubjectAreas) > 0 {
+       query = query.Joins(`INNER JOIN subject_area_resource_mappings ON
+  </code></pre>
 	<table data-id="test-types-table">
 		<thead>
 			<tr>
-				<th></th>
 				<th style="text-align: center">Unit</th>
 				<th style="text-align: center">Integration</th>
 				<th style="text-align: center">End-to-end</th>
@@ -469,16 +489,9 @@ export function isLevelInDanger(oldScores: number[],
 		</thead>
 		<tbody>
 			<tr>
-				<th>Effort</th>
-				<td style="text-align: center">✅</td>
-				<td style="text-align: center">✅</td>
-				<td style="text-align: center">❌</td>
-			</tr>
-			<tr>
-				<th>Value</th>
-				<td style="text-align: center">✅</td>
-				<td style="text-align: center">✅</td>
-				<td style="text-align: center">✅</td>
+				<td style="text-align: center">❓</td>
+				<td style="text-align: center">❓</td>
+				<td style="text-align: center">❓</td>
 			</tr>
 		</tbody>
 	</table>
@@ -753,7 +766,6 @@ it('should add new keyword', async () => {
 		</ul>
 	</aside>
 </section>
-
 <section data-auto-animate data-autoslide="15000">
 	<h2>Adding front-end tests</h2>
 	<pre><code data-trim data-line-numbers="12,15,26">
@@ -811,6 +823,99 @@ it('should add new keyword', async () => {
 				would manage all change events and form states. We could do this another
 				way if we wanted to test the entire form on which this component is
 				used, but that is more than we wanted to test for this story.
+			</li>
+		</ul>
+	</aside>
+</section>
+<section data-auto-animate data-auto-animate-restart data-autoslide="15000">
+	<div style="display: grid; grid-template-columns: 1fr 1fr; width: 100%">
+		<div style="width: 550px">
+			<h2>Adding to CI/CD</h2>
+			<pre
+				style="font-size: 18px"
+			><code data-trim data-line-numbers="7" class="language-yaml">
+jobs:
+  e2e:
+    name: Run the e2e tests
+    uses: ./.github/workflows/_shared_run_e2e_tests.yml
+    with:
+      ENVIRONMENT: prod
+    needs: [deploy-api, deploy-web-app]
+    secrets:
+      E2E_USER_PASSWORD: $&#123;{ secrets.E2E_USER_PASSWORD }}
+      SLACK_WEBHOOK_URL: $&#123;{ secrets.SLACK_WEBHOOK_URL }}
+	</code></pre>
+		</div>
+		<div style="width: 375px">
+			<pre style="font-size: 18px"><code data-trim class="language-yaml">
+jobs:
+  build:
+    name: Lint and Test Web
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+		</code></pre>
+			<pre
+				style="font-size: 18px"
+			><code data-trim data-line-numbers="1-4,11-14" data-ln-start-from="20" class="language-yaml">
+      - name: Lint for web-app
+        run: |
+          cd packages/apps/web
+          yarn lint
+
+      - name: Build for web-app
+        run: |
+          cd packages/apps/web
+          yarn build
+
+      - name: Test for web-app
+        run: |
+          cd packages/apps/web
+          yarn test
+		</code></pre>
+		</div>
+	</div>
+	<aside class="notes">
+		<p>
+			Tests that require manual runs are easy to get ignored and your team can
+			miss out on valuable feedback, so once you start getting some tests
+			together, even if it's just your very first one, you want to start getting
+			this in an automated run.
+		</p>
+		<ul>
+			<li>
+				In our case, we actually already had a CI pipeline that made sure that
+				every pull request to main went through a build process to verify that
+				the app was in a good state.
+			</li>
+			<li>So with that, we were able to add our testing to this step now.</li>
+			<li>
+				We also, for the first time, added lint checks. When we first ran a
+				linter in our project, we received many errors and it kind of seemed
+				overwhelming to start taking action on them, so we downgraded known
+				project errors to warnings so that new errors will fail this action
+				first before we even get to the build, and if both the lint and build
+				succeeds, the test is the last line of defense before we allow a PR to
+				be merged.
+			</li>
+		</ul>
+
+		<p>
+			As for end-to-end tests, we have them run on every deployment to every
+			environment, including our staging and production environments.
+		</p>
+		<ul>
+			<li>
+				We set this job to need the deployment of the main jobs that the app
+				requires to function so it does not run any sooner.
+			</li>
+			<li>
+				We use an environment secret for a user password that gets used to
+				authenticate in the tests,
+			</li>
+			<li>
+				and we have a repository secret for a Slack webhook that immediately
+				posts results, passing or failing.
 			</li>
 		</ul>
 	</aside>
