@@ -2,6 +2,10 @@
 
 {% block main %}
 	{{ content | safe }}
+	{% if music.length > 0 %}
+	<h2>Related music</h2>
+	<p class="apple-music-embed" data-id="{{ music }}">Enable JavaScript and allow embed scripts to view embed. <button type="button" id="allowEmbed">Allow Embed</button></p>
+	{% endif %}
 	<h2>Backlinks</h2>
 	{% if backlinks.length > 0 %}
 		<ul class="backlinks-container">

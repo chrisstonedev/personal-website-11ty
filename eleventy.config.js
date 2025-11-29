@@ -12,7 +12,9 @@ export default function (eleventyConfig) {
 	eleventyConfig.addPassthroughCopy(`./${inputDirectory}/style.css`);
 	eleventyConfig.addPassthroughCopy(`./${inputDirectory}/reveal-override.css`);
 	eleventyConfig.addPassthroughCopy(`./${inputDirectory}/favicon.ico`);
+	eleventyConfig.addPassthroughCopy(`./${inputDirectory}/embed.js`);
 	eleventyConfig.addPassthroughCopy(`./${inputDirectory}/_redirects`);
+	eleventyConfig.addPassthroughCopy(`./${inputDirectory}/robots.txt`);
 	eleventyConfig.addPassthroughCopy({
 		'node_modules/highlight.js/styles/a11y-light.css':
 			'highlight/a11y-light.css',

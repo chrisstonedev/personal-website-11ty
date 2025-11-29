@@ -10,6 +10,7 @@ conferences:
 layout: article.njk
 tags:
   - speaking
+music: https://embed.music.apple.com/us/album/feel-the-fear/1587482045?i=1587482140
 ---
 This talk about automated testing has been given at the following events:
 
@@ -28,7 +29,3 @@ I will answer these questions and more based on my experience and opinions as a 
 
 - <a href="/deploy-without-fear/slides" target="_blank">View slides</a>
 - <a href="/deploy-without-fear/slides/?print-pdf" target="_blank">Download/print slides</a>
-
-## Related music
-
-<iframe allow="autoplay *; encrypted-media *;" frameborder="0" height="150" style="width:100%;max-width:660px;overflow:hidden;background:transparent;" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation" src="https://embed.music.apple.com/us/album/feel-the-fear/1587482045?i=1587482140"></iframe>

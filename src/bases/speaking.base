@@ -1,0 +1,15 @@
+filters:
+  and:
+    - file.tags.contains("speaking")
+views:
+  - type: table
+    name: Table
+    order:
+      - file.name
+      - title
+      - date
+      - date-updated
+      - description
+    sort:
+      - property: title
+        direction: ASC

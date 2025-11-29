@@ -13,6 +13,8 @@
 	<meta name="author" content="Chris Stone">
 	<meta property="og:image" content="https://chrisstone.dev{% generateOpenGraphImage title, page.fileSlug, description, page.url, tags[0] %}" />
 	<meta name="twitter:card" content="summary_large_image">{% endblock %}
+	<script src="/embed.js" defer></script>
+	<meta name="robots" content="none">
 </head>
 <body>
 <header>
@@ -40,8 +42,20 @@
 			{{ content | safe }}
 		{% endblock %}
 	</article>
-	<footer>
+	<footer style="display: flex; justify-content: space-between">
+		<p>Chris Stone</p>
+		<button type="button" id="embedSettings" style="display: none">Embed Settings</button>
 	</footer>
 </main>
+<dialog id="dialog">
+	<form id="embedForm">
+		<h2>Embed Settings</h2>
+		<label>Allow embed:
+			<input type="checkbox" name="allowEmbed" id="allowEmbedValue">
+		</label>
+		<button type="submit">Submit</button>
+		<button type="submit" aria-label="close" formmethod="dialog" formnovalidate>Cancel</button>
+	</form>
+</dialog>
 </body>
 </html>
